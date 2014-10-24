@@ -1,24 +1,17 @@
 CC=mpicxx
 eigenbin = /home/ld7/bin	
 CFLAGS=-c -Wall -I${eigenbin}
-LFLAGS=-limf -lm
-all: floquet
-floquet: main.o bdg.o dist.o prx.o
-	$(CC) *.o -o floquet $(LFLAGS)
+LDFLAGS=-limf -lm
+SRC=main.cpp bdg.cpp prx.cpp dist.cpp 
+OBJ=$(SRC:.cpp=.o)
+EXE=floquet
 
-main.o: main.cpp
-	$(CC) $(CFLAGS) main.cpp
+all: $(SRC) $(EXE)
 
-bdg.o: bdg.cpp
-	$(CC) $(CFLAGS) bdg.cpp
-
-prx.o: prx.cpp
-	$(CC) $(CFLAGS) prx.cpp
-
-dist.o: dist.cpp
-	$(CC) $(CFLAGS) dist.cpp
-
-
+$(EXE): $(OBJ)
+	$(CC) $(OBJ) -o $@ $(LDFLAGS)
+.cpp.o: 
+	$(CC) $(CFLAGS) $< -o $@
 
 touch: 
 	touch *.cpp *.h
