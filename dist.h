@@ -27,8 +27,12 @@ class cDistribute {
     }
       delete []recvbuf;
   }
-  int compute_count(int,int,int);
-  void distribution(int);
+  int compute_count(int rank, int size, int NJOBS);// compute distribution count: the last rank does the remaineder job while the rest do the most even work.
+  // NJOBS is the total number of work to be distributed, because each work is indepedent with each other.
+  void distribution(int NJOBS);// The paradigm is to send momentum value to different rank
+  // and let each processor work on the big matrix independently.
+  // --> A two-level parallization is to be investigated in the furture
+  //     for a sparse matrix partial eigenvalue spectrum calculation.
   void print_rank(); 
 
 };

@@ -21,6 +21,9 @@ class cPRX: public cFloquet {
 };
 
 class cPRX_Bulk : public cPRX, public cDistribute{
+// Bulk property: Chern number
+// Wavefunction is expanded in frequency domain for time-dependent problem;
+// p = 0 for time-independent problem.
 private:
 	int _NKX2;
 	double _kmax;
@@ -33,6 +36,9 @@ public:
 };
 
 class cPRX_Edge : public cPRX, public cDistribute{
+// Edge property: spectrum under hard wall boundary condition.
+// Wavefunction is expanded in both y-direction and frequency domain for time-dependent problem;
+// p = 0 for time-independent problem.
 private:
 	double _L;
 public:

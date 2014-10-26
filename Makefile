@@ -2,7 +2,7 @@ CC=mpicxx
 eigenbin = /home/ld7/bin	
 CFLAGS=-c -Wall -I${eigenbin}
 LDFLAGS=-limf -lm
-SRC=main.cpp bdg.cpp prx.cpp dist.cpp 
+SRC=main.cpp bdg.cpp prx.cpp dist.cpp lgwt.cpp
 OBJ=$(SRC:.cpp=.o)
 EXE=floquet
 

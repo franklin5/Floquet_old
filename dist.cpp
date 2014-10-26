@@ -1,7 +1,5 @@
 #include "dist.h"
 int cDistribute::compute_count(int rank, int size, int NJOBS){
-  // compute distribution count: the last rank does the remaineder job while the rest do the most even work.                                                  
-  // NJOBS is the total number of work to be distributed, because each work is indepedent with each other.
   int result;
   if (rank != size-1) {
     result = int(NJOBS/size);
@@ -12,10 +10,6 @@ int cDistribute::compute_count(int rank, int size, int NJOBS){
 }
 
 void cDistribute::distribution(int NJOBS){
-  // The paradigm is to send momentum value to different rank
-  // and let each processor work on the big matrix independently.
-  // --> A two-level parallization is to be investigated in the furture
-  //     for a sparse matrix partial eigenvalue spectrum calculation.
   if (_rank == _root){ // send process is only root significant
     sendbuf = new int[NJOBS];
     for(int i = 0; i< NJOBS; ++i){

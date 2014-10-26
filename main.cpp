@@ -3,6 +3,7 @@
  *
  *  Created on: Oct 22, 2014
  *      Author: Lin Dong
+ *  I am being pedantic in this version of the C++ project, using OOP paradigm.
  */
 
 #include "stdcpp.h"
@@ -64,6 +65,9 @@ int main(int argc, char** argv){
 		switch (string(topology)=="bulk") {
 			case 1:
 				bdg = new cBdG_Bulk(rank,size,root);
+				bdg->file_input();
+				bdg->construction();
+				bdg->compute();
 				break;
 			case 0:
 				bdg = new cBdG_Edge(rank,size,root);
