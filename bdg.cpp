@@ -95,7 +95,6 @@ void cBdG_Bulk::update(int nk, double kx, double ky){
     //cout << _bdg_H << endl;
   }
 }
-
 void cBdG_Bulk::BrillouinZone(){
   _lowerbound = -999;
   _upperbound = -999; // ridiculous negative flag
@@ -121,8 +120,6 @@ void cBdG_Bulk::BrillouinZone(){
     }
   }
 }
-
-
 double cBdG_Bulk::chern(int nk, double kx, double ky){
   double result;
   complex<double> u,a,b,v,up,ap,bp,vp, Theta1,Theta2, temp;
@@ -241,11 +238,11 @@ void cBdG_Bulk::compute(){
   int nk, nkx, nky;
   for(int ig = 0; ig< _size; ++ig) {
     if (ig == _rank){
-//      cout << "rank " << ig << " has started"<< endl;
+      cout << "rank " << ig << " has started"<< endl;
       _chern_rank = 0.0;
       if (string(_chernSolver)=="curvature") curvature_rank = new double[recvcount];
       for (int i=0; i<recvcount; ++i) { // recvcount is the number of tasks given to each rank.
-//	clock_t start = clock();
+	clock_t start = clock();
 		nk = recvbuf[i]; // distributed momentum value
 		if (string(_chernSolver)=="curvature") {
 		  // gauss quadrature is good for integration
@@ -265,11 +262,11 @@ void cBdG_Bulk::compute(){
 		  localEig[j+i*_SMAX]=_bdg_E[j];
 		}
 		_chern_rank += chern(nk, kx,ky);
-//	clock_t end = clock();
-//	if (_rank==_root) cout << "task " << recvbuf[i] <<"out of " << recvcount << "used " << double (end-start)/ (double) CLOCKS_PER_SEC  << endl;
-//	if (string(_chernSolver)=="curvature") curvature_rank[i] = _temp_curv;
+	clock_t end = clock();
+	if (_rank==_root) cout << "task " << recvbuf[i] <<"out of " << recvcount << "used " << double (end-start)/ (double) CLOCKS_PER_SEC  << endl;
+	if (string(_chernSolver)=="curvature") curvature_rank[i] = _temp_curv;
       }
-//      cout << "rank " << _rank << " has finished "<< recvcount << " tasks " << endl;
+      cout << "rank " << _rank << " has finished "<< recvcount << " tasks " << endl;
     }
   }
 }
