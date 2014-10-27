@@ -42,9 +42,9 @@ public:
 	}
 	void file_input();
 	void construction();
-	void update(int nk);
+	void update(int nk, double kx, double ky);
 	void compute();
-	void chern(int nkx, int nky);
+	double chern(int nk, double kx, double ky);
 };
 
 class cBdG_Edge : public cBdG, public cDistribute{
