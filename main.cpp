@@ -69,9 +69,10 @@ int main(int argc, char** argv){
 				bdg->file_input();
 				bdg->construction();
 				bdg->compute();
+				bdg->file_output();
 				break;
 			case 0:
-				bdg = new cBdG_Edge(rank,size,root);
+				//bdg = new cBdG_Edge(rank,size,root);
 				break;
 			default:
 				break;
@@ -82,10 +83,10 @@ int main(int argc, char** argv){
 		cPRX* prx;
 		switch (string(topology)=="bulk") {
 			case 1:
-				prx = new cPRX_Bulk(rank,size,root);
+				//prx = new cPRX_Bulk(rank,size,root);
 				break;
 			case 0:
-				prx = new cPRX_Edge(rank,size,root);
+				//prx = new cPRX_Edge(rank,size,root);
 				break;
 			default:
 				break;

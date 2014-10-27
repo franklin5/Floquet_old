@@ -21,6 +21,7 @@ class cBdG: public cFloquet {
 	double  _h, _mu, _T, _Delta0, _v;
  public:
   virtual void file_input()   =0; // this->file_input()
+  virtual void file_output()   =0; // this->file_output()
   virtual void construction() =0; // this->construction()
   virtual void compute() =0;		// this->compute()
 };
@@ -32,21 +33,36 @@ class cBdG_Bulk : public cBdG, public cDistribute{
 
 private:
 	int _NKX2;
+	int _lowerbound, _upperbound;
+	int *recvcounts, *displs_r, offset;
+	double *curvature_rank, *curvature;
 	double _kmax, _temp_curv;
 	complex<double> _chern;
+	double _chern_rank, _total_chern;
 	char* _chernSolver;
+	double  *localEig, *TotalEig;
 public:
 	cBdG_Bulk (const int rank, const int size, const int root) : cDistribute(rank,size,root){
 		_chernSolver = new char [100];
 	}
 	~cBdG_Bulk(){
 		delete []_chernSolver;
+		if (_root==_rank) {
+			delete []curvature;
+			delete []recvcounts;
+			delete []displs_r;
+			delete []TotalEig;
+		}
+		delete []curvature_rank;
+		delete []localEig;
 	}
 	void file_input();
+	void file_output();
 	void construction();
 	void update(int nk, double kx, double ky);
 	void compute();
 	double chern(int nk, double kx, double ky);
+	void BrillouinZone();
 };
 
 class cBdG_Edge : public cBdG, public cDistribute{
@@ -59,6 +75,7 @@ private:
 public:
 	cBdG_Edge (const int rank, const int size, const int root) : cDistribute(rank,size,root){}
 	void file_input();
+	void file_output();
 	void construction();
 	void update(int nkx);
 	void compute();
