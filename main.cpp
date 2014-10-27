@@ -1,9 +1,10 @@
-/*
- * main.cpp
- *
- *  Created on: Oct 22, 2014
- *      Author: Lin Dong
- *  I am being pedantic in this version of the C++ project, using OOP paradigm.
+/** \file
+	@brief I am being pedantic in this version of the C++ project, using OOP paradigm.
+
+   Created on: Oct 22, 2014
+   @author Lin Dong
+   @date Oct 2014
+
  */
 
 #include "stdcpp.h"

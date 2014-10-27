@@ -1,3 +1,4 @@
+//! \file
 #include "dist.h"
 int cDistribute::compute_count(int rank, int size, int NJOBS){
   int result;

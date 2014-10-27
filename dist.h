@@ -1,11 +1,11 @@
-//
-//  dist.h
-//  Base class declaration
-//  The base class sets up MPI distribution 
-//  
-//  Created by Dong Lin on 10/22/14.
-//  Copyright (c) 2014 Dong Lin. All rights reserved.
-//
+//! Base class declaration
+/*!
+
+  The base class sets up MPI distribution
+
+  Created by Dong Lin on 10/22/14.
+  Copyright (c) 2014 Dong Lin. All rights reserved.
+*/
 
 #ifndef DIST_H_
 #define DIST_H_

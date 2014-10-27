@@ -1,4 +1,4 @@
-/*
+/*! \file
  * lgwt.cpp
  *
  *  Created on: Feb 6, 2014

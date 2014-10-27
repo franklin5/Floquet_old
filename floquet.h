@@ -1,11 +1,9 @@
-//
-//  floquet.h
-//  Base class declaration
-//  
-//
-//  Created by Dong Lin on 10/22/14.
-//  Copyright (c) 2014 Dong Lin. All rights reserved.
-//
+//! floquet.h Base class declaration
+/*!
+
+  Created by Dong Lin on 10/22/14.
+  Copyright (c) 2014 Dong Lin. All rights reserved.
+*/
 
 #ifndef FLOQUET_H_
 #define FLOQUET_H_

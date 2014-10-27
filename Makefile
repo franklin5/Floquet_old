@@ -13,6 +13,9 @@ $(EXE): $(OBJ)
 .cpp.o: 
 	$(CC) $(CFLAGS) $< -o $@
 
+doc:
+	doxygen Doxyfile
+
 touch: 
 	touch *.cpp *.h
 clean:

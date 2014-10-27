@@ -1,4 +1,4 @@
-/*
+/*! \file
  * prx.cpp
  *
  *  Created on: Oct 24, 2014

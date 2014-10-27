@@ -1,11 +1,13 @@
-//                                                                            
-//  bdg.h
-//  Abstract base class cBdG
-//  The base class sets up virtual process of reading input parameters
-//      and common components of matrix construction
-//  Created by Dong Lin on 10/22/14.                                           
-//  Copyright (c) 2014 Dong Lin. All rights reserved.                          
-//   
+//! Abstract base class cBdG
+/*!
+ The base class sets up virtual process of reading input parameters
+      and common components of matrix construction
+	@author Lin Dong
+	@date Oct 2014
+
+  Created by Dong Lin on 10/22/14.
+  Copyright (c) 2014 Dong Lin. All rights reserved.
+*/
 
 #ifndef BDG_H_
 #define BDG_H_

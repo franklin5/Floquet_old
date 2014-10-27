@@ -1,9 +1,9 @@
-/*
- * prx.h
+/*! prx.h
+ *
  * The base class sets up virtual process of reading input parameters
 //      and common components of matrix construction
  *  Created on: Oct 24, 2014
- *      Author: ld7
+ *      @Author Lin Dong
  */
 
 #ifndef PRX_H_

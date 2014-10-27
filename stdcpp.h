@@ -1,10 +1,10 @@
+/*! handy standard header files
+  stdcpp.h
 //
-//  stdcpp.h
-//  Chern number calculation
 //
 //  Created by Dong Lin on 9/2/14.
 //  Copyright (c) 2014 Dong Lin. All rights reserved.
-//
+*/
 
 #ifndef STDCPP_H_
 #define STDCPP_H_

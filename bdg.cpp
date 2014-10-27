@@ -1,4 +1,4 @@
-/*
+/*! \file
  * bdg.cpp
  *
  *  Created on: Oct 24, 2014
@@ -245,9 +245,12 @@ void cBdG_Bulk::compute(){
 		clock_t start = clock();
 		nk = recvbuf[i];
 		if (string(_chernSolver)=="curvature") {
+			// gauss quadrature is good for integration
 			kx = _gauss_k[nk % _NKX];
 			ky = _gauss_k[int (nk/_NKX)];
 		} else if (string(_chernSolver)=="connection") {
+			// in connection approach, we have to be wise and cover all the areas that are under consideration
+			// square area with the same size is easier to work with, rather than the quadrature meshes.
 			nkx = nk % _NKX;
 			nky = int (nk/_NKX);
 			kx = -_kmax + nkx * _kmax *2.0 /(_NKX-1);
