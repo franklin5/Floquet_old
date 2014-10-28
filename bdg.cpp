@@ -62,7 +62,7 @@ void cBdG_Bulk::update(int nk, double kx, double ky){
   if (nk == -1) {
     _bdg_H.setZero(); // This is done only once.
     // The off-diagonal coupling introduced from time-dependent order parameter should be computed only here.
-    double dt = 0.0001;int lenT = int(_T/dt);double Delta2 = 0.0;
+    double dt = 0.0001;int lenT = int(_T/dt);double Delta2 = 0.5;
     double *DELTA_t = new double [lenT];
     for (int it = 0; it < lenT; ++it) {
       DELTA_t[it] = _Delta0 + Delta2*cos(it*dt*2*M_PI/_T); // time-independent problem: replace Delta2 with 0.0;
@@ -82,14 +82,14 @@ void cBdG_Bulk::update(int nk, double kx, double ky){
     }
     delete []DELTA_t;
   } else {
-    double xi = kx*kx+ky*ky-_mu;
+    double xi = 2.0*(2.0-cos(kx)-cos(ky))-_mu;
     for (int ip = 0; ip < _pblock; ++ip) {
       p = ip - _PMAX;
       _bdg_H(ip*_ibdg,ip*_ibdg)   		=  complex<double> (xi+_h+2*p*M_PI/_T,0.0);
-      _bdg_H(ip*_ibdg+1,ip*_ibdg)   	=  complex<double> (_v*kx,_v*ky);
+      _bdg_H(ip*_ibdg+1,ip*_ibdg)   	=  complex<double> (_v*sin(kx),_v*sin(ky));
       _bdg_H(ip*_ibdg+1,ip*_ibdg+1)   	=  complex<double> (xi-_h+2*p*M_PI/_T,0.0);
       _bdg_H(ip*_ibdg+2,ip*_ibdg+2)   	=  complex<double> (-(xi+_h)+2*p*M_PI/_T,0.0);
-      _bdg_H(ip*_ibdg+3,ip*_ibdg+2)   	=  complex<double> (_v*kx,-_v*ky);
+      _bdg_H(ip*_ibdg+3,ip*_ibdg+2)   	=  complex<double> (_v*sin(kx),-_v*sin(ky));
       _bdg_H(ip*_ibdg+3,ip*_ibdg+3)   	=  complex<double> (-(xi-_h)+2*p*M_PI/_T,0.0);
     }
     //cout << _bdg_H << endl;
@@ -147,14 +147,14 @@ double cBdG_Bulk::chern(int nk, double kx, double ky){
 	    ap = _bdg_V(i*_ibdg+1,ip);
 	    bp = _bdg_V(i*_ibdg+2,ip);
 	    vp = _bdg_V(i*_ibdg+3,ip);
-	    Theta1 += 2*kx*up*conj(u)+_v*ap*conj(u)
-	      +_v*up*conj(a)+2*kx*ap*conj(a)
-	      -2*kx*bp*conj(b)+_v*vp*conj(b)
-	      +_v*bp*conj(v)-2*kx*vp*conj(v);
-	    Theta2 += 2*ky*conj(up)*u-_myI*_v*conj(up)*a
-	      +_myI*_v*conj(ap)*u+2*ky*conj(ap)*a
-	      -2*ky*conj(bp)*b+_myI*_v*conj(bp)*v
-	      -_myI*_v*conj(vp)*b-2*ky*conj(vp)*v;
+	    Theta1 += 2*sin(kx)*up*conj(u)+_v*cos(kx)*ap*conj(u)
+	      +_v*cos(kx)*up*conj(a)+2*sin(kx)*ap*conj(a)
+	      -2*sin(kx)*bp*conj(b)+_v*cos(kx)*vp*conj(b)
+	      +_v*cos(kx)*bp*conj(v)-2*sin(kx)*vp*conj(v);
+	    Theta2 += 2*sin(ky)*conj(up)*u-_myI*_v*cos(kx)*conj(up)*a
+	      +_myI*_v*cos(kx)*conj(ap)*u+2*sin(ky)*conj(ap)*a
+	      -2*sin(ky)*conj(bp)*b+_myI*_v*cos(kx)*conj(bp)*v
+	      -_myI*_v*cos(kx)*conj(vp)*b-2*sin(ky)*conj(vp)*v;
 	  }
 	  Ediff = _bdg_E[ih]-_bdg_E[ip];
 	  _chern += -2.0*Theta1*Theta2/(Ediff*Ediff);
