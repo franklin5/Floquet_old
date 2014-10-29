@@ -1,4 +1,4 @@
-#LyX 1.6.6.1 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.10 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -592,7 +592,154 @@ An example plot of
  a = 4.0*mu; omega = mu/0.07;
 \end_layout
 
+\begin_layout Section
+Floquet invariant for quenched Fermi gas 
+\end_layout
+
 \begin_layout Standard
+In this section, we consider Fermi gas with SOC after quench.
+ The dynamical evolution in phase I can be captured by the order parameter
+ of the form, 
+\begin_inset Formula $\Delta(t)=|\Delta_{\infty}(t)|e^{-2i\mu_{\infty}t+i\phi(t)}$
+\end_inset
+
+.
+ Then we perform a gauge transformation to the quasi-particle wave-functions,
+ 
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{c}
+\tilde{u}_{{\bf k}}(t)\\
+\tilde{\alpha}_{{\bf k}}(t)\\
+\tilde{\beta}_{{\bf k}}(t)\\
+\tilde{v}_{{\bf k}}(t)\end{array}\right)\rightarrow\left(\begin{array}{c}
+u_{{\bf k}}(t)e^{-i\mu_{\infty}t}\\
+\alpha_{{\bf k}}(t)e^{-i\mu_{\infty}t}\\
+\beta_{{\bf k}}(t)e^{+i\mu_{\infty}t}\\
+v_{{\bf k}}(t)e^{+i\mu_{\infty}t}\end{array}\right)\end{equation}
+
+\end_inset
+
+then BdG equation (setting 
+\begin_inset Formula $\mu=0$
+\end_inset
+
+ in the origional equation) can be mapped to 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{cccc}
+\epsilon_{{\bf k}}-\mu_{\infty}+h & \lambda(k_{x}-ik_{y}) & 0 & -|\Delta_{\infty}(t)|e^{i\phi(t)}\\
+\lambda(k_{x}+ik_{y}) & \epsilon_{{\bf k}}-\mu_{\infty}-h & |\Delta_{\infty}(t)|e^{i\phi(t)} & 0\\
+0 & |\Delta_{\infty}(t)|e^{-i\phi(t)} & -(\epsilon_{{\bf k}}-\mu_{\infty}+h) & \lambda(k_{x}+ik_{y})\\
+-|\Delta_{\infty}(t)|e^{-i\phi(t)} & 0 & \lambda(k_{x}-ik_{y}) & -(\epsilon_{{\bf k}}-\mu_{\infty}-h)\end{array}\right)\left(\begin{array}{c}
+u_{{\bf k}}(t)\\
+\alpha_{{\bf k}}(t)\\
+\beta_{{\bf k}}(t)\\
+v_{{\bf k}}(t)\end{array}\right)=i\frac{\partial}{\partial t}\left(\begin{array}{c}
+u_{{\bf k}}(t)\\
+\alpha_{{\bf k}}(t)\\
+\beta_{{\bf k}}(t)\\
+v_{{\bf k}}(t)\end{array}\right)\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+This map requires 
+\begin_inset Formula $\tilde{\Delta}(t)=|\Delta_{\infty}(t)|e^{i\phi(t)}\equiv R(t)+iI(t)$
+\end_inset
+
+ being periodic in time, say with period 
+\begin_inset Formula $T$
+\end_inset
+
+.
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+According to the Floquet theorem, we have 
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{c}
+u_{{\bf k}}(t)\\
+\alpha_{{\bf k}}(t)\\
+\beta_{{\bf k}}(t)\\
+v_{{\bf k}}(t)\end{array}\right)=e^{-i\varepsilon t}\sum_{p=-P_{max}}^{P_{max}}\frac{1}{\sqrt{T}}e^{ip\omega t}\left(\begin{array}{c}
+u_{p}({\bf k})\\
+\alpha_{p}({\bf k})\\
+\beta_{p}({\bf k})\\
+v_{p}({\bf k})\end{array}\right)\end{equation}
+
+\end_inset
+
+where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\omega=\frac{2\pi}{T}$
+\end_inset
+
+.
+ Then the coefficients 
+
+\begin_inset Formula $u_{p}({\bf k})$
+\end_inset
+
+, 
+\begin_inset Formula $\alpha_{p}({\bf k})$
+\end_inset
+
+, 
+\begin_inset Formula $\beta_{p}({\bf k})$
+\end_inset
+
+, 
+\begin_inset Formula $v_{p}({\bf k})$
+\end_inset
+
+ satisfies the time-independent eigenvalue equation
+\begin_inset Formula \begin{equation}
+\sum_{\sigma'p'}\mathcal{H}_{pp'}^{\sigma\sigma'}\varphi_{p'}^{\sigma'}=\varepsilon\varphi_{p}^{\sigma}\end{equation}
+
+\end_inset
+
+where we have abbreviated 
+\begin_inset Formula $\left(\begin{array}{c}
+u_{p}({\bf k})\\
+\alpha_{p}({\bf k})\\
+\beta_{p}({\bf k})\\
+v_{p}({\bf k})\end{array}\right)=\vec{\varphi_{p}}$
+\end_inset
+
 
 \end_layout
 
