@@ -1,0 +1,5290 @@
+#LyX 1.6.6.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass paper
+\begin_preamble
+\def\pa{\partial}
+\def\r{\textbf{r}}
+\def\k{\textbf{k}}
+\def\q{\textbf{q}}
+\def\p{\textbf{p}}
+\def\R{\textbf{R}}
+\def\s{\sigma}
+\def\u{\uparrow}
+\def\d{\downarrow}
+\end_preamble
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\cite_engine natbib_numerical
+\use_bibtopic false
+\paperorientation portrait
+\leftmargin 0.5in
+\topmargin 0.5in
+\rightmargin 0.5in
+\bottommargin 1.2in
+\headsep 0.2in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Time-dependent study of topological superfluids
+\end_layout
+
+\begin_layout Author
+Lin Dong (Dated: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Section
+t-BdG Equations
+\end_layout
+
+\begin_layout Standard
+We start from the Hamiltonian with the general form of spin-orbit coupling
+ (SOC) 
+\begin_inset Formula $H_{SOC}=v_{1}\sigma_{x}k_{x}+v_{2}\sigma_{y}k_{y}+v_{3}\sigma_{z}k_{z}$
+\end_inset
+
+ and Zeeman field in z-direction, 
+\begin_inset Formula $H=H_{0}+H_{int}$
+\end_inset
+
+, where (
+\begin_inset Formula $v_{i}$
+\end_inset
+
+ are real constants, 
+\begin_inset Formula $i=1,2,3$
+\end_inset
+
+) 
+\begin_inset Formula \begin{eqnarray}
+H_{0} & = & \int d{\bf x}\left[\begin{array}{cc}
+\psi_{\uparrow}^{\dagger}({\bf x}) & \psi_{\downarrow}^{\dagger}({\bf x})\end{array}\right]\left[\begin{array}{cc}
+\xi_{{\bf k}}+v_{3}k_{z}+h & v_{1}k_{x}-iv_{2}k_{y}\\
+v_{1}k_{x}+iv_{2}k_{y} & \xi_{k}-v_{3}k_{z}-h\end{array}\right]\left[\begin{array}{c}
+\psi_{\uparrow}({\bf x})\\
+\psi_{\downarrow}({\bf x})\end{array}\right]\\
+H_{int} & = & U_{0}\int d{\bf x}\psi_{\uparrow}^{\dagger}({\bf x})\psi_{\downarrow}^{\dagger}({\bf x})\psi_{\downarrow}({\bf x})\psi_{\uparrow}({\bf x})\end{eqnarray}
+
+\end_inset
+
+And we write Heisenberg equation of motion (EOM) as, (
+\begin_inset Formula $\hbar=1$
+\end_inset
+
+) (remember that 
+\begin_inset Formula $[A,BC]=\{A,B\}C-B\{A,C\}$
+\end_inset
+
+ for Fermions while 
+\begin_inset Formula $[A,BC]=[A,B]C+B[A,C]$
+\end_inset
+
+ for Bosons)
+\begin_inset Formula \begin{eqnarray}
+i\frac{\partial}{\partial t}\psi_{\uparrow}({\bf x}) & = & (\xi_{{\bf k}}+v_{3}k_{z}+h)\psi_{\uparrow}({\bf x})+(v_{1}k_{x}-iv_{2}k_{y})\psi_{\downarrow}({\bf x})+U_{0}\psi_{\downarrow}^{\dagger}({\bf x})\psi_{\downarrow}({\bf x})\psi_{\uparrow}({\bf x})\nonumber \\
+ & \approx & (\xi_{{\bf k}}+v_{3}k_{z}+h)\psi_{\uparrow}({\bf x})+(v_{1}k_{x}-iv_{2}k_{y})\psi_{\downarrow}({\bf x})-\Delta({\bf x})\psi_{\downarrow}^{\dagger}({\bf x})\label{eq:up}\\
+i\frac{\partial}{\partial t}\psi_{\downarrow}({\bf x}) & = & (\xi_{{\bf k}}-v_{3}k_{z}-h)\psi_{\downarrow}({\bf x})+(v_{1}k_{x}+iv_{2}k_{y})\psi_{\uparrow}({\bf x})-U_{0}\psi_{\uparrow}^{\dagger}({\bf x})\psi_{\downarrow}({\bf x})\psi_{\uparrow}({\bf x})\nonumber \\
+ & \approx & (\xi_{{\bf k}}-v_{3}k_{z}-h)\psi_{\downarrow}({\bf x})+(v_{1}k_{x}+iv_{2}k_{y})\psi_{\uparrow}({\bf x})+\Delta({\bf x})\psi_{\uparrow}^{\dagger}({\bf x})\label{eq:dn}\end{eqnarray}
+
+\end_inset
+
+where approximation comes from mean-field approximation by defining order
+ parameter 
+\begin_inset Formula $\Delta({\bf x})=-U_{0}\langle\psi_{\downarrow}\psi_{\uparrow}\rangle$
+\end_inset
+
+.
+ We solve the EOM in terms of Bogoliubov transformation,
+\begin_inset Formula \begin{equation}
+\psi_{\sigma}({\bf x})=\frac{1}{V}\sum_{{\bf k}}\left[u_{{\bf k}\sigma}({\bf x},t)c_{{\bf k}\sigma}+v_{{\bf k}\bar{\sigma}}^{\ast}({\bf x},t)c_{{\bf k}\bar{\sigma}}^{\dagger}+\alpha_{{\bf k}\bar{\sigma}}({\bf x},t)c_{{\bf k}\bar{\sigma}}+\beta_{{\bf k}\sigma}^{\ast}({\bf x},t)c_{{\bf k}\sigma}^{\dagger}\right]\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\sigma=\uparrow,\downarrow$
+\end_inset
+
+ and correspondingly 
+\begin_inset Formula $\bar{\sigma}=\downarrow,\uparrow$
+\end_inset
+
+, 
+\begin_inset Formula \[
+u_{{\bf k}\sigma}({\bf x},t)=u_{{\bf k}\sigma}({\bf x})e^{-iE_{{\bf k}\sigma}t},v_{{\bf k}\sigma}({\bf x},t)=v_{{\bf k}\sigma}({\bf x})e^{-iE_{{\bf k}\sigma}t},\alpha_{{\bf k}\sigma}({\bf x},t)=\alpha_{{\bf k}\sigma}({\bf x})e^{-iE_{{\bf k}\sigma}t},\beta{}_{{\bf k}\sigma}({\bf x},t)=\beta_{{\bf k}\sigma}({\bf x})e^{-iE_{{\bf k}\sigma}t}\]
+
+\end_inset
+
+
+\begin_inset Formula \[
+u_{{\bf k}\sigma}^{\ast}({\bf x},t)=u_{{\bf k}\sigma}^{\ast}({\bf x})e^{+iE_{{\bf k}\sigma}t},v_{{\bf k}\sigma}^{\ast}({\bf x},t)=v_{{\bf k}\sigma}^{\ast}({\bf x})e^{+iE_{{\bf k}\sigma}t},\alpha_{{\bf k}\sigma}^{\ast}({\bf x},t)=\alpha_{{\bf k}\sigma}^{\ast}({\bf x})e^{+iE_{{\bf k}\sigma}t},\beta{}_{{\bf k}\sigma}^{\ast}({\bf x},t)=\beta_{{\bf k}\sigma}^{\ast}({\bf x})e^{+iE_{{\bf k}\sigma}t}\]
+
+\end_inset
+
+ Denote 
+\begin_inset Formula \begin{eqnarray*}
+h_{0}^{+} & = & \xi_{{\bf k}}+v_{3}k_{z}+h\\
+h_{0}^{-} & = & \xi_{{\bf k}}-v_{3}k_{z}-h\\
+\Lambda & = & v_{1}k_{x}-iv_{2}k_{y}\end{eqnarray*}
+
+\end_inset
+
+Then from Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:up"
+
+\end_inset
+
+, we have
+\begin_inset Formula \begin{eqnarray}
+ &  & i\sum_{{\bf k}}\left[\dot{u}_{{\bf k}\uparrow}({\bf x})c_{{\bf k}\uparrow}+\dot{v}_{{\bf k}\downarrow}^{\ast}({\bf x})c_{{\bf k}\downarrow}^{\dagger}+\dot{\alpha}_{{\bf k}\downarrow}({\bf x})c_{{\bf k}\downarrow}+\dot{\beta}_{{\bf k}\uparrow}^{\ast}({\bf x})c_{{\bf k}\uparrow}^{\dagger}\right]\nonumber \\
+ & = & \sum_{{\bf k}}\left[h_{0}^{+}u_{{\bf k}\uparrow}({\bf x})c_{{\bf k}\uparrow}+h_{0}^{+}v_{{\bf k}\downarrow}^{\ast}({\bf x})c_{{\bf k}\downarrow}^{\dagger}+h_{0}^{+}\alpha_{{\bf k}\downarrow}({\bf x})c_{{\bf k}\downarrow}+h_{0}^{+}\beta_{{\bf k}\uparrow}^{\ast}({\bf x})c_{{\bf k}\uparrow}^{\dagger}\right]\nonumber \\
+ & + & \sum_{{\bf k}}\left[\Lambda u_{{\bf k}\downarrow}({\bf x})c_{{\bf k}\downarrow}+\Lambda v_{{\bf k}\uparrow}^{\ast}({\bf x})c_{{\bf k}\uparrow}^{\dagger}+\Lambda\alpha_{{\bf k}\uparrow}({\bf x})c_{{\bf k}\uparrow}+\Lambda\beta_{{\bf k}\downarrow}^{\ast}({\bf x})c_{{\bf k}\downarrow}^{\dagger}\right]\nonumber \\
+ & + & \sum_{{\bf k}}\left[-\Delta u_{{\bf k}\downarrow}^{\ast}({\bf x})c_{{\bf k}\downarrow}^{\dagger}-\Delta v_{{\bf k}\uparrow}({\bf x})c_{{\bf k}\uparrow}-\Delta\alpha_{{\bf k}\uparrow}^{\ast}({\bf x})c_{{\bf k}\uparrow}^{\dagger}-\Delta\beta_{{\bf k}\downarrow}({\bf x})c_{{\bf k}\downarrow}\right]\label{eq:up-bog}\end{eqnarray}
+
+\end_inset
+
+
+\begin_inset Formula \begin{eqnarray}
+ &  & i\sum_{{\bf k}}\left[\dot{u}_{{\bf k}\downarrow}({\bf x})c_{{\bf k}\downarrow}+\dot{v}_{{\bf k}\uparrow}^{\ast}({\bf x})c_{{\bf k}\uparrow}^{\dagger}+\dot{\alpha}_{{\bf k}\uparrow}({\bf x})c_{{\bf k}\uparrow}+\dot{\beta}_{{\bf k}\downarrow}^{\ast}({\bf x})c_{{\bf k}\downarrow}^{\dagger}\right]\nonumber \\
+ & = & \sum_{{\bf k}}\left[h_{0}^{-}u_{{\bf k}\downarrow}({\bf x})c_{{\bf k}\downarrow}+h_{0}^{-}v_{{\bf k}\uparrow}^{\ast}({\bf x})c_{{\bf k}\uparrow}^{\dagger}+h_{0}^{-}\alpha_{{\bf k}\uparrow}({\bf x})c_{{\bf k}\uparrow}+h_{0}^{-}\beta_{{\bf k}\downarrow}^{\ast}({\bf x})c_{{\bf k}\downarrow}^{\dagger}\right]\nonumber \\
+ & + & \sum_{{\bf k}}\left[\Lambda^{\dagger}u_{{\bf k}\uparrow}({\bf x})c_{{\bf k}\uparrow}+\Lambda^{\dagger}v_{{\bf k}\downarrow}^{\ast}({\bf x})c_{{\bf k}\downarrow}^{\dagger}+\Lambda^{\dagger}\alpha_{{\bf k}\downarrow}({\bf x})c_{{\bf k}\downarrow}+\Lambda^{\dagger}\beta_{{\bf k}\uparrow}^{\ast}({\bf x})c_{{\bf k}\uparrow}^{\dagger}\right]\nonumber \\
+ & + & \sum_{{\bf k}}\left[\Delta u_{{\bf k}\uparrow}^{\ast}({\bf x})c_{{\bf k}\uparrow}^{\dagger}+\Delta v_{{\bf k}\downarrow}({\bf x})c_{{\bf k}\downarrow}+\Delta\alpha_{{\bf k}\downarrow}^{\ast}({\bf x})c_{{\bf k}\downarrow}^{\dagger}+\Delta\beta_{{\bf k}\uparrow}({\bf x})c_{{\bf k}\uparrow}\right]\label{eq:dn-bog}\end{eqnarray}
+
+\end_inset
+
+From Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:up-bog"
+
+\end_inset
+
+, we have 
+\begin_inset Formula \begin{eqnarray*}
+i\dot{u}_{{\bf k}\uparrow}({\bf x}) & = & h_{0}^{+}u_{{\bf k}\uparrow}({\bf x})+\Lambda\alpha_{{\bf k}\uparrow}({\bf x})-\Delta v_{{\bf k}\uparrow}({\bf x})\\
+i\dot{v}_{{\bf k}\downarrow}^{\ast}({\bf x}) & = & h_{0}^{+}v_{{\bf k}\downarrow}^{\ast}({\bf x})+\Lambda\beta_{{\bf k}\downarrow}^{\ast}({\bf x})-\Delta u_{{\bf k}\downarrow}^{\ast}({\bf x})\Rightarrow-i\dot{v}_{{\bf k}\downarrow}({\bf x})=(h_{0}^{+})^{\ast}v_{{\bf k}\downarrow}({\bf x})+\Lambda^{\ast}\beta_{{\bf k}\downarrow}({\bf x})-\Delta^{\ast}u_{{\bf k}\downarrow}({\bf x})\\
+i\dot{\alpha}_{{\bf k}\downarrow}({\bf x}) & = & h_{0}^{+}\alpha_{{\bf k}\downarrow}({\bf x})+\Lambda u_{{\bf k}\downarrow}({\bf x})-\Delta\beta_{{\bf k}\downarrow}({\bf x})\\
+i\dot{\beta}_{{\bf k}\uparrow}^{\ast}({\bf x}) & = & h_{0}^{+}\beta_{{\bf k}\uparrow}^{\ast}({\bf x})+\Lambda v_{{\bf k}\uparrow}^{\ast}({\bf x})-\Delta\alpha_{{\bf k}\uparrow}^{\ast}({\bf x})\Rightarrow-i\dot{\beta}_{{\bf k}\uparrow}({\bf x})=(h_{0}^{+})^{\ast}\beta_{{\bf k}\uparrow}({\bf x})+\Lambda^{\ast}v_{{\bf k}\uparrow}({\bf x})-\Delta^{\ast}\alpha_{{\bf k}\uparrow}({\bf x})\\
+i\dot{u}_{{\bf k}\downarrow}({\bf x}) & = & h_{0}^{-}u_{{\bf k}\downarrow}({\bf x})+\Lambda^{\dagger}\alpha_{{\bf k}\downarrow}({\bf x})+\Delta v_{{\bf k}\downarrow}({\bf x})\\
+i\dot{v}_{{\bf k}\uparrow}^{\ast}({\bf x}) & = & h_{0}^{-}v_{{\bf k}\uparrow}^{\ast}({\bf x})+\Lambda^{\dagger}\beta_{{\bf k}\uparrow}^{\ast}({\bf x})+\Delta u_{{\bf k}\uparrow}^{\ast}({\bf x})\Rightarrow-i\dot{v}_{{\bf k}\uparrow}({\bf x})=(h_{0}^{-})^{\ast}v_{{\bf k}\uparrow}({\bf x})+(\Lambda^{\dagger})^{\ast}\beta_{{\bf k}\uparrow}({\bf x})+\Delta^{\ast}u_{{\bf k}\uparrow}({\bf x})\\
+i\dot{\alpha}_{{\bf k}\uparrow}({\bf x}) & = & h_{0}^{-}\alpha_{{\bf k}\uparrow}({\bf x})+\Lambda^{\dagger}u_{{\bf k}\uparrow}({\bf x})+\Delta\beta_{{\bf k}\uparrow}({\bf x})\\
+i\dot{\beta}_{{\bf k}\downarrow}^{\ast}({\bf x}) & = & h_{0}^{-}\beta_{{\bf k}\downarrow}^{\ast}({\bf x})+\Lambda^{\dagger}v_{{\bf k}\downarrow}^{\ast}({\bf x})+\Delta\alpha_{{\bf k}\downarrow}^{\ast}({\bf x})\Rightarrow-i\dot{\beta}_{{\bf k}\downarrow}({\bf x})=(h_{0}^{-})^{\ast}\beta_{{\bf k}\downarrow}({\bf x})+(\Lambda^{\dagger})^{\ast}v_{{\bf k}\downarrow}({\bf x})+\Delta^{\ast}\alpha_{{\bf k}\downarrow}({\bf x})\end{eqnarray*}
+
+\end_inset
+
+where we have used 
+\begin_inset Formula $\Lambda^{\dagger}=v_{1}k_{x}+iv_{2}k_{y}$
+\end_inset
+
+, 
+\begin_inset Formula $\Lambda^{\ast}=-(v_{1}k_{x}+iv_{2}k_{y})$
+\end_inset
+
+, 
+\begin_inset Formula $(\Lambda^{\dagger})^{\ast}=-v_{1}k_{x}+iv_{2}k_{y}$
+\end_inset
+
+ (note: 
+\begin_inset Formula $k=i\hbar\partial/\partial x$
+\end_inset
+
+, 
+\begin_inset Formula $k^{\dagger}=k$
+\end_inset
+
+, 
+\begin_inset Formula $k^{\ast}=-k$
+\end_inset
+
+, so 
+\begin_inset Formula $k^{\dagger}=-k^{\ast}$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Written in matrix form,
+\begin_inset Formula \begin{eqnarray}
+i\frac{\partial}{\partial t}\left(\begin{array}{c}
+u_{{\bf k}\uparrow}({\bf x})\\
+\alpha_{{\bf k}\uparrow}({\bf x})\\
+\beta_{{\bf k}\uparrow}({\bf x})\\
+v_{{\bf k}\uparrow}({\bf x})\end{array}\right) & = & \left(\begin{array}{cccc}
+h_{0}^{+} & \Lambda & 0 & -\Delta\\
+\Lambda^{\dagger} & h_{0}^{-} & \Delta & 0\\
+0 & \Delta^{\ast} & -(h_{0}^{+})^{\ast} & -\Lambda^{\ast}\\
+-\Delta^{\ast} & 0 & -(\Lambda^{\dagger})^{\ast} & -(h_{0}^{-})^{\ast}\end{array}\right)\left(\begin{array}{c}
+u_{{\bf k}\uparrow}({\bf x})\\
+\alpha_{{\bf k}\uparrow}({\bf x})\\
+\beta_{{\bf k}\uparrow}({\bf x})\\
+v_{{\bf k}\uparrow}({\bf x})\end{array}\right)\\
+ & = & \left(\begin{array}{cccc}
+\xi_{{\bf k}}+v_{3}k_{z}+h & v_{1}k_{x}-iv_{2}k_{y} & 0 & -\Delta\\
+v_{1}k_{x}+iv_{2}k_{y} & \xi_{{\bf k}}-v_{3}k_{z}-h & \Delta & 0\\
+0 & \Delta^{\ast} & -(\xi_{{\bf k}}-v_{3}k_{z}+h) & v_{1}k_{x}+iv_{2}k_{y}\\
+-\Delta^{\ast} & 0 & v_{1}k_{x}-iv_{2}k_{y} & -(\xi_{{\bf k}}+v_{3}k_{z}-h)\end{array}\right)\left(\begin{array}{c}
+u_{{\bf k}\uparrow}({\bf x})\\
+\alpha_{{\bf k}\uparrow}({\bf x})\\
+\beta_{{\bf k}\uparrow}({\bf x})\\
+v_{{\bf k}\uparrow}({\bf x})\end{array}\right)\label{eq:ualphabetav}\end{eqnarray}
+
+\end_inset
+
+
+\begin_inset Formula \begin{eqnarray}
+i\frac{\partial}{\partial t}\left(\begin{array}{c}
+\alpha_{{\bf k}\downarrow}({\bf x})\\
+u_{{\bf k}\downarrow}({\bf x})\\
+v_{{\bf k}\downarrow}({\bf x})\\
+\beta_{{\bf k}\downarrow}({\bf x})\end{array}\right) & = & \left(\begin{array}{cccc}
+h_{0}^{+} & \Lambda & 0 & -\Delta\\
+\Lambda^{\dagger} & h_{0}^{-} & \Delta & 0\\
+0 & \Delta^{\ast} & -(h_{0}^{+})^{\ast} & -\Lambda^{\ast}\\
+-\Delta^{\ast} & 0 & -(\Lambda^{\dagger})^{\ast} & -(h_{0}^{-})^{\ast}\end{array}\right)\left(\begin{array}{c}
+\alpha_{{\bf k}\downarrow}({\bf x})\\
+u_{{\bf k}\downarrow}({\bf x})\\
+v_{{\bf k}\downarrow}({\bf x})\\
+\beta_{{\bf k}\downarrow}({\bf x})\end{array}\right)\\
+ & = & \left(\begin{array}{cccc}
+\xi_{{\bf k}}+v_{3}k_{z}+h & v_{1}k_{x}-iv_{2}k_{y} & 0 & -\Delta\\
+v_{1}k_{x}+iv_{2}k_{y} & \xi_{{\bf k}}-v_{3}k_{z}-h & \Delta & 0\\
+0 & \Delta^{\ast} & -(\xi_{{\bf k}}-v_{3}k_{z}+h) & v_{1}k_{x}+iv_{2}k_{y}\\
+-\Delta^{\ast} & 0 & v_{1}k_{x}-iv_{2}k_{y} & -(\xi_{{\bf k}}+v_{3}k_{z}-h)\end{array}\right)\left(\begin{array}{c}
+\alpha_{{\bf k}\downarrow}({\bf x})\\
+u_{{\bf k}\downarrow}({\bf x})\\
+v_{{\bf k}\downarrow}({\bf x})\\
+\beta_{{\bf k}\downarrow}({\bf x})\end{array}\right)\end{eqnarray}
+
+\end_inset
+
+And normalization is given by 
+\begin_inset Formula $\int d{\bf x}\left[|u_{{\bf k}\sigma}({\bf x})|^{2}+|\alpha_{{\bf k}\sigma}({\bf x})|^{2}+|\beta_{{\bf k}\sigma}({\bf x})|^{2}+|v_{{\bf k}\sigma}({\bf x})|^{2}\right]=1$
+\end_inset
+
+.
+ 
+\begin_inset Formula \begin{eqnarray*}
+\Delta({\bf x}) & = & -U_{0}\langle\psi_{\downarrow}({\bf x})\psi_{\uparrow}({\bf x})\rangle\\
+ & = & -U_{0}\frac{1}{V}\sum_{{\bf k}}\left[u_{{\bf k}\downarrow}({\bf x})v_{{\bf k}\downarrow}^{\ast}({\bf x})\langle c_{{\bf k}\downarrow}c_{{\bf k}\downarrow}^{\dagger}\rangle+u_{{\bf k}\uparrow}({\bf x})v_{{\bf k}\uparrow}^{\ast}({\bf x})\langle c_{{\bf k}\uparrow}^{\dagger}c_{{\bf k}\uparrow}\rangle+\alpha_{{\bf k}\uparrow}({\bf x})\beta_{{\bf k}\uparrow}^{\ast}({\bf x})\langle c_{{\bf k}\uparrow}c_{{\bf k}\uparrow}^{\dagger}\rangle+\alpha_{{\bf k}\downarrow}({\bf x})\beta_{{\bf k}\downarrow}^{\ast}({\bf x})\langle c_{{\bf k}\downarrow}^{\dagger}c_{{\bf k}\downarrow}\rangle\right]\\
+ & = & -U_{0}\frac{1}{V}\sum_{{\bf k}}{}'\left[u_{{\bf k}\downarrow}({\bf x})v_{{\bf k}\downarrow}^{\ast}({\bf x})f(-E_{{\bf k}\downarrow})+u_{{\bf k}\uparrow}({\bf x})v_{{\bf k}\uparrow}^{\ast}({\bf x})f(E_{{\bf k}\uparrow})+\alpha_{{\bf k}\uparrow}({\bf x})\beta_{{\bf k}\uparrow}^{\ast}({\bf x})f(-E_{{\bf k}\uparrow})+\alpha_{{\bf k}\downarrow}({\bf x})\beta_{{\bf k}\downarrow}^{\ast}({\bf x})f(E_{{\bf k}\downarrow})\right]\\
+n_{\uparrow}({\bf x}) & = & \langle\psi_{\uparrow}^{\dagger}({\bf x})\psi_{\uparrow}({\bf x})\rangle\\
+ & = & \frac{1}{V}\sum_{{\bf k}}\left[|u_{{\bf k}\uparrow}({\bf x})|^{2}\langle c_{{\bf k}\uparrow}^{\dagger}c_{{\bf k}\uparrow}\rangle+|v_{{\bf k}\downarrow}({\bf x})|^{2}\langle c_{{\bf k}\downarrow}c_{{\bf k}\downarrow}^{\dagger}\rangle+|\alpha_{{\bf k}\downarrow}({\bf x})|^{2}\langle c_{{\bf k}\downarrow}^{\dagger}c_{{\bf k}\downarrow}\rangle+|\beta_{{\bf k}\uparrow}({\bf x})|^{2}\langle c_{{\bf k}\uparrow}^{\dagger}c_{{\bf k}\uparrow}\rangle\right]\\
+ & = & \frac{1}{V}\sum_{{\bf k}}{}'\left[|u_{{\bf k}\uparrow}({\bf x})|^{2}f(E_{{\bf k}\uparrow})+|v_{{\bf k}\downarrow}({\bf x})|^{2}f(-E_{{\bf k}\downarrow})+|\alpha_{{\bf k}\downarrow}({\bf x})|^{2}f(E_{{\bf k}\downarrow})+|\beta_{{\bf k}\uparrow}({\bf x})|^{2}f(-E_{{\bf k}\uparrow})\right]\\
+n_{\downarrow}({\bf x}) & = & \langle\psi_{\downarrow}^{\dagger}({\bf x})\psi_{\downarrow}({\bf x})\rangle\\
+ & = & \frac{1}{V}\sum_{{\bf k}}\left[|u_{{\bf k}\downarrow}({\bf x})|^{2}\langle c_{{\bf k}\downarrow}^{\dagger}c_{{\bf k}\downarrow}\rangle+|v_{{\bf k}\uparrow}({\bf x})|^{2}\langle c_{{\bf k}\uparrow}c_{{\bf k}\uparrow}^{\dagger}\rangle+|\alpha_{{\bf k}\uparrow}({\bf x})|^{2}\langle c_{{\bf k}\uparrow}^{\dagger}c_{{\bf k}\uparrow}\rangle+|\beta_{{\bf k}\downarrow}({\bf x})|^{2}\langle c_{{\bf k}\downarrow}^{\dagger}c_{{\bf k}\downarrow}\rangle\right]\\
+ & = & \frac{1}{V}\sum_{{\bf k}}{}'\left[|u_{{\bf k}\downarrow}({\bf x})|^{2}f(E_{{\bf k}\downarrow})+|v_{{\bf k}\uparrow}({\bf x})|^{2}f(-E_{{\bf k}\uparrow})+|\alpha_{{\bf k}\uparrow}({\bf x})|^{2}f(E_{{\bf k}\uparrow})+|\beta_{{\bf k}\downarrow}({\bf x})|^{2}f(-E_{{\bf k}\downarrow})\right]\end{eqnarray*}
+
+\end_inset
+
+This involves the full solution of 
+\begin_inset Formula $u_{{\bf k}\sigma}({\bf x})$
+\end_inset
+
+, 
+\begin_inset Formula $v_{{\bf k}\sigma}({\bf x})$
+\end_inset
+
+, 
+\begin_inset Formula $\alpha_{{\bf k}\sigma}({\bf x})$
+\end_inset
+
+, 
+\begin_inset Formula $\beta_{{\bf k}\sigma}({\bf x})$
+\end_inset
+
+, and 
+\begin_inset Formula $\frac{1}{V}\sum_{{\bf k}}{}'$
+\end_inset
+
+ summation only involves 
+\begin_inset Formula ${\bf k}>0$
+\end_inset
+
+ (which is understood as requiring 
+\begin_inset Formula $k_{x},k_{y},k_{z}>0$
+\end_inset
+
+ simultaneously).
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ 
+\begin_inset Formula $E_{{\bf k}\uparrow}>0$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{{\bf k}\downarrow}<0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ However, the construction of BdG formalism is redundant, and we can reduce
+ half of computation by recognizing the one-to-one correspondence,
+\begin_inset Formula \begin{eqnarray*}
+E_{{\bf k}\uparrow} & \leftrightarrow & E_{{\bf k}\downarrow}\\
+\left(\begin{array}{c}
+u_{{\bf k}\uparrow}({\bf x})\\
+\alpha_{{\bf k}\uparrow}({\bf x})\\
+\beta_{{\bf k}\uparrow}({\bf x})\\
+v_{{\bf k}\uparrow}({\bf x})\end{array}\right) & \leftrightarrow & \left(\begin{array}{c}
+\alpha_{{\bf k}\downarrow}({\bf x})\\
+u_{{\bf k}\downarrow}({\bf x})\\
+v_{{\bf k}\downarrow}({\bf x})\\
+\beta_{{\bf k}\downarrow}({\bf x})\end{array}\right)\end{eqnarray*}
+
+\end_inset
+
+Therefore, we only need to solve the spin-up part, and remove the spin index,
+ by denoting 
+\begin_inset Formula $u_{{\bf k}\uparrow}({\bf x})\equiv u_{{\bf k}}({\bf x})$
+\end_inset
+
+, 
+\begin_inset Formula $v_{{\bf k}\uparrow}({\bf x})\equiv v_{{\bf k}}({\bf x})$
+\end_inset
+
+, 
+\begin_inset Formula $\alpha_{{\bf k}\uparrow}({\bf x})\equiv\alpha_{{\bf k}}({\bf x})$
+\end_inset
+
+, 
+\begin_inset Formula $\beta_{{\bf k}\uparrow}({\bf x})\equiv\beta_{{\bf k}}({\bf x})$
+\end_inset
+
+, and 
+\begin_inset Formula $E_{{\bf k}\uparrow}\equiv E_{{\bf k}}$
+\end_inset
+
+.
+ Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ualphabetav"
+
+\end_inset
+
+ becomes, 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula \begin{equation}
+i\frac{\partial}{\partial t}\left(\begin{array}{c}
+u_{{\bf k}}({\bf x},t)\\
+\alpha_{{\bf k}}({\bf x},t)\\
+\beta_{{\bf k}}({\bf x},t)\\
+v_{{\bf k}}({\bf x},t)\end{array}\right)=\left(\begin{array}{cccc}
+\xi_{{\bf k}}+v_{3}k_{z}+h & v_{1}k_{x}-iv_{2}k_{y} & 0 & -\Delta({\bf x})\\
+v_{1}k_{x}+iv_{2}k_{y} & \xi_{{\bf k}}-v_{3}k_{z}-h & \Delta({\bf x}) & 0\\
+0 & \Delta^{\ast}({\bf x}) & -(\xi_{{\bf k}}-v_{3}k_{z}+h) & v_{1}k_{x}+iv_{2}k_{y}\\
+-\Delta^{\ast}({\bf x}) & 0 & v_{1}k_{x}-iv_{2}k_{y} & -(\xi_{{\bf k}}+v_{3}k_{z}-h)\end{array}\right)\left(\begin{array}{c}
+u_{{\bf k}}({\bf x},t)\\
+\alpha_{{\bf k}}({\bf x},t)\\
+\beta_{{\bf k}}({\bf x},t)\\
+v_{{\bf k}}({\bf x},t)\end{array}\right)\end{equation}
+
+\end_inset
+
+which is
+\begin_inset Formula \begin{equation}
+E_{{\bf k}}\left(\begin{array}{c}
+u_{{\bf k}}({\bf x})\\
+\alpha_{{\bf k}}({\bf x})\\
+\beta_{{\bf k}}({\bf x})\\
+v_{{\bf k}}({\bf x})\end{array}\right)=\left(\begin{array}{cccc}
+\xi_{{\bf k}}+v_{3}k_{z}+h & v_{1}k_{x}-iv_{2}k_{y} & 0 & -\Delta({\bf x})\\
+v_{1}k_{x}+iv_{2}k_{y} & \xi_{{\bf k}}-v_{3}k_{z}-h & \Delta({\bf x}) & 0\\
+0 & \Delta^{\ast}({\bf x}) & -(\xi_{{\bf k}}-v_{3}k_{z}+h) & v_{1}k_{x}+iv_{2}k_{y}\\
+-\Delta^{\ast}({\bf x}) & 0 & v_{1}k_{x}-iv_{2}k_{y} & -(\xi_{{\bf k}}+v_{3}k_{z}-h)\end{array}\right)\left(\begin{array}{c}
+u_{{\bf k}}({\bf x})\\
+\alpha_{{\bf k}}({\bf x})\\
+\beta_{{\bf k}}({\bf x})\\
+v_{{\bf k}}({\bf x})\end{array}\right)\end{equation}
+
+\end_inset
+
+where spin-down part of contribution should be written out for the sake
+ of self-consistency, 
+\begin_inset Formula \begin{eqnarray}
+\Delta({\bf x}) & = & -U_{0}\frac{1}{V}\sum_{{\bf k}}{}'\left[u_{{\bf k}\uparrow}({\bf x})v_{{\bf k}\uparrow}^{\ast}({\bf x})f(E_{{\bf k}\uparrow})+\alpha_{{\bf k}\uparrow}({\bf x})\beta_{{\bf k}\uparrow}^{\ast}({\bf x})f(-E_{{\bf k}\uparrow})\right]\nonumber \\
+ & \equiv & -U_{0}\frac{1}{V}\sum_{{\bf k}}{}'\left[u_{{\bf k}}({\bf x})v_{{\bf k}}^{\ast}({\bf x})f(E_{{\bf k}})+\alpha_{{\bf k}}({\bf x})\beta_{{\bf k}}^{\ast}({\bf x})f(-E_{{\bf k}})\right]\label{eq:Delta-(1)}\\
+n_{\uparrow}({\bf x}) & = & \frac{1}{V}\sum_{{\bf k}}{}'\left[|u_{{\bf k}\uparrow}({\bf x})|^{2}f(E_{{\bf k}\uparrow})+|\beta_{{\bf k}\uparrow}({\bf x})|^{2}f(-E_{{\bf k}\uparrow})\right]\nonumber \\
+ & \equiv & \frac{1}{V}\sum_{{\bf k}}{}'\left[|u_{{\bf k}}({\bf x})|^{2}f(E_{{\bf k}})+|\beta_{{\bf k}}({\bf x})|^{2}f(-E_{{\bf k}})\right]\label{eq:nup-(1)}\\
+n_{\downarrow}({\bf x}) & = & \frac{1}{V}\sum_{{\bf k}}{}'\left[|v_{{\bf k}\uparrow}({\bf x})|^{2}f(-E_{{\bf k}\uparrow})+|\alpha_{{\bf k}\uparrow}({\bf x})|^{2}f(E_{{\bf k}\uparrow})\right]\nonumber \\
+ & = & \frac{1}{V}\sum_{{\bf k}}{}'\left[|v_{{\bf k}}({\bf x})|^{2}f(-E_{{\bf k}})+|\alpha_{{\bf k}}({\bf x})|^{2}f(E_{{\bf k}})\right]\label{eq:ndn-(1)}\end{eqnarray}
+
+\end_inset
+
+Denote
+\begin_inset Formula \begin{eqnarray*}
+m_{11}({\bf k}) & = & \xi_{{\bf k}}+v_{3}k_{z}+h\\
+m_{22}({\bf k}) & = & \xi_{{\bf k}}-v_{3}k_{z}-h\\
+m_{33}({\bf k}) & = & -\xi_{{\bf k}}+v_{3}k_{z}-h\\
+m_{44}({\bf k}) & = & -\xi_{{\bf k}}-v_{3}k_{z}+h\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For the homogeneous system we study here, we use plane-wave as the basis
+ and wavefunctions take the following form,
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{c}
+u_{{\bf k}}({\bf x})\\
+\alpha_{{\bf k}}({\bf x})\\
+\beta_{{\bf k}}({\bf x})\\
+v_{{\bf k}}({\bf x})\end{array}\right)=\left(\begin{array}{c}
+u_{{\bf k}}e^{+iqz/2}\\
+\alpha_{{\bf k}}e^{+iqz/2}\\
+\beta_{{\bf k}}e^{-iqz/2}\\
+v_{{\bf k}}e^{-iqz/2}\end{array}\right)e^{i{\bf k}\cdot{\bf x}}\end{equation}
+
+\end_inset
+
+Don't forget the momentum operator is yet to be operated upon plane-wave
+ states.
+ For instance, 
+\begin_inset Formula \begin{eqnarray}
+E_{{\bf k}}u_{{\bf k}}e^{i({\bf k}+\frac{q}{2}{\bf e}_{z})\cdot x} & = & m_{11}(\hat{{\bf k}})u_{{\bf k}}e^{i({\bf k}+\frac{q}{2}{\bf e}_{z})\cdot x}+\Lambda(\hat{{\bf k}})\alpha_{{\bf k}}e^{i({\bf k}+\frac{q}{2}{\bf e}_{z})\cdot x}-\Delta({\bf x})v_{{\bf k}}e^{i({\bf k}-\frac{q}{2}{\bf e}_{z})\cdot x}\nonumber \\
+ & = & m_{11}({\bf k}+\frac{q}{2}{\bf e}_{z})u_{{\bf k}}e^{i({\bf k}+\frac{q}{2}{\bf e}_{z})\cdot x}+(v_{1}k_{x}-iv_{2}k_{y})\alpha_{{\bf k}}e^{i({\bf k}+\frac{q}{2}{\bf e}_{z})\cdot x}-\Delta({\bf x})v_{{\bf k}}e^{i({\bf k}-\frac{q}{2}{\bf e}_{z})\cdot x}\nonumber \\
+ & \Downarrow\nonumber \\
+E_{{\bf k}}u_{{\bf k}} & = & m_{11}({\bf k}+\frac{q}{2}{\bf e}_{z})u_{{\bf k}}+(v_{1}k_{x}-iv_{2}k_{y})\alpha_{{\bf k}}-\Delta({\bf x})e^{-iqz}v_{{\bf k}}\end{eqnarray}
+
+\end_inset
+
+And similarly, we have other three terms,
+\begin_inset Formula \begin{eqnarray}
+E_{{\bf k}}\alpha_{{\bf k}} & = & (v_{1}k_{x}+iv_{2}k_{y})u_{{\bf k}}+m_{22}({\bf k}+\frac{q}{2}{\bf e}_{z})\alpha_{{\bf k}}+\Delta({\bf x})e^{-iqz}\beta_{{\bf k}}\\
+E_{{\bf k}}\beta_{{\bf k}} & = & \Delta^{\ast}({\bf x})e^{+iqz}\alpha_{{\bf k}}+m_{33}({\bf k}-\frac{q}{2}{\bf e}_{z})\beta_{{\bf k}}+(v_{1}k_{x}+iv_{2}k_{y})v_{{\bf k}}\\
+E_{{\bf k}}v_{{\bf k}} & = & -\Delta^{\ast}({\bf x})u_{{\bf k}}e^{+iqz}+(v_{1}k_{x}-iv_{2}k_{y})\beta_{{\bf k}}+m_{44}({\bf k}-\frac{q}{2}{\bf e}_{z})v_{{\bf k}}\end{eqnarray}
+
+\end_inset
+
+Putting everything together, we further have
+\begin_inset Formula \begin{equation}
+\mathcal{M}\left(\begin{array}{c}
+u_{{\bf k}}\\
+\alpha_{{\bf k}}\\
+\beta_{{\bf k}}\\
+v_{{\bf k}}\end{array}\right)=E_{{\bf k}}\left(\begin{array}{c}
+u_{{\bf k}}\\
+\alpha_{{\bf k}}\\
+\beta_{{\bf k}}\\
+v_{{\bf k}}\end{array}\right)\label{eq:mathcalM}\end{equation}
+
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+ where
+\begin_inset Formula \[
+\mathcal{M}=\left(\begin{array}{cccc}
+\xi_{{\bf k}+\frac{q}{2}{\bf e}_{z}}+v_{3}(k_{z}+\frac{q}{2})+h & v_{1}k_{x}-iv_{2}k_{y} & 0 & -\Delta({\bf x})e^{-iqz}\\
+v_{1}k_{x}+iv_{2}k_{y} & \xi_{{\bf k}+\frac{q}{2}{\bf e}_{z}}-v_{3}(k_{z}+\frac{q}{2})-h & \Delta({\bf x})e^{-iqz} & 0\\
+0 & \Delta^{\ast}({\bf x})e^{+iqz} & -(\xi_{{\bf k}-\frac{q}{2}{\bf e}_{z}}-v_{3}(k_{z}-\frac{q}{2})+h) & v_{1}k_{x}+iv_{2}k_{y}\\
+-\Delta^{\ast}({\bf x})e^{+iqz} & 0 & v_{1}k_{x}-iv_{2}k_{y} & -(\xi_{{\bf k}-\frac{q}{2}{\bf e}_{z}}+v_{3}(k_{z}-\frac{q}{2})-h)\end{array}\right)\]
+
+\end_inset
+
+and Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Delta-(1)"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:nup-(1)"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ndn-(1)"
+
+\end_inset
+
+ become
+\begin_inset Formula \begin{eqnarray}
+\Delta(z) & = & -e^{+iqz}U_{0}\frac{1}{V}\sum_{{\bf k}}{}'\left[u_{{\bf k}}v_{{\bf k}}^{\ast}f(E_{{\bf k}})+\alpha_{{\bf k}}\beta_{{\bf k}}^{\ast}f(-E_{{\bf k}})\right]\label{eq:Delta-(2)}\\
+n_{\uparrow} & = & \frac{1}{V}\sum_{{\bf k}}{}'\left[|u_{{\bf k}}|^{2}f(E_{{\bf k}})+|\beta_{{\bf k}}|^{2}f(-E_{{\bf k}})\right]\label{eq:nup-(2)}\\
+n_{\downarrow} & = & \frac{1}{V}\sum_{{\bf k}}{}'\left[|v_{{\bf k}}|^{2}f(-E_{{\bf k}})+|\alpha_{{\bf k}}|^{2}f(E_{{\bf k}})\right]\label{eq:ndn-(2)}\end{eqnarray}
+
+\end_inset
+
+We shall further note the BdG equation has particle-hole symmetry, where
+ equations are invariant under interchange of 
+\begin_inset Formula \begin{eqnarray}
+E_{{\bf k}} & \leftrightarrow & -E_{-{\bf k}}\nonumber \\
+\left(\begin{array}{c}
+u_{{\bf k}}\\
+\alpha_{{\bf k}}\\
+\beta_{{\bf k}}\\
+v_{{\bf k}}\end{array}\right) & \leftrightarrow & \left(\begin{array}{c}
+\beta_{-{\bf k}}^{\ast}\\
+v_{-{\bf k}}^{\ast}\\
+u_{-{\bf k}}^{\ast}\\
+\alpha_{-{\bf k}}^{\ast}\end{array}\right)\label{eq:particleholesymmetry}\end{eqnarray}
+
+\end_inset
+
+For instance, we start from 
+\begin_inset Formula \begin{equation}
+m_{11}({\bf k}+\frac{q}{2}{\bf e}_{z})u_{{\bf k}}+(v_{1}k_{x}-iv_{2}k_{y})\alpha_{{\bf k}}-\Delta({\bf x})e^{-iqz}v_{{\bf k}}=E_{{\bf k}}u_{{\bf k}}\end{equation}
+
+\end_inset
+
+and we make the particle-hole interchange,
+\begin_inset Formula \begin{equation}
+m_{11}({\bf k}+\frac{q}{2}{\bf e}_{z})\beta_{-{\bf k}}^{\ast}+(v_{1}k_{x}-iv_{2}k_{y})v_{-{\bf k}}^{\ast}-\Delta({\bf x})e^{-iqz}\alpha_{-{\bf k}}^{\ast}=-E_{-{\bf k}}\beta_{-{\bf k}}^{\ast}\end{equation}
+
+\end_inset
+
+and take the conjugate on both sides (note here every variable in the equation
+ is complex number and there is no more operator involved, except 
+\begin_inset Formula $E_{\pm{\bf k}}$
+\end_inset
+
+ is real), 
+\begin_inset Formula \begin{eqnarray}
+m_{11}({\bf k}+\frac{q}{2}{\bf e}_{z})^{\ast}\beta_{-{\bf k}}+(v_{1}k_{x}-iv_{2}k_{y})^{\ast}v_{-{\bf k}}-\Delta^{\ast}({\bf x})e^{+iqz}\alpha_{-{\bf k}} & = & -E_{-{\bf k}}\beta_{-{\bf k}}\nonumber \\
+ & \Downarrow\nonumber \\
+\left(\xi_{{\bf k}+\frac{q}{2}{\bf e}_{z}}+v_{3}(k_{z}+\frac{q}{2})+h\right)\beta_{-{\bf k}}+(v_{1}k_{x}+iv_{2}k_{y})v_{-{\bf k}}-\Delta^{\ast}({\bf x})e^{+iqz}\alpha_{-{\bf k}} & = & -E_{-{\bf k}}\beta_{-{\bf k}}\end{eqnarray}
+
+\end_inset
+
+Then, we change the sign of momentum 
+\begin_inset Formula ${\bf k}$
+\end_inset
+
+ and arrive at (note 
+\begin_inset Formula $\xi_{{\bf k}}=\xi_{-{\bf k}}$
+\end_inset
+
+, 
+\begin_inset Formula $\xi_{{\bf k}}=\epsilon_{{\bf k}}-\mu=\frac{\hbar^{2}{\bf k}^{2}}{2m}-\mu$
+\end_inset
+
+)
+\begin_inset Formula \begin{eqnarray}
+-\left(\xi_{-{\bf k}+\frac{q}{2}{\bf e}_{z}}+v_{3}(-k_{z}+\frac{q}{2})+h\right)\beta_{{\bf k}}-(-v_{1}k_{x}-iv_{2}k_{y})v_{{\bf k}}+\Delta^{\ast}({\bf x})e^{+iqz}\alpha_{{\bf k}} & = & E_{{\bf k}}\beta_{{\bf k}}\nonumber \\
+ & \Downarrow\nonumber \\
+-\left(\xi_{{\bf k}-\frac{q}{2}{\bf e}_{z}}-v_{3}(k_{z}-\frac{q}{2})+h\right)\beta_{{\bf k}}+(v_{1}k_{x}+iv_{2}k_{y})v_{{\bf k}}+\Delta^{\ast}({\bf x})e^{+iqz}\alpha_{{\bf k}} & = & E_{{\bf k}}\beta_{{\bf k}}\end{eqnarray}
+
+\end_inset
+
+which is identical to the third line in Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:mathcalM"
+
+\end_inset
+
+.
+ It is interesting to note that 
+\begin_inset Formula $m_{33}({\bf k}-\frac{q}{2}{\bf e}_{z})=-m_{11}(-{\bf k}+\frac{q}{2}{\bf e}_{z})^{\ast}$
+\end_inset
+
+ that has been used in the above derivation (also 
+\begin_inset Formula $m_{44}({\bf k}-\frac{q}{2}{\bf e}_{z})=-m_{22}(-{\bf k}+\frac{q}{2}{\bf e}_{z})^{\ast}$
+\end_inset
+
+).
+ The sequence of operation is summerized as 
+\begin_inset Quotes eld
+\end_inset
+
+take conjugate-negate k-negate equation
+\begin_inset Quotes erd
+\end_inset
+
+ and order of operation does not matter (the proof can go backwards).
+ Similarly, other equations in Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:mathcalM"
+
+\end_inset
+
+ follow the particle-hole symmetry.
+ 
+\end_layout
+
+\begin_layout Standard
+We can make use of the particle-hole symmetry to simplify Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Delta-(2)"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:nup-(2)"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ndn-(2)"
+
+\end_inset
+
+ into
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula \begin{eqnarray}
+\Delta(z) & = & -e^{+iqz}\frac{U_{0}}{2}\frac{1}{V}\sum_{{\bf k}}\left[u_{{\bf k}}v_{{\bf k}}^{\ast}f(E_{{\bf k}})+\alpha_{{\bf k}}\beta_{{\bf k}}^{\ast}f(-E_{{\bf k}})\right]\label{eq:Delta-(3)}\\
+n_{\uparrow} & = & \frac{1}{2}\frac{1}{V}\sum_{{\bf k}}\left[|u_{{\bf k}}|^{2}f(E_{{\bf k}})+|\beta_{{\bf k}}|^{2}f(-E_{{\bf k}})\right]\label{eq:nup-(3)}\\
+n_{\downarrow} & = & \frac{1}{2}\frac{1}{V}\sum_{{\bf k}}\left[|v_{{\bf k}}|^{2}f(-E_{{\bf k}})+|\alpha_{{\bf k}}|^{2}f(E_{{\bf k}})\right]\label{eq:ndn-(3)}\end{eqnarray}
+
+\end_inset
+
+where 
+\begin_inset Formula $\frac{1}{V}\sum_{{\bf k}}$
+\end_inset
+
+ runs over all momentum space, which will be convinient in numerical calculation
+s.
+ The factor of 
+\begin_inset Formula $1/2$
+\end_inset
+
+ comes from the following proof, 
+\begin_inset Formula \begin{eqnarray}
+\Delta(z) & = & -e^{+iqz}U_{0}\frac{1}{V}\sum_{{\bf k}>0}\left[u_{{\bf k}}v_{{\bf k}}^{\ast}f(E_{{\bf k}})+\alpha_{{\bf k}}\beta_{{\bf k}}^{\ast}f(-E_{{\bf k}})\right]\label{eq:Delta(z)positiveK}\\
+ & = & -e^{+iqz}U_{0}\frac{1}{V}\sum_{{\bf k}<0}\left[u_{-{\bf k}}v_{-{\bf k}}^{\ast}f(E_{-{\bf k}})+\alpha_{-{\bf k}}\beta_{-{\bf k}}^{\ast}f(-E_{-{\bf k}})\right]\label{eq:Delta(z)negativeK}\end{eqnarray}
+
+\end_inset
+
+where we just simply rewritten 
+\begin_inset Formula ${\bf k}$
+\end_inset
+
+ as 
+\begin_inset Formula $-{\bf k}$
+\end_inset
+
+ and sum over the other half of momentum space with 
+\begin_inset Formula ${\bf k}<0$
+\end_inset
+
+.
+ Then, it's time to make use of particle-hole symmetry to rewrite Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Delta(z)negativeK"
+
+\end_inset
+
+ as
+\begin_inset Formula \begin{equation}
+\Delta(z)=-e^{+iqz}U_{0}\frac{1}{V}\sum_{{\bf k}<0}\left[\beta_{{\bf k}}^{\ast}\alpha_{{\bf k}}f(-E_{{\bf k}})+v_{{\bf k}}^{\ast}u_{{\bf k}}f(E_{{\bf k}})\right]\label{eq:Delta(z)negativeKnew}\end{equation}
+
+\end_inset
+
+which is identical to Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Delta(z)positiveK"
+
+\end_inset
+
+ except for the momentum space summation.
+ Together with Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Delta(z)positiveK"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Delta(z)negativeKnew"
+
+\end_inset
+
+, we arrive at Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Delta-(3)"
+
+\end_inset
+
+ where 
+\begin_inset Formula $\frac{1}{V}\sum_{{\bf k}}$
+\end_inset
+
+ runs over all momentum space.
+ Similar proof can be followed for Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:nup-(3)"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ndn-(3)"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+Ground state solutions
+\end_layout
+
+\begin_layout Standard
+We first start from ground state solutions using saddle point approach and
+ assume a plane-wave form of order parameter (we assume 
+\begin_inset Formula $\Delta_{0}$
+\end_inset
+
+ is a real number) 
+\begin_inset Formula \begin{equation}
+\Delta(z)=\Delta_{0}e^{+iqz}\end{equation}
+
+\end_inset
+
+instead of summing over quasiparticle contributions from Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Delta-(3)"
+
+\end_inset
+
+.
+ Then Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:mathcalM"
+
+\end_inset
+
+ is simplified into
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{cccc}
+m_{11}({\bf k}+\frac{q}{2}{\bf e}_{z}) & v_{1}k_{x}-iv_{2}k_{y} & 0 & -\Delta_{0}\\
+v_{1}k_{x}+iv_{2}k_{y} & m_{22}({\bf k}+\frac{q}{2}{\bf e}_{z}) & \Delta_{0} & 0\\
+0 & \Delta_{0} & m_{33}({\bf k}-\frac{q}{2}{\bf e}_{z}) & v_{1}k_{x}+iv_{2}k_{y}\\
+-\Delta_{0} & 0 & v_{1}k_{x}-iv_{2}k_{y} & m_{44}({\bf k}-\frac{q}{2}{\bf e}_{z})\end{array}\right)\left(\begin{array}{c}
+u_{{\bf k}}\\
+\alpha_{{\bf k}}\\
+\beta_{{\bf k}}\\
+v_{{\bf k}}\end{array}\right)=E_{{\bf k}}\left(\begin{array}{c}
+u_{{\bf k}}\\
+\alpha_{{\bf k}}\\
+\beta_{{\bf k}}\\
+v_{{\bf k}}\end{array}\right)\label{eq:OmegaBdG}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\Delta_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $q$
+\end_inset
+
+, 
+\begin_inset Formula $\mu$
+\end_inset
+
+ are determined from minimizing thermodynamic potential 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ under requirement of number conservation, 
+\begin_inset Formula \begin{equation}
+\frac{\partial\Omega}{\partial\Delta_{0}}=0,\quad\frac{\partial\Omega}{\partial q}=0,\quad-\frac{\partial\Omega}{\partial\mu}=n=\frac{1}{3\pi^{2}}\quad\text{(for 3D gas)}\label{eq:saddlepointsolution}\end{equation}
+
+\end_inset
+
+where expression of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is found from previous paper [2013 New J.
+ Phys.
+ 15 075014]
+\begin_inset Formula \begin{equation}
+\frac{\Omega}{V}=-\frac{|\Delta_{0}|^{2}m}{4\pi\hbar^{2}a_{s}}+\frac{1}{V}\sum_{{\bf k}}\left[\frac{\xi_{{\bf k}+q{\bf e}_{z}/2}+\xi_{-{\bf k}+q{\bf e}_{z}/2}}{2}-\frac{1}{4}\sum_{\eta=1}^{4}|E_{{\bf k}}^{\eta}|+\frac{|\Delta_{0}|^{2}}{2\epsilon_{{\bf k}}}-\frac{1}{2\beta}\sum_{\eta=1}^{4}\ln\left(1+\exp(-\beta|E_{{\bf k}}^{\eta}|)\right)\right]\end{equation}
+
+\end_inset
+
+and 
+\begin_inset Formula $E_{{\bf k}}^{\eta}$
+\end_inset
+
+ are diagonalized from Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:OmegaBdG"
+
+\end_inset
+
+ for given 
+\begin_inset Formula $\Delta_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $q$
+\end_inset
+
+, 
+\begin_inset Formula $\mu$
+\end_inset
+
+ as variational parameters.
+ 
+\end_layout
+
+\begin_layout Standard
+If the system we consider has 
+\begin_inset Formula $v_{3}=0$
+\end_inset
+
+, then we can directly solve gap and number equations without resorting
+ to Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:saddlepointsolution"
+
+\end_inset
+
+, since the expression for 
+\begin_inset Formula $E_{{\bf k}}^{\eta}$
+\end_inset
+
+ can be analytically derived.
+\end_layout
+
+\begin_layout Section
+Time evolution
+\end_layout
+
+\begin_layout Standard
+Once we have the saddle point solution of 
+\begin_inset Formula $\Delta_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $q$
+\end_inset
+
+, 
+\begin_inset Formula $\mu$
+\end_inset
+
+, we can determine the set of initial values 
+\begin_inset Formula $u_{{\bf k}}^{\eta}$
+\end_inset
+
+, 
+\begin_inset Formula $\alpha_{{\bf k}}^{\eta}$
+\end_inset
+
+, 
+\begin_inset Formula $\beta_{{\bf k}}^{\eta}$
+\end_inset
+
+, 
+\begin_inset Formula $v_{{\bf k}}^{\eta}$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{{\bf k}}^{\eta}$
+\end_inset
+
+ from Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:OmegaBdG"
+
+\end_inset
+
+.
+ Next, we study the time-dependent behaviour of order parameter and spin
+ population, i.e.
+ 
+\begin_inset Formula $\Delta(t)$
+\end_inset
+
+, 
+\begin_inset Formula $n_{\uparrow}(t)$
+\end_inset
+
+, 
+\begin_inset Formula $n_{\downarrow}(t)$
+\end_inset
+
+, by quenching 
+\begin_inset Formula $h$
+\end_inset
+
+, 
+\begin_inset Formula $v_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $v_{2}$
+\end_inset
+
+, 
+\begin_inset Formula $v_{3}$
+\end_inset
+
+, or 
+\begin_inset Formula $a_{s}$
+\end_inset
+
+.
+ The set of evolution equation is given by (simplified from Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:mathcalM"
+
+\end_inset
+
+), 
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{cccc}
+m_{11}({\bf k}+\frac{q}{2}{\bf e}_{z}) & v_{1}k_{x}-iv_{2}k_{y} & 0 & -\Delta(t)\\
+v_{1}k_{x}+iv_{2}k_{y} & m_{22}({\bf k}+\frac{q}{2}{\bf e}_{z}) & \Delta(t) & 0\\
+0 & \Delta^{\ast}(t) & m_{33}({\bf k}-\frac{q}{2}{\bf e}_{z}) & v_{1}k_{x}+iv_{2}k_{y}\\
+-\Delta^{\ast}(t) & 0 & v_{1}k_{x}-iv_{2}k_{y} & m_{44}({\bf k}-\frac{q}{2}{\bf e}_{z})\end{array}\right)\left(\begin{array}{c}
+u_{{\bf k}}^{\eta}(t)\\
+\alpha_{{\bf k}}^{\eta}(t)\\
+\beta_{{\bf k}}^{\eta}(t)\\
+v_{{\bf k}}^{\eta}(t)\end{array}\right)=i\frac{\partial}{\partial t}\left(\begin{array}{c}
+u_{{\bf k}}^{\eta}(t)\\
+\alpha_{{\bf k}}^{\eta}(t)\\
+\beta_{{\bf k}}^{\eta}(t)\\
+v_{{\bf k}}^{\eta}(t)\end{array}\right)\label{eq:OmegaBdG-1}\end{equation}
+
+\end_inset
+
+where according to Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Delta-(3)"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:nup-(3)"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ndn-(3)"
+
+\end_inset
+
+ 
+\begin_inset Formula \begin{eqnarray}
+\Delta(t) & \equiv & \Delta(z)e^{-iqz}\\
+ & = & -\frac{U_{0}}{2}\frac{1}{V}\sum_{\eta=1}^{4}\sum_{{\bf k}}\left[u_{{\bf k}}^{\eta}(t)v_{{\bf k}}^{\eta\ast}(t)f(E_{{\bf k}}(t))+\alpha_{{\bf k}}^{\eta}(t)\beta_{{\bf k}}^{\eta\ast}(t)f(-E_{{\bf k}}^{\eta}(t))\right]\\
+n_{\uparrow}(t) & = & \frac{1}{2}\frac{1}{V}\sum_{\eta=1}^{4}\sum_{{\bf k}}\left[|u_{{\bf k}}^{\eta}(t)|^{2}f(E_{{\bf k}}^{\eta}(t))+|\beta_{{\bf k}}^{\eta}(t)|^{2}f(-E_{{\bf k}}^{\eta}(t))\right]\\
+n_{\downarrow}(t) & = & \frac{1}{2}\frac{1}{V}\sum_{\eta=1}^{4}\sum_{{\bf k}}\left[|v_{{\bf k}}^{\eta}(t)|^{2}f(-E_{{\bf k}}(t))+|\alpha_{{\bf k}}^{\eta}(t)|^{2}f(E_{{\bf k}}^{\eta}(t))\right]\end{eqnarray}
+
+\end_inset
+
+and 
+\begin_inset Formula $E_{{\bf k}}^{\eta}(t)$
+\end_inset
+
+ should be fixed at 
+\begin_inset Formula $t=0$
+\end_inset
+
+, because in the formulation of BdG theory, the population of quasiparticles
+ do not change over time, but rather the wave-functions.
+ 
+\end_layout
+
+\begin_layout Standard
+The goal is to study 
+\end_layout
+
+\begin_layout Enumerate
+Whether 
+\begin_inset Formula $\Delta(t)$
+\end_inset
+
+ and 
+\begin_inset Formula $n_{\sigma}(t)$
+\end_inset
+
+ could equilibriate and how fast do they equilibriate.
+ Compare timescale associated with 
+\begin_inset Formula $\hbar/E_{F}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+For for steady state solution, could we prove it in the thermodynamic limit
+ by taking 
+\begin_inset Formula $V\rightarrow\infty$
+\end_inset
+
+? (not likely to be done as arxiv 1401.2390)
+\end_layout
+
+\begin_layout Enumerate
+How does the equilibriation process depend upon scattering length 
+\begin_inset Formula $a_{s}$
+\end_inset
+
+, SOC strength 
+\begin_inset Formula $v_{i}$
+\end_inset
+
+, initial and final 
+\begin_inset Formula $h$
+\end_inset
+
+? 
+\end_layout
+
+\begin_layout Enumerate
+For 
+\begin_inset Formula $v_{3}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $v_{1}=v_{2}\equiv\lambda$
+\end_inset
+
+, we can study whether topological phase transition could manifest itself
+ in the equilibration process, namely from regions with 2 or 4 Fermi points
+ to regions without Fermi points.
+\end_layout
+
+\begin_layout Enumerate
+For 
+\begin_inset Formula $v_{1}=v_{2}=v_{3}\equiv v\neq0$
+\end_inset
+
+, we can similarly study the dynamics by observing the precence or absence
+ of nodal Fermi surface, and discuss about the validity of topological phase.
+\end_layout
+
+\begin_layout Section
+Case study: Rashba SOC with Zeeman field.
+\end_layout
+
+\begin_layout Standard
+In this case study, we set 
+\begin_inset Formula $v_{3}=0$
+\end_inset
+
+, 
+\begin_inset Formula $v_{2}=v_{2}=\lambda$
+\end_inset
+
+, 
+\begin_inset Formula $T=0$
+\end_inset
+
+ and consequently we assume 
+\begin_inset Formula $q=0$
+\end_inset
+
+.
+ The quasiparticle energy is written as 
+\begin_inset Formula $E_{\boldsymbol{k},\pm}^{\pm}=\pm\sqrt{\xi_{\boldsymbol{k}}^{2}+\Delta^{2}+h^{2}+\lambda^{2}k_{\perp}^{2}\pm2\sqrt{(h^{2}+\lambda^{2}k_{\perp}^{2})\xi_{\boldsymbol{k}}^{2}+h^{2}\Delta^{2}}}$
+\end_inset
+
+, from which the number and gap equation can be derived as
+\begin_inset Formula \begin{equation}
+n=\frac{1}{V}\sum_{\boldsymbol{k}}\left\{ 1+\sum_{\alpha=\pm}\frac{-\xi_{k}}{2E_{k\alpha}}\left[1+\alpha\frac{h^{2}+\lambda^{2}k_{\perp}^{2}}{\sqrt{(h^{2}+\lambda^{2}k_{\perp}^{2})\xi_{\boldsymbol{k}}^{2}+h^{2}\Delta^{2}}}\right]\right\} \end{equation}
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+\frac{m}{4\pi\hbar^{2}a_{s}}=\frac{1}{V}\sum_{\boldsymbol{k},\alpha=\pm}\frac{-1}{4E_{\boldsymbol{k},\alpha}}\left[1+\alpha\frac{h^{2}}{\sqrt{(h^{2}+\lambda^{2}k_{\perp}^{2})\xi_{\boldsymbol{k}}^{2}+h^{2}\Delta^{2}}}\right]+\frac{1}{V}\sum_{\boldsymbol{k}}\frac{1}{2\epsilon_{\boldsymbol{k}}}\end{equation}
+
+\end_inset
+
+In dimensionless form, we have 
+\begin_inset Formula \begin{eqnarray*}
+\frac{1}{3\pi^{2}} & = & \frac{1}{4\pi^{2}}\int_{0}^{\infty}k_{\perp}dk_{\perp}\int_{-\infty}^{\infty}dk_{z}\\
+ &  & \{1-\text{\frac{\xi_{k}}{2E_{k+}}\left[1+\frac{h^{2}+\lambda^{2}k_{\perp}^{2}}{\sqrt{(h^{2}+\lambda^{2}k_{\perp}^{2})\xi_{\boldsymbol{k}}^{2}+h^{2}\Delta^{2}}}\right]-\frac{\xi_{k}}{2E_{k-}}\left[1-\frac{h^{2}+\lambda^{2}k_{\perp}^{2}}{\sqrt{(h^{2}+\lambda^{2}k_{\perp}^{2})\xi_{\boldsymbol{k}}^{2}+h^{2}\Delta^{2}}}\right]}\}\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Formula \begin{eqnarray*}
+\frac{1}{8\pi a_{s}k_{F}} & = & \frac{1}{4\pi^{2}}\int_{0}^{\infty}k_{\perp}dk_{\perp}\int_{-\infty}^{\infty}dk_{z}(\frac{1}{2(k_{\perp}^{2}+k_{z}^{2})}-\frac{1}{4}\frac{\left[1+\frac{h^{2}}{\sqrt{(h^{2}+\lambda^{2}k_{\perp}^{2})(k_{\perp}^{2}+k_{z}^{2}-\mu)^{2}+h^{2}\Delta^{2}}}\right]}{E_{k+}}-\frac{1}{4}\frac{\left[1-\frac{h^{2}}{\sqrt{(h^{2}+\lambda^{2}k_{\perp}^{2})(k_{\perp}^{2}+k_{z}^{2}-\mu)^{2}+h^{2}\Delta^{2}}}\right]}{E_{k-}})\end{eqnarray*}
+
+\end_inset
+
+from which we shall solve 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu$
+\end_inset
+
+ for given 
+\begin_inset Formula $h$
+\end_inset
+
+, 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, 
+\begin_inset Formula $a_{s}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+For the gap and number equations, we discuss about the numerical procedures
+ in details here.
+ The accuracy of momentum integrals is crucial to the precision of parameter
+ values and phase boundaries in general.
+ We first introduce some notations.
+ 
+\begin_inset Formula \begin{eqnarray}
+\frac{1}{3\pi^{2}} & = & \frac{1}{4\pi^{2}}\int_{0}^{\infty}k_{\perp}dk_{\perp}\int_{-\infty}^{\infty}dk_{z}A(k_{\perp},k_{z})\\
+ & = & \frac{1}{4\pi^{2}}\int_{0}^{\infty}dk\int_{-1}^{1}dxA(k,x)\\
+\frac{1}{8\pi a_{s}k_{F}} & = & \frac{1}{4\pi^{2}}\int_{0}^{\infty}k_{\perp}dk_{\perp}\int_{-\infty}^{\infty}dk_{z}B(k_{\perp},k_{z})\\
+ & = & \frac{1}{4\pi^{2}}\int_{0}^{\infty}dk\int_{-1}^{1}dxB(k,x)\end{eqnarray}
+
+\end_inset
+
+where 
+\begin_inset Formula $k_{\perp}=k\sin\theta$
+\end_inset
+
+, 
+\begin_inset Formula $k_{z}=k\cos\theta$
+\end_inset
+
+, and 
+\begin_inset Formula \begin{eqnarray}
+A(k_{\perp},k_{z}) & = & 1-\text{\frac{\xi_{k}}{2E_{k+}}\left[1+\frac{h^{2}+\lambda^{2}k_{\perp}^{2}}{\sqrt{(h^{2}+\lambda^{2}k_{\perp}^{2})\xi_{\boldsymbol{k}}^{2}+h^{2}\Delta^{2}}}\right]-\frac{\xi_{k}}{2E_{k-}}\left[1-\frac{h^{2}+\lambda^{2}k_{\perp}^{2}}{\sqrt{(h^{2}+\lambda^{2}k_{\perp}^{2})\xi_{\boldsymbol{k}}^{2}+h^{2}\Delta^{2}}}\right]}\\
+A(k,x) & = & k^{2}(1-\text{\frac{\xi_{k}}{2E_{k+}}\left[1+\frac{h^{2}+\lambda^{2}k^{2}\sin^{2}\theta}{\sqrt{(h^{2}+\lambda^{2}k^{2}\sin^{2}\theta)\xi_{\boldsymbol{k}}^{2}+h^{2}\Delta^{2}}}\right]-\frac{\xi_{k}}{2E_{k-}}\left[1-\frac{h^{2}+\lambda^{2}k^{2}\sin^{2}\theta}{\sqrt{(h^{2}+\lambda^{2}k^{2}\sin^{2}\theta)\xi_{\boldsymbol{k}}^{2}+h^{2}\Delta^{2}}}\right])}\\
+B(k_{\perp},k_{z}) & = & \frac{1}{2(k_{\perp}^{2}+k_{z}^{2})}-\frac{1}{4}\frac{\left[1+\frac{h^{2}}{\sqrt{(h^{2}+\lambda^{2}k_{\perp}^{2})(k_{\perp}^{2}+k_{z}^{2}-\mu)^{2}+h^{2}\Delta^{2}}}\right]}{E_{k+}}-\frac{1}{4}\frac{\left[1-\frac{h^{2}}{\sqrt{(h^{2}+\lambda^{2}k_{\perp}^{2})(k_{\perp}^{2}+k_{z}^{2}-\mu)^{2}+h^{2}\Delta^{2}}}\right]}{E_{k-}}\\
+B(k,x) & = & k^{2}(\frac{1}{2k^{2}}-\frac{1}{4}\frac{\left[1+\frac{h^{2}}{\sqrt{(h^{2}+\lambda^{2}k^{2}\sin^{2}\theta)(k^{2}-\mu)^{2}+h^{2}\Delta^{2}}}\right]}{E_{k+}}-\frac{1}{4}\frac{\left[1-\frac{h^{2}}{\sqrt{(h^{2}+\lambda^{2}k^{2}\sin^{2}\theta)(k^{2}-\mu)^{2}+h^{2}\Delta^{2}}}\right]}{E_{k-}})\end{eqnarray}
+
+\end_inset
+
+where 
+\begin_inset Formula $x=\cos\theta$
+\end_inset
+
+.
+ We further have 
+\begin_inset Formula $A(k,x)=A(k,-x)$
+\end_inset
+
+ and 
+\begin_inset Formula $B(k,x)=B(k,-x)$
+\end_inset
+
+.
+ Then, we rewrite gap and number equation as,
+\begin_inset Formula \begin{eqnarray}
+\frac{1}{3\pi^{2}} & = & \frac{2}{4\pi^{2}}\int_{0}^{1}dx\left(\int_{0}^{k_{c}}dkA(k,x)+\int_{k_{c}}^{\infty}dk\left(\frac{a_{1}(x)}{k^{2}}+\frac{a_{2}(x)}{k^{4}}+\frac{a_{3}(x)}{k^{6}}+...\right)\right)\\
+ & = & \frac{2}{4\pi^{2}}\int_{0}^{1}dx\left(\int_{0}^{k_{c}}dkA(k,x)+\left(\frac{a_{1}(x)}{k_{c}}+\frac{a_{2}(x)}{3k_{c}^{3}}+\frac{a_{3}(x)}{5k_{c}^{5}}+...\right)\right)\\
+\frac{1}{8\pi a_{s}k_{F}} & = & \frac{2}{4\pi^{2}}\int_{0}^{1}dx\left(\int_{0}^{k_{c}}dkB(k,x)+\int_{k_{c}}^{\infty}dk\left(\frac{b_{1}(x)}{k^{2}}+\frac{b_{2}(x)}{k^{4}}+\frac{b_{3}(x)}{k^{6}}+...\right)\right)\\
+ & = & \frac{2}{4\pi^{2}}\int_{0}^{1}dx\left(\int_{0}^{k_{c}}dkB(k,x)+\left(\frac{b_{1}(x)}{k_{c}}+\frac{b_{2}(x)}{3k_{c}^{3}}+\frac{b_{3}(x)}{5k_{c}^{5}}+...\right)\right)\end{eqnarray}
+
+\end_inset
+
+where we have made use of the fact that both 
+\begin_inset Formula $A(k,x)$
+\end_inset
+
+ and 
+\begin_inset Formula $B(k,x)$
+\end_inset
+
+ scales as 
+\begin_inset Formula $1/k^{2}$
+\end_inset
+
+ at large 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ We determine the coefficients of 
+\begin_inset Formula $a_{i}(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $b_{i}(x)$
+\end_inset
+
+ by calculating 
+\begin_inset Formula \begin{eqnarray}
+y_{1} & = & k_{1}^{6}A(k_{1},x)\\
+y_{2} & = & k_{2}^{6}A(k_{2},x)\\
+y_{3} & = & k_{3}^{6}A(k_{3},x)\end{eqnarray}
+
+\end_inset
+
+and then at large momentum, they are related as
+\begin_inset Formula \begin{eqnarray}
+\left(\begin{array}{c}
+y_{1}\\
+y_{2}\\
+y_{3}\end{array}\right) & = & \left(\begin{array}{ccc}
+k_{1}^{4} & k_{1}^{2} & 1\\
+k_{2}^{4} & k_{2}^{2} & 1\\
+k_{3}^{4} & k_{3}^{2} & 1\end{array}\right)\left(\begin{array}{c}
+a_{1}\\
+a_{2}\\
+a_{3}\end{array}\right)\\
+\left(\begin{array}{c}
+a_{1}\\
+a_{2}\\
+a_{3}\end{array}\right) & = & \left(\begin{array}{ccc}
+k_{1}^{4} & k_{1}^{2} & 1\\
+k_{2}^{4} & k_{2}^{2} & 1\\
+k_{3}^{4} & k_{3}^{2} & 1\end{array}\right)^{-1}\left(\begin{array}{c}
+y_{1}\\
+y_{2}\\
+y_{3}\end{array}\right)\\
+ & = & \frac{1}{det}\left(\begin{array}{ccc}
+\left|\begin{array}{cc}
+k_{2}^{2} & 1\\
+k_{3}^{2} & 1\end{array}\right| & \left|\begin{array}{cc}
+1 & k_{1}^{2}\\
+1 & k_{3}^{2}\end{array}\right| & \left|\begin{array}{cc}
+k_{1}^{2} & 1\\
+k_{2}^{2} & 1\end{array}\right|\\
+\left|\begin{array}{cc}
+1 & k_{2}^{4}\\
+1 & k_{3}^{4}\end{array}\right| & \left|\begin{array}{cc}
+k_{1}^{4} & 1\\
+k_{3}^{4} & 1\end{array}\right| & \left|\begin{array}{cc}
+1 & k_{1}^{4}\\
+1 & k_{2}^{4}\end{array}\right|\\
+\left|\begin{array}{cc}
+k_{2}^{4} & k_{2}^{2}\\
+k_{3}^{4} & k_{3}^{2}\end{array}\right| & \left|\begin{array}{cc}
+k_{1}^{2} & k_{1}^{4}\\
+k_{3}^{2} & k_{3}^{4}\end{array}\right| & \left|\begin{array}{cc}
+k_{1}^{4} & k_{1}^{2}\\
+k_{2}^{4} & k_{2}^{2}\end{array}\right|\end{array}\right)\left(\begin{array}{c}
+y_{1}\\
+y_{2}\\
+y_{3}\end{array}\right)\\
+ & = & \frac{1}{det}\left(\begin{array}{ccc}
+k_{2}^{2}-k_{3}^{2} & k_{3}^{2}-k_{1}^{2} & k_{1}^{2}-k_{2}^{2}\\
+k_{3}^{4}-k_{2}^{4} & k_{1}^{4}-k_{3}^{4} & k_{2}^{4}-k_{1}^{4}\\
+k_{2}^{4}k_{3}^{2}-k_{2}^{2}k_{3}^{4} & k_{3}^{4}k_{1}^{2}-k_{3}^{2}k_{1}^{4} & k_{1}^{4}k_{2}^{2}-k_{1}^{2}k_{2}^{4}\end{array}\right)\left(\begin{array}{c}
+y_{1}\\
+y_{2}\\
+y_{3}\end{array}\right)\end{eqnarray}
+
+\end_inset
+
+and 
+\begin_inset Formula $det=-(k_{1}^{2}-k_{2}^{2})(k_{2}^{2}-k_{3}^{2})(k_{3}^{2}-k_{1}^{2})$
+\end_inset
+
+.
+ Similiar expressions for 
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{c}
+b_{1}\\
+b_{2}\\
+b_{3}\end{array}\right)=\frac{1}{det}\left(\begin{array}{ccc}
+k_{2}^{2}-k_{3}^{2} & k_{3}^{2}-k_{1}^{2} & k_{1}^{2}-k_{2}^{2}\\
+k_{3}^{4}-k_{2}^{4} & k_{1}^{4}-k_{3}^{4} & k_{2}^{4}-k_{1}^{4}\\
+k_{2}^{4}k_{3}^{2}-k_{2}^{2}k_{3}^{4} & k_{3}^{4}k_{1}^{2}-k_{3}^{2}k_{1}^{4} & k_{1}^{4}k_{2}^{2}-k_{1}^{2}k_{2}^{4}\end{array}\right)\left(\begin{array}{c}
+z_{1}\\
+z_{2}\\
+z_{3}\end{array}\right)\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula \begin{eqnarray}
+z_{1} & = & k_{1}^{6}B(k_{1},x)\\
+z_{2} & = & k_{2}^{6}B(k_{2},x)\\
+z_{3} & = & k_{3}^{6}B(k_{3},x)\end{eqnarray}
+
+\end_inset
+
+We can take 
+\begin_inset Formula $k_{1}=k_{c}\gg1$
+\end_inset
+
+, 
+\begin_inset Formula $k_{2}=1.5k_{c}\gg1$
+\end_inset
+
+, and 
+\begin_inset Formula $k_{3}=2k_{c}\gg1$
+\end_inset
+
+ for instance.
+ 
+\end_layout
+
+\begin_layout Standard
+Then we take the initial values as 
+\begin_inset Formula $\Delta(0)$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu(0)$
+\end_inset
+
+ and plug them back into 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{cccc}
+\xi_{{\bf k}}+h & \lambda(k_{x}-ik_{y}) & 0 & -\Delta(0)\\
+\lambda(k_{x}+ik_{y}) & \xi_{{\bf k}}-h & \Delta(0) & 0\\
+0 & \Delta(0) & -(\xi_{{\bf k}}+h) & \lambda(k_{x}+ik_{y})\\
+-\Delta(0) & 0 & \lambda(k_{x}-ik_{y}) & -(\xi_{{\bf k}}-h)\end{array}\right)\left(\begin{array}{c}
+u_{{\bf k}}^{\eta}(0)\\
+\alpha_{{\bf k}}^{\eta}(0)\\
+\beta_{{\bf k}}^{\eta}(0)\\
+v_{{\bf k}}^{\eta}(0)\end{array}\right)=E_{{\bf k}}^{\eta}\left(\begin{array}{c}
+u_{{\bf k}}^{\eta}(0)\\
+\alpha_{{\bf k}}^{\eta}(0)\\
+\beta_{{\bf k}}^{\eta}(0)\\
+v_{{\bf k}}^{\eta}(0)\end{array}\right)\end{equation}
+
+\end_inset
+
+and straightforwardly diagonalize it for given momentum 
+\begin_inset Formula ${\bf k}$
+\end_inset
+
+ and obtain wave-functions of 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+
+\begin_inset Formula $u_{{\bf k}}^{\eta}$
+\end_inset
+
+, 
+\begin_inset Formula $\alpha_{{\bf k}}^{\eta}$
+\end_inset
+
+, 
+\begin_inset Formula $\beta_{{\bf k}}^{\eta}$
+\end_inset
+
+, 
+\begin_inset Formula $v_{{\bf k}}^{\eta}$
+\end_inset
+
+ and eigenenergy 
+\begin_inset Formula $E_{{\bf k}}^{\eta}$
+\end_inset
+
+ (check if it is the same as 
+\begin_inset Formula $E_{{\bf k}\pm}^{\pm}$
+\end_inset
+
+).
+ With the initial values (as benchmarks), we quench value of 
+\begin_inset Formula $h$
+\end_inset
+
+ and evolve the functions according to 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{cccc}
+\xi_{{\bf k}}+h & \lambda(k_{x}-ik_{y}) & 0 & -\Delta(t)\\
+\lambda(k_{x}+ik_{y}) & \xi_{{\bf k}}-h & \Delta(t) & 0\\
+0 & \Delta^{\ast}(t) & -(\xi_{{\bf k}}+h) & \lambda(k_{x}+ik_{y})\\
+-\Delta^{\ast}(t) & 0 & \lambda(k_{x}-ik_{y}) & -(\xi_{{\bf k}}-h)\end{array}\right)\left(\begin{array}{c}
+u_{{\bf k}}^{\eta}(t)\\
+\alpha_{{\bf k}}^{\eta}(t)\\
+\beta_{{\bf k}}^{\eta}(t)\\
+v_{{\bf k}}^{\eta}(t)\end{array}\right)=i\frac{\partial}{\partial t}\left(\begin{array}{c}
+u_{{\bf k}}^{\eta}(t)\\
+\alpha_{{\bf k}}^{\eta}(t)\\
+\beta_{{\bf k}}^{\eta}(t)\\
+v_{{\bf k}}^{\eta}(t)\end{array}\right)\end{equation}
+
+\end_inset
+
+where
+\begin_inset Formula \begin{equation}
+\Delta(t)=-\frac{U_{0}}{2}\frac{1}{V}\sum_{\eta=1}^{4}\sum_{{\bf k}}\left[u_{{\bf k}}^{\eta}(t)v_{{\bf k}}^{\eta\ast}(t)f(E_{{\bf k}}^{\eta}(t=0))+\alpha_{{\bf k}}^{\eta}(t)\beta_{{\bf k}}^{\eta\ast}(t)f(-E_{{\bf k}}^{\eta}(t=0))\right]\end{equation}
+
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+where we need to use renormalization 
+\begin_inset Formula $1/U_{0}=m/(4\pi\hbar^{2}a_{s})-\sum_{{\bf {\bf k}}}1/2\epsilon_{{\bf {\bf k}}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+For two dimensional system, the renormalization is given by 
+\begin_inset Formula \begin{eqnarray}
+\frac{1}{U_{0}} & = & -\frac{2\pi}{(2\pi)^{2}}\int_{0}^{k_{c}}kdk\frac{1}{E_{b}+2\epsilon_{k}}\\
+ & = & -\frac{1}{2\pi}\frac{1}{4}\log(2k^{2}+E_{b})|_{0}^{k_{c}}\\
+ & = & -\frac{1}{8\pi}\log(1+\frac{2k_{c}^{2}}{E_{b}})\end{eqnarray}
+
+\end_inset
+
+where I have used 
+\begin_inset Formula $\frac{1}{V}\sum_{{\bf k}}=\frac{1}{(2\pi)^{2}}\int_{0}^{k_{c}}kdk\int_{0}^{2\pi}d\theta$
+\end_inset
+
+ and as for BdG matrix elements, 
+\begin_inset Formula $k_{x}=k\cos\theta$
+\end_inset
+
+, 
+\begin_inset Formula $k_{y}=k\sin\theta$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+BCS theory prototyping
+\end_layout
+
+\begin_layout Plain Layout
+From BCS BdG equation, 
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{cc}
+\epsilon_{k}-\mu & -\Delta(t)\\
+-\Delta^{\ast}(t) & -\epsilon_{k}+\mu\end{array}\right)\left(\begin{array}{c}
+u_{k}\\
+v_{k}\end{array}\right)=i\frac{\partial}{\partial t}\left(\begin{array}{c}
+u_{k}\\
+v_{k}\end{array}\right)\label{eq:bcsbdg}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\Delta(t)=g\sum_{k}u_{k}v_{k}^{\ast}$
+\end_inset
+
+.
+ If we make a gauge transformation
+\begin_inset Formula \begin{eqnarray}
+u_{k} & \rightarrow & \tilde{u_{k}}e^{+i\mu t}\label{eq:bcsgauge1}\\
+v_{k} & \rightarrow & \tilde{v_{k}}e^{-i\mu t}\label{eq:bcsgauge2}\end{eqnarray}
+
+\end_inset
+
+we will have
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{cc}
+\epsilon_{k} & -\Delta(t)e^{-2i\mu t}\\
+-\Delta^{\ast}(t)e^{+2i\mu t} & -\epsilon_{k}\end{array}\right)\left(\begin{array}{c}
+\tilde{u_{k}}\\
+\tilde{v_{k}}\end{array}\right)=i\frac{\partial}{\partial t}\left(\begin{array}{c}
+\tilde{u_{k}}\\
+\tilde{v_{k}}\end{array}\right)\label{eq:bcsbdg_gauge}\end{equation}
+
+\end_inset
+
+where we will denote 
+\begin_inset Formula $\tilde{\Delta}(t)=\Delta(t)e^{-2i\mu t}=ge^{-2i\mu t}\sum_{k}u_{k}v_{k}^{\ast}=ge^{-2i\mu t}e^{+2i\mu t}\sum_{k}\tilde{u_{k}}\tilde{v_{k}^{\ast}}=g\sum_{k}\tilde{u_{k}}\tilde{v_{k}^{\ast}}$
+\end_inset
+
+.
+ This shows BdG equation is invariant under the gauge transformation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bcsgauge1"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bcsgauge2"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+In the numerical calculation, I put the ground state solution of 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ and 
+\begin_inset Formula $\mu$
+\end_inset
+
+ into Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bcsbdg"
+
+\end_inset
+
+ and obtain 
+\begin_inset Formula $u_{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $v_{k}$
+\end_inset
+
+.
+ Then I set 
+\begin_inset Formula $\mu=0$
+\end_inset
+
+ and evolve it according to Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bcsbdg"
+
+\end_inset
+
+.
+ The so-calculated 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\Delta(t)$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ is actually 
+\begin_inset Formula $\tilde{\Delta}(t)$
+\end_inset
+
+, which has exactly zero phase fluctuations.
+ (checked numerically)
+\end_layout
+
+\begin_layout Plain Layout
+Isn't it equivalent to say 
+\begin_inset Formula $\Delta(t)$
+\end_inset
+
+ has 
+\begin_inset Formula $e^{2i\mu t}$
+\end_inset
+
+ type of phase oscillations, even though 
+\begin_inset Formula $\Delta(t)$
+\end_inset
+
+ can't be straightforwardly calculated here?
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+As a result of particle-hole symmetry, integration in 
+\begin_inset Formula $\Delta(t)$
+\end_inset
+
+ can be reduced to radial direction only, since the relative phase between
+ 
+\begin_inset Formula $k_{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $k_{y}$
+\end_inset
+
+ would not matter.
+ 
+\begin_inset Formula \begin{equation}
+\Delta(t)=-\frac{1}{2}\frac{1}{V}\sum_{\eta=1}^{4}\frac{1}{2\pi}\int_{0}^{k_{c}}kdk\left[u_{{\bf k}}^{\eta}(t)v_{{\bf k}}^{\eta\ast}(t)f(E_{{\bf k}}^{\eta}(t=0))+\alpha_{{\bf k}}^{\eta}(t)\beta_{{\bf k}}^{\eta\ast}(t)f(-E_{{\bf k}}^{\eta}(t=0))\right]\frac{1}{-\frac{1}{8\pi}\log(1+\frac{2k_{c}^{2}}{E_{b}})}\end{equation}
+
+\end_inset
+
+To get accurate time-dependent results, the momentum integral meshgrid number
+ is expected to be above 2000 points, and time step shall be around 0.0005.
+ 
+\end_layout
+
+\begin_layout Section
+Condensate Fraction
+\end_layout
+
+\begin_layout Standard
+According to PHYSICAL REVIEW A 84, 033633 (2011), condensate fraction is
+ defined as 
+\begin_inset Formula $N_{c}=N_{0}+N_{1}$
+\end_inset
+
+ where
+\begin_inset Formula \begin{eqnarray}
+N_{0} & =\frac{1}{V}\sum_{{\bf k}} & |\langle\psi_{\uparrow}({\bf k})\psi_{\downarrow}(-{\bf k})\rangle|^{2}\\
+N_{1} & =\frac{1}{V}\sum_{{\bf k}} & |\langle\psi_{\uparrow}({\bf k})\psi_{\uparrow}(-{\bf k})\rangle|^{2}\end{eqnarray}
+
+\end_inset
+
+and 
+\begin_inset Formula $N_{0}$
+\end_inset
+
+ refers to singlet contribution while 
+\begin_inset Formula $N_{1}$
+\end_inset
+
+ refers to triplet contribution.
+ Recall Bogoliubov transformation,
+\begin_inset Formula \begin{equation}
+\psi_{\sigma}({\bf x})=\frac{1}{V}\sum_{{\bf k}}\left[u_{{\bf k}\sigma}({\bf x},t)c_{{\bf k}\sigma}+v_{{\bf k}\bar{\sigma}}^{\ast}({\bf x},t)c_{{\bf k}\bar{\sigma}}^{\dagger}+\alpha_{{\bf k}\bar{\sigma}}({\bf x},t)c_{{\bf k}\bar{\sigma}}+\beta_{{\bf k}\sigma}^{\ast}({\bf x},t)c_{{\bf k}\sigma}^{\dagger}\right]\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\sigma=\uparrow,\downarrow$
+\end_inset
+
+ and correspondingly 
+\begin_inset Formula $\bar{\sigma}=\downarrow,\uparrow$
+\end_inset
+
+.
+ For the homogeneous system we study here, we use plane-wave as the basis
+ and wavefunctions take the following form,
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{c}
+u_{{\bf k}}({\bf x})\\
+\alpha_{{\bf k}}({\bf x})\\
+\beta_{{\bf k}}({\bf x})\\
+v_{{\bf k}}({\bf x})\end{array}\right)=\left(\begin{array}{c}
+u_{{\bf k}}e^{+iqz/2}\\
+\alpha_{{\bf k}}e^{+iqz/2}\\
+\beta_{{\bf k}}e^{-iqz/2}\\
+v_{{\bf k}}e^{-iqz/2}\end{array}\right)e^{i{\bf k}\cdot{\bf x}}\end{equation}
+
+\end_inset
+
+We further have
+\begin_inset Formula \begin{eqnarray*}
+\psi_{\sigma}({\bf k}') & = & \int e^{-i{\bf k}'\cdot{\bf x}}d{\bf x}\frac{1}{V}\sum_{{\bf k}}\left[u_{{\bf k}\sigma}({\bf x},t)c_{{\bf k}\sigma}+v_{{\bf k}\bar{\sigma}}^{\ast}({\bf x},t)c_{{\bf k}\bar{\sigma}}^{\dagger}+\alpha_{{\bf k}\bar{\sigma}}({\bf x},t)c_{{\bf k}\bar{\sigma}}+\beta_{{\bf k}\sigma}^{\ast}({\bf x},t)c_{{\bf k}\sigma}^{\dagger}\right]\\
+ & = & \int d{\bf k}\int e^{-i{\bf k}'\cdot{\bf x}}d{\bf x}\left[u_{{\bf k}\sigma}e^{+iqz/2}e^{i{\bf k}\cdot{\bf x}}c_{{\bf k}\sigma}+v_{{\bf k}\bar{\sigma}}^{\ast}e^{+iqz/2}e^{-i{\bf k}\cdot{\bf x}}c_{{\bf k}\bar{\sigma}}^{\dagger}+\alpha_{{\bf k}\bar{\sigma}}e^{+iqz/2}e^{i{\bf k}\cdot{\bf x}}c_{{\bf k}\bar{\sigma}}+\beta_{{\bf k}\sigma}^{\ast}e^{+iqz/2}e^{-i{\bf k}\cdot{\bf x}}c_{{\bf k}\sigma}^{\dagger}\right]\\
+ & = & \int d{\bf k}\left[u_{{\bf k}\sigma}c_{{\bf k}\sigma}\delta(k+q/2-k')+v_{{\bf k}\bar{\sigma}}^{\ast}c_{{\bf k}\bar{\sigma}}^{\dagger}\delta(-k+q/2-k')+\alpha_{{\bf k}\bar{\sigma}}c_{{\bf k}\bar{\sigma}}\delta(k+q/2-k')+\beta_{{\bf k}\sigma}^{\ast}c_{{\bf k}\sigma}^{\dagger}\delta(-k+q/2-k')\right]\\
+ & = & u_{-{\bf q}/2+{\bf k}'\sigma}c_{-{\bf q}/2+{\bf k}'\sigma}+v_{{\bf q}/2-{\bf k}'\bar{\sigma}}^{\ast}c_{{\bf q}/2-{\bf k}'\bar{\sigma}}^{\dagger}+\alpha_{-{\bf q}/2+{\bf k}'\bar{\sigma}}c_{-{\bf q}/2+{\bf k}'\bar{\sigma}}+\beta_{{\bf q}/2-{\bf k}'\sigma}^{\ast}c_{{\bf q}/2-{\bf k}'\sigma}^{\dagger}\end{eqnarray*}
+
+\end_inset
+
+Then, we should have
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula \begin{eqnarray}
+N_{0} & = & \left|\frac{1}{V}\sum_{{\bf k}}u_{{\bf k}\downarrow}({\bf x})v_{{\bf k}\downarrow}^{\ast}({\bf x})\langle c_{{\bf k}\downarrow}c_{{\bf k}\downarrow}^{\dagger}\rangle+u_{{\bf k}\uparrow}({\bf x})v_{{\bf k}\uparrow}^{\ast}({\bf x})\langle c_{{\bf k}\uparrow}^{\dagger}c_{{\bf k}\uparrow}\rangle+\alpha_{{\bf k}\uparrow}({\bf x})\beta_{{\bf k}\uparrow}^{\ast}({\bf x})\langle c_{{\bf k}\uparrow}c_{{\bf k}\uparrow}^{\dagger}\rangle+\alpha_{{\bf k}\downarrow}({\bf x})\beta_{{\bf k}\downarrow}^{\ast}({\bf x})\langle c_{{\bf k}\downarrow}^{\dagger}c_{{\bf k}\downarrow}\rangle\right|^{2}\\
+ & = & \left|\frac{1}{V}\sum_{{\bf k}}{}'u_{{\bf k}\downarrow}({\bf x})v_{{\bf k}\downarrow}^{\ast}({\bf x})f(-E_{{\bf k}\downarrow})+u_{{\bf k}\uparrow}({\bf x})v_{{\bf k}\uparrow}^{\ast}({\bf x})f(E_{{\bf k}\uparrow})+\alpha_{{\bf k}\uparrow}({\bf x})\beta_{{\bf k}\uparrow}^{\ast}({\bf x})f(-E_{{\bf k}\uparrow})+\alpha_{{\bf k}\downarrow}({\bf x})\beta_{{\bf k}\downarrow}^{\ast}({\bf x})f(E_{{\bf k}\downarrow})\right|^{2}\\
+ & = & |\frac{1}{V}\sum_{{\bf k}}{}'\left[u_{{\bf k}}({\bf x})v_{{\bf k}}^{\ast}({\bf x})f(E_{{\bf k}})+\alpha_{{\bf k}}({\bf x})\beta_{{\bf k}}^{\ast}({\bf x})f(-E_{{\bf k}})\right]|^{2}\\
+ & = & |e^{+iqz}\frac{1}{V}\sum_{{\bf k}}{}'\left[u_{{\bf k}}v_{{\bf k}}^{\ast}f(E_{{\bf k}})+\alpha_{{\bf k}}\beta_{{\bf k}}^{\ast}f(-E_{{\bf k}})\right]|^{2}\\
+ & = & |\frac{1}{2}\frac{1}{V}\sum_{\eta=1}^{4}\sum_{{\bf k}}\left[u_{{\bf k}}^{\eta}(t)v_{{\bf k}}^{\eta\ast}(t)f(E_{{\bf k}}(t))+\alpha_{{\bf k}}^{\eta}(t)\beta_{{\bf k}}^{\eta\ast}(t)f(-E_{{\bf k}}^{\eta}(t))\right]|^{2}\end{eqnarray}
+
+\end_inset
+
+WRONG!!!
+\end_layout
+
+\begin_layout Plain Layout
+REDUNDANT:
+\end_layout
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula \[
+=\int d{\bf k}|u_{-{\bf q}/2+{\bf k}\uparrow}v_{{\bf q}/2+{\bf k}\uparrow}^{\ast}\langle c_{-{\bf q}/2+{\bf k}\uparrow}c_{{\bf q}/2+{\bf k}\uparrow}^{\dagger}\rangle+u_{-{\bf q}/2+{\bf k}\uparrow}\beta_{{\bf q}/2+{\bf k}\downarrow}^{\ast}\langle c_{-{\bf q}/2+{\bf k}\uparrow}c_{{\bf q}/2+{\bf k}\downarrow}^{\dagger}\rangle+v_{{\bf q}/2-{\bf k}\downarrow}^{\ast}u_{-{\bf q}/2-{\bf k}\downarrow}\langle c_{{\bf q}/2-{\bf k}\downarrow}^{\dagger}c_{-{\bf q}/2-{\bf k}\downarrow}\rangle+v_{{\bf q}/2-{\bf k}\downarrow}^{\ast}\alpha_{-{\bf q}/2-{\bf k}\uparrow}\langle c_{{\bf q}/2-{\bf k}\downarrow}^{\dagger}c_{-{\bf q}/2-{\bf k}\uparrow}\rangle+\alpha_{-{\bf q}/2+{\bf k}\downarrow}v_{{\bf q}/2+{\bf k}\uparrow}^{\ast}\langle c_{-{\bf q}/2+{\bf k}\downarrow}c_{{\bf q}/2+{\bf k}\uparrow}^{\dagger}\rangle+\alpha_{-{\bf q}/2+{\bf k}\downarrow}\beta_{{\bf q}/2+{\bf k}\downarrow}^{\ast}\langle c_{-{\bf q}/2+{\bf k}\downarrow}c_{{\bf q}/2+{\bf k}\downarrow}^{\dagger}\rangle+\beta_{{\bf q}/2-{\bf k}\uparrow}^{\ast}u_{-{\bf q}/2-{\bf k}\downarrow}\langle c_{{\bf q}/2-{\bf k}\uparrow}^{\dagger}c_{-{\bf q}/2-{\bf k}\downarrow}\rangle+\beta_{{\bf q}/2-{\bf k}\uparrow}^{\ast}\alpha_{-{\bf q}/2-{\bf k}\uparrow}\langle c_{{\bf q}/2-{\bf k}\uparrow}^{\dagger}c_{-{\bf q}/2-{\bf k}\uparrow}\rangle|^{2}\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula \begin{eqnarray*}
+N_{0} & = & \int d{\bf k}|\langle\left(u_{-{\bf q}/2+{\bf k}\uparrow}c_{-{\bf q}/2+{\bf k}\uparrow}+v_{{\bf q}/2-{\bf k}\downarrow}^{\ast}c_{{\bf q}/2-{\bf k}\downarrow}^{\dagger}+\alpha_{-{\bf q}/2+{\bf k}\downarrow}c_{-{\bf q}/2+{\bf k}\downarrow}+\beta_{{\bf q}/2-{\bf k}\uparrow}^{\ast}c_{{\bf q}/2-{\bf k}\uparrow}^{\dagger}\right)\\
+ & \times & \left(u_{-{\bf q}/2-{\bf k}\downarrow}c_{-{\bf q}/2-{\bf k}\downarrow}+v_{{\bf q}/2+{\bf k}\uparrow}^{\ast}c_{{\bf q}/2+{\bf k}\uparrow}^{\dagger}+\alpha_{-{\bf q}/2-{\bf k}\uparrow}c_{-{\bf q}/2-{\bf k}\uparrow}+\beta_{{\bf q}/2+{\bf k}\downarrow}^{\ast}c_{{\bf q}/2+{\bf k}\downarrow}^{\dagger}\right)\rangle|^{2}\\
+ & = & \int d{\bf k}|u_{-{\bf q}/2+{\bf k}\uparrow}v_{{\bf q}/2+{\bf k}\uparrow}^{\ast}\langle c_{-{\bf q}/2+{\bf k}\uparrow}c_{{\bf q}/2+{\bf k}\uparrow}^{\dagger}\rangle+v_{{\bf q}/2-{\bf k}\downarrow}^{\ast}u_{-{\bf q}/2-{\bf k}\downarrow}\langle c_{{\bf q}/2-{\bf k}\downarrow}^{\dagger}c_{-{\bf q}/2-{\bf k}\downarrow}\rangle\\
+ & + & \alpha_{-{\bf q}/2+{\bf k}\downarrow}\beta_{{\bf q}/2+{\bf k}\downarrow}^{\ast}\langle c_{-{\bf q}/2+{\bf k}\downarrow}c_{{\bf q}/2+{\bf k}\downarrow}^{\dagger}\rangle+\beta_{{\bf q}/2-{\bf k}\uparrow}^{\ast}\alpha_{-{\bf q}/2-{\bf k}\uparrow}\langle c_{{\bf q}/2-{\bf k}\uparrow}^{\dagger}c_{-{\bf q}/2-{\bf k}\uparrow}\rangle|^{2}\end{eqnarray*}
+
+\end_inset
+
+If we consider zero in-plane Zeeman field, we set 
+\begin_inset Formula ${\bf q}=0$
+\end_inset
+
+.
+ Then, we have 
+\begin_inset Formula \begin{eqnarray}
+N_{0} & = & \int d{\bf k}|u_{{\bf k}\uparrow}v_{{\bf k}\uparrow}^{\ast}\langle c_{{\bf k}\uparrow}c_{{\bf k}\uparrow}^{\dagger}\rangle+v_{-{\bf k}\downarrow}^{\ast}u_{-{\bf k}\downarrow}\langle c_{-{\bf k}\downarrow}^{\dagger}c_{-{\bf k}\downarrow}\rangle+\alpha_{{\bf k}\downarrow}\beta_{{\bf k}\downarrow}^{\ast}\langle c_{{\bf k}\downarrow}c_{{\bf k}\downarrow}^{\dagger}\rangle+\beta_{-{\bf k}\uparrow}^{\ast}\alpha_{-{\bf k}\uparrow}\langle c_{-{\bf k}\uparrow}^{\dagger}c_{-{\bf k}\uparrow}\rangle|^{2}\end{eqnarray}
+
+\end_inset
+
+Due to redundancy in BdG construction and particle-symmetry, we furter have
+\begin_inset Formula \begin{eqnarray}
+N_{0} & = & \frac{1}{4}\frac{1}{V}\sum_{{\bf k}}\left|u_{{\bf k}}v_{{\bf k}}^{\ast}f(E_{{\bf k}})+\alpha_{{\bf k}}\beta_{{\bf k}}^{\ast}f(-E_{{\bf k}})\right|^{2}\\
+ & = & \frac{1}{4}\frac{1}{V}\sum_{{\bf k}}\left|\sum_{\eta=1}^{4}u_{{\bf k}}^{\eta}(t)v_{{\bf k}}^{\eta\ast}(t)f(E_{{\bf k}}^{\eta}(t=0))+\alpha_{{\bf k}}^{\eta}(t)\beta_{{\bf k}}^{\eta\ast}(t)f(-E_{{\bf k}}^{\eta}(t=0))\right|^{2}\end{eqnarray}
+
+\end_inset
+
+which we could have obtained in a much simpler way, by doing analogy with
+ 
+\begin_inset Formula $\Delta$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Similarly, we have triplet condensate fraction, 
+\begin_inset Formula \begin{eqnarray}
+N_{1} & = & \int d{\bf k}|\langle\left(u_{-{\bf q}/2+{\bf k}\uparrow}c_{-{\bf q}/2+{\bf k}\uparrow}+v_{{\bf q}/2-{\bf k}\downarrow}^{\ast}c_{{\bf q}/2-{\bf k}\downarrow}^{\dagger}+\alpha_{-{\bf q}/2+{\bf k}\downarrow}c_{-{\bf q}/2+{\bf k}\downarrow}+\beta_{{\bf q}/2-{\bf k}\uparrow}^{\ast}c_{{\bf q}/2-{\bf k}\uparrow}^{\dagger}\right)\\
+ & \times & \left(u_{-{\bf q}/2-{\bf k}\uparrow}c_{-{\bf q}/2-{\bf k}\uparrow}+v_{{\bf q}/2+{\bf k}\downarrow}^{\ast}c_{{\bf q}/2+{\bf k}\downarrow}^{\dagger}+\alpha_{-{\bf q}/2-{\bf k}\downarrow}c_{-{\bf q}/2-{\bf k}\downarrow}+\beta_{{\bf q}/2+{\bf k}\uparrow}^{\ast}c_{{\bf q}/2+{\bf k}\uparrow}^{\dagger}\right)\rangle|^{2}\\
+ & = & \int d{\bf k}|u_{-{\bf q}/2+{\bf k}\uparrow}\beta_{{\bf q}/2+{\bf k}\uparrow}^{\ast}\langle c_{-{\bf q}/2+{\bf k}\uparrow}c_{{\bf q}/2+{\bf k}\uparrow}^{\dagger}\rangle+v_{{\bf q}/2-{\bf k}\downarrow}^{\ast}\alpha_{-{\bf q}/2-{\bf k}\downarrow}\langle c_{{\bf q}/2-{\bf k}\downarrow}^{\dagger}c_{-{\bf q}/2-{\bf k}\downarrow}\rangle\\
+ & + & \alpha_{-{\bf q}/2+{\bf k}\downarrow}v_{{\bf q}/2+{\bf k}\downarrow}^{\ast}\langle c_{-{\bf q}/2+{\bf k}\downarrow}c_{{\bf q}/2+{\bf k}\downarrow}^{\dagger}\rangle+\beta_{{\bf q}/2-{\bf k}\uparrow}^{\ast}u_{-{\bf q}/2-{\bf k}\uparrow}\langle c_{{\bf q}/2-{\bf k}\uparrow}^{\dagger}c_{-{\bf q}/2-{\bf k}\uparrow}\rangle|^{2}\end{eqnarray}
+
+\end_inset
+
+Setting 
+\begin_inset Formula ${\bf q}=0$
+\end_inset
+
+ and using the redundancy reduction, we have
+\begin_inset Formula \begin{eqnarray}
+N_{1} & = & \frac{1}{4}\frac{1}{V}\sum_{{\bf k}}\left|u_{{\bf k}}\beta_{{\bf k}}^{\ast}f(E_{{\bf k}})+\alpha_{{\bf k}}v_{{\bf k}}^{\ast}f(-E_{{\bf k}})\right|^{2}\\
+ & = & \frac{1}{4}\frac{1}{V}\sum_{{\bf k}}\left|\sum_{\eta=1}^{4}u_{{\bf k}}^{\eta}(t)\beta_{{\bf k}}^{\eta\ast}(t)f(E_{{\bf k}}^{\eta}(t=0))+\alpha_{{\bf k}}^{\eta}(t)v_{{\bf k}}^{\eta\ast}(t)f(-E_{{\bf k}}^{\eta}(t=0))\right|^{2}\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Chern Number
+\end_layout
+
+\begin_layout Standard
+Berry curvature for hole branch 
+\begin_inset Formula $\Gamma^{\nu=-}\equiv\gamma_{1}^{\nu=-}+\gamma_{2}^{\nu=-}$
+\end_inset
+
+,
+\begin_inset Formula \begin{eqnarray}
+\gamma_{\eta}^{\nu} & = & i(\langle\partial_{k_{x}}\Phi_{\eta}^{\nu}|\partial_{k_{y}}\Phi_{\eta}^{\nu}\rangle-k_{x}\longleftrightarrow k_{y})\\
+ & = & -2\Im\langle\frac{\partial\Psi_{\eta}^{\nu}}{\partial k_{x}}|\frac{\partial\Psi_{\eta}^{\nu}}{\partial k_{y}}\rangle\\
+ & = & -2\Im\left[\left(\begin{array}{cccc}
+\frac{\partial u_{{\bf k}}}{\partial k_{x}} & \frac{\partial\alpha_{{\bf k}}}{\partial k_{x}} & \frac{\partial\beta_{{\bf k}}}{\partial k_{x}} & \frac{\partial v_{{\bf k}}}{\partial k_{x}}\end{array}\right)^{\ast}\cdot\left(\begin{array}{c}
+\frac{\partial u_{{\bf k}}}{\partial k_{y}}\\
+\frac{\partial\alpha_{{\bf k}}}{\partial k_{y}}\\
+\frac{\partial\beta_{{\bf k}}}{\partial k_{y}}\\
+\frac{\partial v_{{\bf k}}}{\partial k_{y}}\end{array}\right)\right]_{\eta}^{\nu}\\
+ & = & -2\Im\left(\frac{\partial u_{{\bf k}}^{\ast}}{\partial k_{x}}\frac{\partial u_{{\bf k}}}{\partial k_{y}}+\frac{\partial\alpha_{{\bf k}}^{\ast}}{\partial k_{x}}\frac{\partial\alpha_{{\bf k}}}{\partial k_{y}}+\frac{\partial\beta_{{\bf k}}^{\ast}}{\partial k_{x}}\frac{\partial\beta_{{\bf k}}}{\partial k_{y}}+\frac{\partial v_{{\bf k}}^{\ast}}{\partial k_{x}}\frac{\partial v_{{\bf k}}}{\partial k_{y}}\right)_{\eta}^{\nu}\end{eqnarray}
+
+\end_inset
+
+Chern number is defined as
+\begin_inset Formula \begin{equation}
+C^{\nu=-}=\frac{1}{2\pi}\int d^{2}{\bf k}\sum_{\eta=1,2}\gamma_{\eta}^{\nu=-}\end{equation}
+
+\end_inset
+
+where the summation runs over the two occupied quasi-hole bands.
+ The equivalent definition for Berry curvature is 
+\begin_inset Formula \begin{eqnarray}
+\gamma_{\eta}^{\nu=-} & = & i\sum_{\nu'\neq\nu}\sum_{\eta'=1,2}\frac{\langle\nu\eta|\partial_{k_{x}}H_{BdG}|\nu'\eta'\rangle\langle\nu'\eta'|\partial_{k_{y}}H_{BdG}|\nu\eta\rangle-(k_{x}\leftrightarrow k_{y})}{(E_{{\bf k}}^{\nu\eta}-E_{{\bf k}}^{\nu'\eta'})^{2}}\\
+ & = & -2\sum_{\nu'\neq\nu}\sum_{\eta'=1,2}\Im\frac{\langle\nu\eta|\partial_{k_{x}}H_{BdG}|\nu'\eta'\rangle\langle\nu'\eta'|\partial_{k_{y}}H_{BdG}|\nu\eta\rangle}{(E_{{\bf k}}^{\nu\eta}-E_{{\bf k}}^{\nu'\eta'})^{2}}\end{eqnarray}
+
+\end_inset
+
+Derivatives for Hamiltonian is straightforward, 
+\begin_inset Formula \begin{eqnarray}
+\frac{\partial}{\partial k_{x}}\left(\begin{array}{cccc}
+\xi_{{\bf k}}+h & \lambda(k_{x}-ik_{y}) & 0 & -\Delta(t)\\
+\lambda(k_{x}+ik_{y}) & \xi_{{\bf k}}-h & \Delta(t) & 0\\
+0 & \Delta^{\ast}(t) & -(\xi_{{\bf k}}+h) & \lambda(k_{x}+ik_{y})\\
+-\Delta^{\ast}(t) & 0 & \lambda(k_{x}-ik_{y}) & -(\xi_{{\bf k}}-h)\end{array}\right) & = & \left(\begin{array}{cccc}
+2k_{x} & \lambda & 0 & 0\\
+\lambda & 2k_{x} & 0 & 0\\
+0 & 0 & -2k_{x} & \lambda\\
+0 & 0 & \lambda & -2k_{x}\end{array}\right)\equiv h_{x}\\
+\frac{\partial}{\partial k_{y}}\left(\begin{array}{cccc}
+\xi_{{\bf k}}+h & \lambda(k_{x}-ik_{y}) & 0 & -\Delta(t)\\
+\lambda(k_{x}+ik_{y}) & \xi_{{\bf k}}-h & \Delta(t) & 0\\
+0 & \Delta^{\ast}(t) & -(\xi_{{\bf k}}+h) & \lambda(k_{x}+ik_{y})\\
+-\Delta^{\ast}(t) & 0 & \lambda(k_{x}-ik_{y}) & -(\xi_{{\bf k}}-h)\end{array}\right) & = & \left(\begin{array}{cccc}
+2k_{y} & -i\lambda & 0 & 0\\
+i\lambda & 2k_{y} & 0 & 0\\
+0 & 0 & -2k_{y} & i\lambda\\
+0 & 0 & -i\lambda & -2k_{y}\end{array}\right)\equiv h_{y}\end{eqnarray}
+
+\end_inset
+
+where I have chosen 
+\begin_inset Formula $\hbar=2m=1$
+\end_inset
+
+.
+ Then, we have a simplified notation
+\begin_inset Formula \begin{eqnarray*}
+\gamma_{\eta}^{\nu=-} & = & -2\sum_{\nu'\neq\nu}\sum_{\eta'=1,2}\Im\frac{\langle\nu\eta|h_{x}|\nu'\eta'\rangle\langle\nu'\eta'|h_{y}|\nu\eta\rangle}{(E_{{\bf k}}^{\nu\eta}-E_{{\bf k}}^{\nu'\eta'})^{2}}\\
+ & = & -2\sum_{\nu'\neq\nu}\sum_{\eta'=1,2}\Im\left\{ \frac{1}{(E_{{\bf k}}^{\nu\eta}-E_{{\bf k}}^{\nu'\eta'})^{2}}\left(\begin{array}{cccc}
+u & \alpha & \beta & v\end{array}\right)^{\ast}\left(\begin{array}{c}
+2k_{x}u'+\lambda\alpha'\\
+\lambda u'+2k_{x}\alpha'\\
+-2k_{x}\beta'+\lambda v'\\
+\lambda\beta'-2k_{x}v'\end{array}\right)\cdot\left(\begin{array}{cccc}
+u' & \alpha' & \beta' & v'\end{array}\right)^{\ast}\left(\begin{array}{c}
+2k_{y}u-i\lambda\alpha\\
+i\lambda u+2k_{y}\alpha\\
+-2k_{y}\beta+i\lambda v\\
+-i\lambda\beta-2k_{y}v\end{array}\right)\right\} \\
+ & = & -2\sum_{\nu'\neq\nu}\sum_{\eta'=1,2}\Im\left\{ \frac{1}{(E_{{\bf k}}^{\nu\eta}-E_{{\bf k}}^{\nu'\eta'})^{2}}\Xi_{1}\cdot\Xi_{2}\right\} \end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula \begin{eqnarray*}
+\Xi_{1} & = & \left(2k_{x}u'u^{\ast}+\lambda\alpha'u^{\ast}+\lambda u'\alpha^{\ast}+2k_{x}\alpha'\alpha^{\ast}-2k_{x}\beta'\beta^{\ast}+\lambda v'\beta^{\ast}+\lambda\beta'v^{\ast}-2k_{x}v'v^{\ast}\right)\\
+\Xi_{2} & = & \left(2k_{y}u'^{\ast}u-i\lambda u'^{\ast}\alpha+i\lambda\alpha'^{\ast}u+2k_{y}\alpha'^{\ast}\alpha-2k_{y}\beta'^{\ast}\beta+i\lambda\beta'^{\ast}v-i\lambda v'^{\ast}\beta-2k_{y}v'^{\ast}v\right)\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset Formula \begin{eqnarray}
+C^{\nu=-} & = & \frac{-2}{2\pi}\int dk_{x}\int dk_{y}\sum_{\nu'\neq\nu}\sum_{\eta=1,2}\sum_{\eta'=1,2}\Im\left\{ \frac{1}{(E_{{\bf k}}^{\nu\eta}-E_{{\bf k}}^{\nu'\eta'})^{2}}\Xi_{1}\cdot\Xi_{2}\right\} \\
+ & = & \frac{-2}{2\pi}\int dk_{x}\int dk_{y}\sum_{\eta=1,2}\sum_{\eta'=1,2}\Im\left\{ \frac{1}{(E_{{\bf k}}^{-\eta}-E_{{\bf k}}^{+\eta'})^{2}}\Xi_{1}\cdot\Xi_{2}\right\} \end{eqnarray}
+
+\end_inset
+
+In practice, we observe the curvature as a function of momentum 
+\begin_inset Formula $k_{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $k_{y}$
+\end_inset
+
+ are rotationally symmetric.
+ Therefore, we can have
+\begin_inset Formula \begin{equation}
+C^{\nu=-}=-\frac{4}{\pi}\int_{0}^{k_{c}}dk_{x}\int_{0}^{k_{c}}dk_{y}\sum_{\eta=1,2}\sum_{\eta'=1,2}\Im\left\{ \frac{1}{(E_{{\bf k}}^{-\eta}-E_{{\bf k}}^{+\eta'})^{2}}\Xi_{1}\cdot\Xi_{2}\right\} \end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $k_{c}$
+\end_inset
+
+ is the momentum cutoff introduced numerically, and integration mesh only
+ requires 100 grids.
+ --> very accurate results of Chern number!!! Numerically, I have checked
+ 
+\begin_inset Formula $\gamma_{\eta}^{\nu=-}(k_{x},k_{y})$
+\end_inset
+
+ is rotationally symmetric.
+ As a result, we may further reduce the momentum integration to the radial
+ direction, as the following, 
+\begin_inset Formula \begin{equation}
+C^{\nu=-}=-2\int_{0}^{k_{c}}kdk\sum_{\eta=1,2}\sum_{\eta'=1,2}\Im\left\{ \frac{1}{(E_{k}^{-\eta}-E_{k}^{+\eta'})^{2}}\Xi_{1}\cdot\Xi_{2}\right\} \end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula \begin{eqnarray*}
+\Xi_{1} & = & \left(2ku'u^{\ast}+\lambda\alpha'u^{\ast}+\lambda u'\alpha^{\ast}+2k\alpha'\alpha^{\ast}-2k\beta'\beta^{\ast}+\lambda v'\beta^{\ast}+\lambda\beta'v^{\ast}-2kv'v^{\ast}\right)\\
+\Xi_{2} & = & \left(2ku'^{\ast}u-i\lambda u'^{\ast}\alpha+i\lambda\alpha'^{\ast}u+2k\alpha'^{\ast}\alpha-2k\beta'^{\ast}\beta+i\lambda\beta'^{\ast}v-i\lambda v'^{\ast}\beta-2kv'^{\ast}v\right)\end{eqnarray*}
+
+\end_inset
+
+where we may emperically choose 
+\begin_inset Formula $k_{c}\sim10k_{F}$
+\end_inset
+
+ and grids around 500 points.
+\end_layout
+
+\begin_layout Standard
+Note that in the calculation, we need to update 
+\begin_inset Formula $E_{{\bf k}}^{\nu\eta}(t)$
+\end_inset
+
+ at each time step in the following way, 
+\begin_inset Formula \begin{equation}
+E_{{\bf k}}^{\nu\eta}(t)=\left(\begin{array}{cccc}
+u_{{\bf k}}^{\eta}(t) & \alpha_{{\bf k}}^{\eta}(t) & \beta_{{\bf k}}^{\eta}(t) & v_{{\bf k}}^{\eta}(t)\end{array}\right)^{\ast}\left(\begin{array}{cccc}
+\xi_{{\bf k}}+h & \lambda(k_{x}-ik_{y}) & 0 & -\Delta(t)\\
+\lambda(k_{x}+ik_{y}) & \xi_{{\bf k}}-h & \Delta(t) & 0\\
+0 & \Delta^{\ast}(t) & -(\xi_{{\bf k}}+h) & \lambda(k_{x}+ik_{y})\\
+-\Delta^{\ast}(t) & 0 & \lambda(k_{x}-ik_{y}) & -(\xi_{{\bf k}}-h)\end{array}\right)\left(\begin{array}{c}
+u_{{\bf k}}^{\eta}(t)\\
+\alpha_{{\bf k}}^{\eta}(t)\\
+\beta_{{\bf k}}^{\eta}(t)\\
+v_{{\bf k}}^{\eta}(t)\end{array}\right)\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+TODO: study the note by Xiao Di and test the method of calculating Chern
+ number in a Berry curvature projection operator way.
+\end_layout
+
+\begin_layout Standard
+Ming Gong's way: Berry connection method.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In phase I, after phase fixing, the Hamiltonian is periodic in time with
+ period 
+\begin_inset Formula $T$
+\end_inset
+
+.
+ According to the Floquet theorem, we have 
+\begin_inset Formula $\psi(t)=\Phi(t)e^{i\varepsilon t}$
+\end_inset
+
+ where 
+\begin_inset Formula $|\Phi(t)\rangle\equiv\left(\begin{array}{c}
+u(t)\\
+\alpha(t)\\
+\beta(t)\\
+v(t)\end{array}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $|\Phi(t+T)\rangle=|\Phi(t)\rangle$
+\end_inset
+
+.
+ Then we write 
+\begin_inset Formula $H(t)|\psi(t)\rangle=i\partial_{t}|\psi(t)\rangle$
+\end_inset
+
+ as 
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{cccc}
+H-i\partial_{t} & \Lambda &  & -\Delta(t)\\
+\Lambda^{\dagger} & H-i\partial_{t} & \Delta(t)\\
+ & \Delta^{\ast}(t) & -H-i\partial_{t} & \Lambda^{\dagger}\\
+-\Delta^{\ast}(t) &  & \Lambda & -H-i\partial_{t}\end{array}\right)\left(\begin{array}{c}
+u(t)\\
+\alpha(t)\\
+\beta(t)\\
+v(t)\end{array}\right)=\varepsilon\left(\begin{array}{c}
+u(t)\\
+\alpha(t)\\
+\beta(t)\\
+v(t)\end{array}\right)\end{equation}
+
+\end_inset
+
+ We expand the wavefunction in time as
+\begin_inset Formula \begin{equation}
+|\Phi(t)\rangle\equiv\left(\begin{array}{c}
+u(t)\\
+\alpha(t)\\
+\beta(t)\\
+v(t)\end{array}\right)=\sum_{p=-P_{max}}^{P_{max}}\frac{1}{\sqrt{T}}\exp(+i\frac{2p\pi t}{T})\left(\begin{array}{c}
+u_{p}\\
+\alpha_{p}\\
+\beta_{p}\\
+v_{p}\end{array}\right)\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $P_{max}=50$
+\end_inset
+
+ is a good cutoff number.
+ We have
+\begin_inset Formula \begin{eqnarray*}
+\left(k_{x}^{2}+k_{y}^{2}-\mu_{\infty}+h+\frac{2p\pi}{T}\right)u_{p}+\lambda(k_{x}-ik_{y})\alpha_{p}-\sum_{q}\Gamma_{pq}^{(1)}v_{q} & = & \varepsilon u_{p}\\
+\lambda(k_{x}+ik_{y})u_{p}+\left(k_{x}^{2}+k_{y}^{2}-\mu_{\infty}-h+\frac{2p\pi}{T}\right)\alpha_{p}+\sum_{q}\Gamma_{pq}^{(1)}\beta_{q} & = & \varepsilon\alpha_{p}\\
+\sum_{q}\Gamma_{pq}^{(2)}\alpha_{q}-\left(k_{x}^{2}+k_{y}^{2}-\mu_{\infty}+h-\frac{2p\pi}{T}\right)\beta_{p}+\lambda(k_{x}+ik_{y})v_{p} & = & \varepsilon\beta_{p}\\
+-\sum_{q}\Gamma_{pq}^{(2)}u_{q}+\lambda(k_{x}-ik_{y})\beta_{p}-\left(k_{x}^{2}+k_{y}^{2}-\mu_{\infty}-h-\frac{2p\pi}{T}\right)v_{p} & = & \varepsilon v_{p}\end{eqnarray*}
+
+\end_inset
+
+where,
+\begin_inset Formula \begin{eqnarray}
+\Gamma_{pq}^{(1)} & = & \int_{0}^{T}\frac{dt}{T}|\Delta_{\infty}(t)|\exp\left(i\frac{2\pi}{T}(q-p)t+i\phi(t)\right)\\
+\Gamma_{pq}^{(2)} & = & \int_{0}^{T}\frac{dt}{T}|\Delta_{\infty}(t)|\exp\left(i\frac{2\pi}{T}(q-p)t-i\phi(t)\right)\end{eqnarray}
+
+\end_inset
+
+The self-adjoinct property of the matrix can be easily checked by noting
+ 
+\begin_inset Formula $\Gamma_{pq}^{(1)\ast}=\Gamma_{qp}^{(2)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Floquet spectrum
+\end_layout
+
+\begin_layout Standard
+For a periodically driven Hamiltonian 
+\begin_inset Formula $\hat{H}(t)$
+\end_inset
+
+ with period 
+\begin_inset Formula $T$
+\end_inset
+
+, Floquet operator is defined as,
+\begin_inset Formula \begin{equation}
+\hat{F}=\hat{\mathcal{T}}\exp\{-i\int_{T_{i}}^{T_{i}+T}dt\hat{H}(t)\}\end{equation}
+
+\end_inset
+
+where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\hat{\mathcal{T}}$
+\end_inset
+
+ denotes time-order, and 
+\begin_inset Formula $T_{i}$
+\end_inset
+
+ is the initial time.
+ The eigenvalue and eigenstates of 
+\begin_inset Formula $\hat{F}$
+\end_inset
+
+ is given by
+\begin_inset Formula \begin{equation}
+\hat{F}|\varphi_{n}\rangle=e^{-i\varepsilon_{n}T}|\varphi_{n}\rangle,\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $-\pi/T<\varepsilon_{n}<\pi/T$
+\end_inset
+
+ is the quasi-energy.
+\end_layout
+
+\begin_layout Standard
+The time-ordering operator can be written in terms of ordered product of
+ exponentials in the infinite limit of number of terms 
+\begin_inset Formula \begin{eqnarray}
+\hat{F} & = & \hat{\mathcal{T}}\exp\{-i\left(\int_{T_{i}}^{T_{i}+\Delta T}dt\hat{H}(T_{i})+\int_{T_{i}+\Delta T}^{T_{i}+2\Delta T}dt\hat{H}(T_{i}+\Delta T)+...+\int_{T_{i}+T-\Delta T}^{T_{i}+T}dt\hat{H}(T_{i}+T-\Delta T)\right)\}\\
+ & = & \hat{\mathcal{T}}\exp\{-i\Delta T\left(\hat{H}(T_{i})+\hat{H}(T_{i}+\Delta T)+...+\hat{H}(T_{i}+T-\Delta T)\right)\}\\
+ & = & \lim_{M\rightarrow\infty}\left(e^{-i\hat{H}(t_{M-1})\Delta T}e^{-i\hat{H}(t_{M-2})\Delta T}\dots e^{-i\hat{H}(t_{0})\Delta T}\right)\\
+ & \approx & \exp\{-i\hat{H}(T_{i}+T-\Delta T)\Delta T\}\exp\{-i\hat{H}(T_{i}+T-2\Delta T)\Delta T\}...\exp\{-i\hat{H}(T_{i})\Delta T\}\\
+ & \equiv & \exp\{-i\hat{H}(t_{M-1})\Delta T\}\exp\{-i\hat{H}(t_{M-2})\Delta T\}...\exp\{-i\hat{H}(t_{0})\Delta T\}\end{eqnarray}
+
+\end_inset
+
+where we have devided the time interval from 
+\begin_inset Formula $T_{i}$
+\end_inset
+
+ to 
+\begin_inset Formula $T_{i}+T$
+\end_inset
+
+ into 
+\begin_inset Formula $M$
+\end_inset
+
+ moments 
+\begin_inset Formula $\Delta T=T/M$
+\end_inset
+
+ and 
+\begin_inset Formula $t_{j}=T_{i}+jT/M$
+\end_inset
+
+ and 
+\begin_inset Formula $j=0,1,...M-1$
+\end_inset
+
+.
+ Numerically, we will introduce a cutoff 
+\begin_inset Formula $M_{\text{max}}$
+\end_inset
+
+ for finite terms.
+ We can make use of eigenvalue decomposition 
+\begin_inset Formula \begin{eqnarray}
+H(t) & = & V(t)D(t)V(t)^{\dagger}\\
+e^{-iH(t)\Delta t} & = & V(t)e^{-iD(t)\Delta t}V(t)^{\dagger}\end{eqnarray}
+
+\end_inset
+
+(it is worth to note that this method is more stable than Taylor expansion
+ to 2nd, 4th(RK) order, similiar to algorithm used in MATLAB function of
+ expm or 
+\begin_inset Formula $exp$
+\end_inset
+
+ subroutine in 
+\begin_inset CommandInset href
+LatexCommand href
+name "unsupported module of Eigen C++ library"
+target "http://eigen.tuxfamily.org/dox/unsupported/group__MatrixFunctions__Module.html"
+
+\end_inset
+
+) then we have ,
+\begin_inset Formula \begin{equation}
+F=\lim_{M\rightarrow\infty}\left(V(t_{M-1})e^{-iD(t_{M-1})\Delta t}V(t_{M-1})^{\dagger}V(t_{M-2})e^{-iD(t_{M-2})\Delta t}V(t_{M-2})^{\dagger}\dots V(t_{0})e^{-iD(t_{0})\Delta t}V(t_{0})^{\dagger}\right)\end{equation}
+
+\end_inset
+
+where exponential of 
+\begin_inset Formula $D$
+\end_inset
+
+ is evaluated only for the diagonal terms, which are the eigenvalue terms.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Each exponential matrix is further approximated by Taylor expansion up to
+ second order
+\begin_inset Formula \begin{equation}
+e^{-iH(t_{j})\Delta t}\approx I-iH(t_{j})\Delta t-\frac{1}{2}H(t_{j})H(t_{j})(\Delta t)^{2}\end{equation}
+
+\end_inset
+
+which turns out to be difficult to treat exactly because at different time
+ the Hamiltonian matrix does not commute.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+To make some progress, we treat operator 
+\begin_inset Formula $\hat{F}$
+\end_inset
+
+ as a function of time 
+\begin_inset Formula $t$
+\end_inset
+
+ and the end result of one period expression is equivalent to integrate
+ the differential equation
+\begin_inset Formula \begin{equation}
+\frac{\partial}{\partial t}\hat{F}(T_{i}+t,T_{i})=-i\hat{H}(t)\hat{F}(T_{i}+t,T_{i})\label{eq:diffFloquet}\end{equation}
+
+\end_inset
+
+up to 
+\begin_inset Formula $t=T$
+\end_inset
+
+ with initial condition 
+\begin_inset Formula $\hat{F}(T_{i},T_{i})=I_{4N_{max}\times4N_{max}}$
+\end_inset
+
+.
+ We adopt the Runge-Kutta method to integrate the Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:diffFloquet"
+
+\end_inset
+
+ as
+\begin_inset Formula \begin{equation}
+F(T_{i}+t_{j+1},T_{i})=F(T_{i}+t_{j},T_{i})-\frac{i\delta t}{6}(k_{1}+2k_{2}+2k_{3}+k_{4})\label{eq:RKFloquet}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\delta t=T/M$
+\end_inset
+
+ and 
+\begin_inset Formula \begin{eqnarray}
+k_{1} & = & H(t_{j})F(t_{j})\\
+k_{2} & = & H(t_{j})(F(t_{j})+\frac{\delta t}{2}k_{1})=(1+\frac{\delta t}{2}H(t_{j}))\cdot k_{1}\\
+k_{3} & = & H(t_{j})(F(t_{j})+\frac{\delta t}{2}k_{2})=k_{1}+\frac{\delta t}{2}H(t_{j})\cdot k_{2}\\
+k_{4} & = & H(t_{j})(F(t_{j})+\delta tk_{3})=k_{1}+\frac{\delta t}{2}H(t_{j})\cdot k_{3}\end{eqnarray}
+
+\end_inset
+
+In order to get rid of matrix storage for 
+\begin_inset Formula $k_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $k_{2}$
+\end_inset
+
+, 
+\begin_inset Formula $k_{3}$
+\end_inset
+
+, 
+\begin_inset Formula $k_{4}$
+\end_inset
+
+, we write Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:RKFloquet"
+
+\end_inset
+
+ explicitly as
+\begin_inset Formula \begin{equation}
+F'=\left[I-i\delta t\left(H+\frac{\delta t}{2}H^{2}+\frac{(\delta t)^{2}}{6}H^{3}+\frac{(\delta t)^{3}}{24}H^{4}\right)\right]F\end{equation}
+
+\end_inset
+
+where we only need to have storage of 
+\begin_inset Formula $F$
+\end_inset
+
+, 
+\begin_inset Formula $H$
+\end_inset
+
+, 
+\begin_inset Formula $M1$
+\end_inset
+
+, 
+\begin_inset Formula $M2$
+\end_inset
+
+ as the following pseudocode in favor of Eigen opensource:
+\begin_inset Formula \begin{eqnarray}
+M1.\text{setIdentity()}\\
+M1.\text{noalias()} & += & -i\delta tH\\
+M2.\text{noalias()} & \leftarrow & H^{2}\\
+M1.\text{noalias}() & += & -i\frac{(\delta t)^{2}}{2}M2\\
+M2 & \leftarrow & M2\cdot H\\
+M1.\text{noalias}() & += & -i\frac{(\delta t)^{3}}{6}M2\\
+F & \leftarrow & (M1-i\frac{(\delta t)^{4}}{24}M2\cdot H)\cdot F\end{eqnarray}
+
+\end_inset
+
+Euler method 
+\begin_inset Formula $F.\text{noalias()+=}\delta tH$
+\end_inset
+
+.
+ Here we try the method adopted by MATLAB, 
+\begin_inset CommandInset href
+LatexCommand href
+name "expm"
+target "http://www.mathworks.com/help/matlab/ref/expm.html"
+
+\end_inset
+
+, which originate from the 
+\begin_inset CommandInset href
+LatexCommand href
+name "paper"
+target "http://eprints.ma.man.ac.uk/634/01/covered/MIMS_ep2006_394.pdf"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset href
+LatexCommand href
+name "review"
+target "http://www.cs.cornell.edu/cv/researchpdf/19ways+.pdf"
+
+\end_inset
+
+.
+ The algorithm is the so-called 
+\begin_inset Quotes eld
+\end_inset
+
+scaling-and-squaring method combined with Padé approximation
+\begin_inset Quotes erd
+\end_inset
+
+, which has been implemented in the 
+\begin_inset CommandInset href
+LatexCommand href
+name "unsupported module of Eigen open source library"
+target "http://eigen.tuxfamily.org/dox/unsupported/group__MatrixFunctions__Module.html"
+
+\end_inset
+
+.
+ (benchmarked the results in this 
+\begin_inset CommandInset href
+LatexCommand href
+name "paper"
+target "http://iopscience.iop.org/0953-8984/12/11/301/pdf/0953-8984_12_11_301.pdf"
+
+\end_inset
+
+, under project EdgeStateFloquetSideproject in workspace of asantewa.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we have time-independent Hamiltonian 
+\begin_inset Formula $H$
+\end_inset
+
+, then 
+\begin_inset Formula $V$
+\end_inset
+
+ and 
+\begin_inset Formula $D$
+\end_inset
+
+ are also time-independent and we shall have 
+\begin_inset Formula $V(t_{M-1})^{\dagger}V(t_{M-2})=I$
+\end_inset
+
+ and 
+\begin_inset Formula $V(t_{M-1})=V(t_{0})=V$
+\end_inset
+
+.
+ Then it follows that 
+\begin_inset Formula $F=V\left(\Pi_{j=0}^{M-1}e^{-iDT/M}\right)V^{\dagger}=Ve^{-iD\sum_{j=0}^{M-1}T/M}V^{\dagger}=Ve^{-iDT}V^{\dagger}=e^{-iHT}$
+\end_inset
+
+ and its spectrum is given by 
+\begin_inset Formula $e^{-i\varepsilon_{n}T}$
+\end_inset
+
+, where 
+\begin_inset Formula $\varepsilon_{n}$
+\end_inset
+
+ is the spectrum of 
+\begin_inset Formula $H$
+\end_inset
+
+.
+ However, note that from the spectrum of 
+\begin_inset Formula $H$
+\end_inset
+
+, the result of 
+\begin_inset Formula $\log(e^{-i\varepsilon_{n}T})/(-iT)$
+\end_inset
+
+ is not necessarily the same as 
+\begin_inset Formula $\varepsilon_{n}$
+\end_inset
+
+ because 
+\begin_inset Formula $|\varepsilon_{n}T|$
+\end_inset
+
+ can have components larger than 
+\begin_inset Formula $\pi$
+\end_inset
+
+ and this fact leads to 
+\begin_inset Quotes eld
+\end_inset
+
+spectrum folding
+\begin_inset Quotes erd
+\end_inset
+
+ where spectrums belong to different branches in the complex plane are taken
+ into account.
+ The same thing applies to 
+\begin_inset Formula $\text{phase}(e^{-i\varepsilon_{n}T})/(-T)$
+\end_inset
+
+ is not necessarily the same as 
+\begin_inset Formula $\varepsilon_{n}$
+\end_inset
+
+.
+ In order to circumvent this artifact for time-independent Hamiltonian,
+ we need to restrict 
+\begin_inset Formula $T$
+\end_inset
+
+ to be small for large cutoff in 
+\begin_inset Formula $H$
+\end_inset
+
+ matrix, where the end results of high 
+\begin_inset Formula $\varepsilon_{n}T$
+\end_inset
+
+ are restricted within the bounds of 
+\begin_inset Formula $[-\pi,\pi]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+For anyone of the above mentioned algorithms, I have implemented the MPI
+ version of the C++ code, by letting different CPUs do the concurrent work
+ of the eigenvalue computation for each given 
+\begin_inset Formula $k_{x}$
+\end_inset
+
+ values, which are decoupled and good quantum numbers.
+ MPI scatters the index of 
+\begin_inset Formula $k_{x}$
+\end_inset
+
+ to different ranks and MPI gathers all of them and arranging the results
+ according to the ranks and output the results into the final file.
+ The slightly nontrivial part of this communication is to either communicate
+ via multiple MPI_DOUBLE default data types (converting matrix to long array
+ vectors) or define a composite derived data types and send the derived
+ data type once.
+ (It is not very necessary to go with the latter approach because they are
+ all MPI_DOUBLEs, former method is better.
+ )
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the meanwhile, we need to look for a transformation to the order parameter
+ of the type 
+\begin_inset Formula $\Delta(t)=|\Delta_{\infty}(t)|e^{-2i\mu_{\infty}t+i\phi(t)}$
+\end_inset
+
+, (according to the paper by Matt.
+ Foster arxiv1307.2256 and PRB 88,104511(2013)) where 
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{c}
+u_{{\bf k}}^{\eta}\\
+\alpha_{{\bf k}}^{\eta}\\
+\beta_{{\bf k}}^{\eta}\\
+v_{{\bf k}}^{\eta}\end{array}\right)\rightarrow\left(\begin{array}{c}
+u_{{\bf k}}^{\eta}e^{-i\mu_{\infty}t}\\
+\alpha_{{\bf k}}^{\eta}e^{-i\mu_{\infty}t}\\
+\beta_{{\bf k}}^{\eta}e^{+i\mu_{\infty}t}\\
+v_{{\bf k}}^{\eta}e^{+i\mu_{\infty}t}\end{array}\right)\end{equation}
+
+\end_inset
+
+then BdG equation (setting 
+\begin_inset Formula $\mu=0$
+\end_inset
+
+ in the origional equation) can be mapped to 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{cccc}
+\epsilon_{{\bf k}}-\mu_{\infty}+h & \lambda(k_{x}-ik_{y}) & 0 & -|\Delta_{\infty}(t)|e^{i\phi(t)}\\
+\lambda(k_{x}+ik_{y}) & \epsilon_{{\bf k}}-\mu_{\infty}-h & |\Delta_{\infty}(t)|e^{i\phi(t)} & 0\\
+0 & |\Delta_{\infty}(t)|e^{-i\phi(t)} & -(\epsilon_{{\bf k}}-\mu_{\infty}+h) & \lambda(k_{x}+ik_{y})\\
+-|\Delta_{\infty}(t)|e^{-i\phi(t)} & 0 & \lambda(k_{x}-ik_{y}) & -(\epsilon_{{\bf k}}-\mu_{\infty}-h)\end{array}\right)\left(\begin{array}{c}
+u_{{\bf k}}^{\eta}\\
+\alpha_{{\bf k}}^{\eta}\\
+\beta_{{\bf k}}^{\eta}\\
+v_{{\bf k}}^{\eta}\end{array}\right)=i\frac{\partial}{\partial t}\left(\begin{array}{c}
+u_{{\bf k}}^{\eta}\\
+\alpha_{{\bf k}}^{\eta}\\
+\beta_{{\bf k}}^{\eta}\\
+v_{{\bf k}}^{\eta}\end{array}\right)\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+This map requires 
+\begin_inset Formula $\tilde{\Delta}(t)=|\Delta_{\infty}(t)|e^{i\phi(t)}\equiv R(t)+iI(t)$
+\end_inset
+
+ is periodic in time, say with period 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+, for both real and imaginary parts and function 
+\begin_inset Formula $|\Delta_{\infty}(t)|$
+\end_inset
+
+ and 
+\begin_inset Formula $\phi(t)$
+\end_inset
+
+ should share the same period or the integer times of it (the so-called
+ commensurate condition)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+We assume 
+\begin_inset Formula $|\Delta_{\infty}(t)|$
+\end_inset
+
+ has period 
+\begin_inset Formula $T_{1}$
+\end_inset
+
+ and by requiring 
+\begin_inset Formula $\tilde{\Delta}(t_{0})=\tilde{\Delta}(t_{0}+T)$
+\end_inset
+
+ we could have 
+\begin_inset Formula $e^{i\phi(t_{0})}=e^{i\phi(t_{0}+T)}\rightarrow\phi(t_{0})=\phi(t_{0}+T)+2p\pi$
+\end_inset
+
+ and 
+\begin_inset Formula $|\Delta_{\infty}(t_{0}+T)|=|\Delta_{\infty}(t_{0})|\rightarrow T=qT_{1}$
+\end_inset
+
+ for any integer 
+\begin_inset Formula $\forall p$
+\end_inset
+
+ and 
+\begin_inset Formula $\forall q\ge1$
+\end_inset
+
+.
+ Then we could extrapolate 
+\begin_inset Formula $\mu_{\infty}$
+\end_inset
+
+ from the two end points: 
+\begin_inset Formula \begin{eqnarray}
+\phi(t_{0})-2\mu_{\infty}t_{0} & = & \arccos(\Re\{\Delta(t_{0})\}/|\Delta_{\infty}(t_{0})|)+2m\pi,\quad t=t_{0}\\
+\phi(t_{0}+T)-2\mu_{\infty}(t_{0}+T) & = & \arccos(\Re\{\Delta(t_{0}+T)\}/|\Delta_{\infty}(t_{0}+T)|)+2m'\pi,\quad t=t_{0}+T\end{eqnarray}
+
+\end_inset
+
+then subtracting the two equations we obtain, 
+\begin_inset Formula \begin{equation}
+\mu_{\infty}=\frac{\arccos(\Re\{\Delta(t_{0})\}/|\Delta_{\infty}(t_{0})|)-\arccos(\Re\{\Delta(t_{0}+qT_{1})\}/|\Delta_{\infty}(t_{0}+qT_{1})|)+2\pi(m-m'-p)}{2qT_{1}}\label{eq:muInf}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\arccos$
+\end_inset
+
+ can be replaced by 
+\begin_inset Formula $\arcsin$
+\end_inset
+
+ or 
+\begin_inset Formula $\arctan$
+\end_inset
+
+ if proper changes were made too.
+ 
+\end_layout
+
+\end_inset
+
+In order to obtain 
+\begin_inset Formula $\mu_{\infty}$
+\end_inset
+
+ from the phase of 
+\begin_inset Formula $\Delta(t)$
+\end_inset
+
+, we follow the approach in PRL 96, 230403 (2006) and extract the linear
+ slop of 
+\begin_inset Formula $\text{phase}(\Delta)\equiv\theta(t)$
+\end_inset
+
+ as 
+\begin_inset Formula $(\theta(T)-\theta(0))/T=-2\mu_{\infty}$
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+Note that in MATLAB, function 
+\begin_inset Formula $\text{phase}$
+\end_inset
+
+ and 
+\begin_inset Formula $\text{angle}$
+\end_inset
+
+ is different in definition, and here we need 
+\begin_inset Formula $\text{phase}$
+\end_inset
+
+ function.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+After obtaining 
+\begin_inset Formula $\mu_{\infty}$
+\end_inset
+
+ we can further work out 
+\begin_inset Formula $R(t)$
+\end_inset
+
+ and 
+\begin_inset Formula $I(t)$
+\end_inset
+
+ as the following: 
+\begin_inset Formula \begin{eqnarray}
+\Delta(t) & = & |\Delta(t)|e^{i\phi(t)}(\cos(2\mu_{\infty}t)-i\sin(2\mu_{\infty}t))\\
+ & = & \left(R(t)+iI(t)\right)\left(\cos(2\mu_{\infty}t)-i\sin(2\mu_{\infty}t)\right)\\
+ & = & \left(R(t)\cos(2\mu_{\infty}t)+I(t)\sin(2\mu_{\infty}t)\right)+i\left(I(t)\cos(2\mu_{\infty}t)-R(t)\sin(2\mu_{\infty}t)\right)\end{eqnarray}
+
+\end_inset
+
+then we can write
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{cc}
+\cos(2\mu_{\infty}t) & \sin(2\mu_{\infty}t)\\
+-\sin(2\mu_{\infty}t) & \cos(2\mu_{\infty}t)\end{array}\right)\left(\begin{array}{c}
+R(t)\\
+I(t)\end{array}\right)=\left(\begin{array}{c}
+\Re\{\Delta(t)\}\\
+\Im\{\Delta(t)\}\end{array}\right)\end{equation}
+
+\end_inset
+
+as
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{c}
+R(t)\\
+I(t)\end{array}\right)=\left(\begin{array}{cc}
+\cos(2\mu_{\infty}t) & -\sin(2\mu_{\infty}t)\\
+\sin(2\mu_{\infty}t) & \cos(2\mu_{\infty}t)\end{array}\right)\left(\begin{array}{c}
+\Re\{\Delta(t)\}\\
+\Im\{\Delta(t)\}\end{array}\right)\end{equation}
+
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+where 
+\begin_inset Formula $\mu_{\infty}$
+\end_inset
+
+ is given by Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:muInf"
+
+\end_inset
+
+.
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+Or equivalently, 
+\begin_inset Formula \begin{equation}
+\phi(t)=2\mu_{\infty}t+\arccos(\Re\{\Delta(t)\}/|\Delta_{\infty}(t)|)+2m\pi\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/donglin/Documents/Research/Topological_FF/oscillatorySteadyState.eps
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+After phase fixing, the Hamiltonian is periodic in time with period 
+\begin_inset Formula $T$
+\end_inset
+
+.
+ According to the Floquet theorem, we have 
+\begin_inset Formula $|\psi(t)\rangle=|\Phi(t)\rangle e^{-i\varepsilon t}$
+\end_inset
+
+ where 
+\begin_inset Formula $|\Phi(t+T)\rangle=|\Phi(t)\rangle$
+\end_inset
+
+.
+ Then we write 
+\begin_inset Formula $H(t)|\psi(t)\rangle=i\partial_{t}|\psi(t)\rangle$
+\end_inset
+
+ as 
+\begin_inset Formula $\left(H(t)-i\partial_{t}\right)|\Phi(t)\rangle=E|\Phi(t)\rangle$
+\end_inset
+
+.
+ Following the paper 
+\begin_inset CommandInset href
+LatexCommand href
+name "arXiv:1404.4934v1"
+target "http://arxiv.org/pdf/1404.4934v1.pdf"
+
+\end_inset
+
+, we expand the wavefunction in both position and time as (assuming hard
+ wall boundary condition along y direction)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+After phase fixing, the Hamiltonian is periodic in time with period 
+\begin_inset Formula $T$
+\end_inset
+
+.
+ According to the Floquet theorem, we have 
+\begin_inset Formula $\left(\begin{array}{c}
+U(y,t)\\
+A(y,t)\\
+B(y,t)\\
+V(y,t)\end{array}\right)=\left(\begin{array}{c}
+u(y,t)e^{-i\varepsilon t}\\
+\alpha(y,t)e^{-i\varepsilon t}\\
+\beta(y,t)e^{+i\varepsilon t}\\
+v(y,t)e^{+i\varepsilon t}\end{array}\right)$
+\end_inset
+
+ where 
+\begin_inset Formula $|\Phi(t)\rangle\equiv\left(\begin{array}{c}
+u(y,t)\\
+\alpha(y,t)\\
+\beta(y,t)\\
+v(y,t)\end{array}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $|\Phi(t+T)\rangle=|\Phi(t)\rangle$
+\end_inset
+
+.
+ This is because we need to respect the particle-hole symmetryThen we write
+ 
+\begin_inset Formula $H(t)|\psi(t)\rangle=i\partial_{t}|\psi(t)\rangle$
+\end_inset
+
+ as 
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{cccc}
+H-i\partial_{t} & \Lambda &  & -\Delta\\
+\Lambda^{\dagger} & H-i\partial_{t} & \Delta\\
+ & \Delta^{\ast} & H+i\partial_{t} & \Lambda^{\dagger}\\
+-\Delta^{\ast} &  & \Lambda & H+i\partial_{t}\end{array}\right)\left(\begin{array}{c}
+u(y,t)\\
+\alpha(y,t)\\
+\beta(y,t)\\
+v(y,t)\end{array}\right)=i\hbar\frac{\partial}{\partial t}\left(\begin{array}{c}
+u(y,t)\\
+\alpha(y,t)\\
+\beta(y,t)\\
+v(y,t)\end{array}\right)\end{equation}
+
+\end_inset
+
+ Following the paper 
+\begin_inset CommandInset href
+LatexCommand href
+name "arXiv:1404.4934v1"
+target "http://arxiv.org/pdf/1404.4934v1.pdf"
+
+\end_inset
+
+, we expand the wavefunction in both position and time as (assuming hard
+ wall boundary condition along y direction)
+\begin_inset Formula \begin{equation}
+|\Phi(t)\rangle\equiv\left(\begin{array}{c}
+u(y,t)\\
+\alpha(y,t)\\
+\beta(y,t)\\
+v(y,t)\end{array}\right)=\sum_{p=-P_{max}}^{P_{max}}\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\frac{1}{\sqrt{T}}\exp(+i\frac{2p\pi t}{T})\left(\begin{array}{c}
+u_{np}\\
+\alpha_{np}\\
+\beta_{np}\\
+v_{np}\end{array}\right)\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $N_{max}=200$
+\end_inset
+
+ and 
+\begin_inset Formula $P_{max}=10$
+\end_inset
+
+ (?) are good cutoffs.
+ The Hamiltonian can be recast into a self-adjoint matrix form of size 
+\begin_inset Formula $(N_{max}\times(2P_{max}+1))\times(N_{max}\times(2P_{max}+1))$
+\end_inset
+
+ , 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula \begin{eqnarray*}
+\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\left(k_{x}^{2}-\mu_{\infty}+h+(\frac{n\pi}{L})^{2}+\frac{2p\pi}{T}\right)u_{np}+\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\left(vk_{x}\sin(\frac{n\pi y}{L})-v\frac{n\pi}{L}\cos(\frac{n\pi y}{L})\right)\alpha_{np}-\sum_{q}\int_{0}^{T}\frac{dt}{T}|\Delta_{\infty}(t)|e^{i\phi(t)}e^{i\frac{2\pi t}{T}(q-p)}\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})v_{nq} & = & E\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})u_{np}\\
+\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\left(vk_{x}\sin(\frac{n\pi y}{L})+v\frac{n\pi}{L}\cos(\frac{n\pi y}{L})\right)u_{np}+\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\left(k_{x}^{2}-\mu_{\infty}-h+(\frac{n\pi}{L})^{2}+\frac{2p\pi}{T}\right)\alpha_{np}+\sum_{q}\int_{0}^{T}\frac{dt}{T}|\Delta_{\infty}(t)|e^{i\phi(t)}e^{i\frac{2\pi t}{T}(q-p)}\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\beta_{nq} & = & E\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\alpha_{np}\\
+\sum_{q}\int_{0}^{T}\frac{dt}{T}|\Delta_{\infty}(t)|e^{-i\phi(t)}e^{-i\frac{2\pi t}{T}(q-p)}\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\alpha_{nq}-\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\left(k_{x}^{2}-\mu_{\infty}+h+(\frac{n\pi}{L})^{2}+\frac{2p\pi}{T}\right)\beta_{np}+\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\left(vk_{x}\sin(\frac{n\pi y}{L})+v\frac{n\pi}{L}\cos(\frac{n\pi y}{L})\right)v_{np} & = & E\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\beta_{np}\\
+-\sum_{q}\int_{0}^{T}\frac{dt}{T}|\Delta_{\infty}(t)|e^{-i\phi(t)}e^{-i\frac{2\pi t}{T}(q-p)}\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})u_{nq}+\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\left(vk_{x}\sin(\frac{n\pi y}{L})-v\frac{n\pi}{L}\cos(\frac{n\pi y}{L})\right)\beta_{np}-\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\left(k_{x}^{2}-\mu_{\infty}-h+(\frac{n\pi}{L})^{2}+\frac{2p\pi}{T}\right)v_{np} & = & E\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})v_{np}\end{eqnarray*}
+
+\end_inset
+
+Using integral relations
+\begin_inset Formula \begin{eqnarray}
+\frac{2}{L}\int_{0}^{L}\sin(\frac{m\pi}{L}y)\sin(\frac{n\pi}{L}y)dy & = & \delta_{mn}\\
+\frac{2}{L}\int_{0}^{L}\sin(\frac{m\pi}{L}y)\cos(\frac{n\pi}{L}y)dy & = & 0,\quad\text{for }m=n\\
+ & = & \frac{2m(1-(-1)^{m+n})}{(m^{2}-n^{2})\pi},\quad\text{for }m\neq n\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+we have
+\begin_inset Formula \begin{eqnarray*}
+\left(k_{x}^{2}-\mu_{\infty}+h+(\frac{m\pi}{L})^{2}+\frac{2p\pi}{T}\right)u_{mp}+\lambda k_{x}\alpha_{mp}-\sum_{n\neq m}\Lambda_{mn}\alpha_{np}-\sum_{q}\Gamma_{pq}^{(1)}v_{mq} & = & Eu_{mp}\\
+\lambda k_{x}u_{mp}+\sum_{n\neq m}\Lambda_{mn}u_{np}+\left(k_{x}^{2}-\mu_{\infty}-h+(\frac{m\pi}{L})^{2}+\frac{2p\pi}{T}\right)\alpha_{mp}+\sum_{q}\Gamma_{pq}^{(1)}\beta_{mq} & = & E\alpha_{mp}\\
+\sum_{q}\Gamma_{pq}^{(2)}\alpha_{mq}-\left(k_{x}^{2}-\mu_{\infty}+h+(\frac{m\pi}{L})^{2}+\frac{2p\pi}{T}\right)\beta_{mp}+\lambda k_{x}v_{mp}+\sum_{n\neq m}\Lambda_{mn}v_{np} & = & E\beta_{mp}\\
+-\sum_{q}\Gamma_{pq}^{(2)}u_{mq}+\lambda k_{x}\beta_{mp}-\sum_{n\neq m}\Lambda_{mn}\beta_{np}-\left(k_{x}^{2}-\mu_{\infty}-h+(\frac{m\pi}{L})^{2}+\frac{2p\pi}{T}\right)v_{mp} & = & Ev_{mp}\end{eqnarray*}
+
+\end_inset
+
+where,
+\begin_inset Formula \begin{eqnarray}
+\Gamma_{pq}^{(1)} & = & \int_{0}^{T}\frac{dt}{T}|\Delta_{\infty}(t)|\exp\left(+i\frac{2\pi}{T}(q-p)t+i\phi(t)\right)\\
+\Gamma_{pq}^{(2)} & = & \int_{0}^{T}\frac{dt}{T}|\Delta_{\infty}(t)|\exp\left(-i\frac{2\pi}{T}(q-p)t-i\phi(t)\right)\\
+\Lambda_{mn} & = & \frac{2\lambda mn}{L}\frac{(1-(-1)^{m+n})}{(m^{2}-n^{2})}\end{eqnarray}
+
+\end_inset
+
+The self-adjoinct property of the matrix can be easily checked by noting
+ 
+\begin_inset Formula $\Lambda_{mn}=-\Lambda_{nm}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Gamma_{pq}^{(1)\ast}=\Gamma_{qp}^{(2)}$
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{pq}^{(2)}$
+\end_inset
+
+ is evaluated as 
+\begin_inset Formula $\int_{0}^{T}\frac{dt}{T}(R-iI)\exp(i\frac{2\pi}{T}(p-q)t)$
+\end_inset
+
+ in numerical routines and integration is performed by direct summation.
+ And the diagonalization for self-adjoint matrix only refers to lower left
+ part of the matrix.
+ 
+\end_layout
+
+\end_inset
+
+Instead of performing serials of exponential matrix multiplication, we construct
+ the matrix once and diagonalize it directly to examine Floquet spectrum
+ within the range of 
+\begin_inset Formula $[-\frac{\pi}{T},\frac{\pi}{T}]$
+\end_inset
+
+.
+ However, the price to pay is that the matrix size becomes very large, with
+ 
+\begin_inset Formula $S_{max}\times S_{max}$
+\end_inset
+
+ where 
+\begin_inset Formula $S_{max}=(2P_{max}+1)4N_{max}$
+\end_inset
+
+.
+ Of note is that the matrix is not only Hermitian but also sparse, and the
+ degree of denseness can be calculated by first calculating the number of
+ nonzero entries 
+\begin_inset Formula $(2P_{max}+1)(4N_{max}+4N_{max}+4(4N_{max}\times4N_{max}))+2P_{max}(2P_{max}+1)4N_{max}=8N_{max}(2P_{max}+1)(1+8N_{max}+P_{max})$
+\end_inset
+
+and the ratio of nonzero entries to the toal matrix elements is 
+\begin_inset Formula $\frac{8N_{max}+P_{max}+1}{2N_{max}(2P_{max}+1)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+To get a sense of the sparse matrix pattern, we write out symbolically the
+ matrix as (for 
+\begin_inset Formula $P_{max}=2$
+\end_inset
+
+ and 
+\begin_inset Formula $N_{max}=1$
+\end_inset
+
+ )
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{cccccccccccccccccccc}
+\xi & \Lambda &  & -\Gamma &  &  &  & -\Gamma &  &  &  & -\Gamma &  &  &  & -\Gamma &  &  &  & -\Gamma\\
+\Lambda^{\dagger} & \xi & \Gamma &  &  &  & \Gamma &  &  &  & \Gamma &  &  &  & \Gamma &  &  &  & \Gamma\\
+ & \Gamma^{\dagger} & -\xi & \Lambda^{\dagger} &  & \Gamma^{\dagger} &  &  &  & \Gamma^{\dagger} &  &  &  & \Gamma^{\dagger} &  &  &  & \Gamma^{\dagger}\\
+-\Gamma^{\dagger} &  & \Lambda & -\xi & -\Gamma^{\dagger} &  &  &  & -\Gamma^{\dagger} &  &  &  & -\Gamma^{\dagger} &  &  &  & -\Gamma^{\dagger}\\
+ &  &  & -\Gamma & \xi & \Lambda &  & -\Gamma &  &  &  & -\Gamma &  &  &  & -\Gamma &  &  &  & -\Gamma\\
+ &  & \Gamma &  & \Lambda^{\dagger} & \xi & \Gamma &  &  &  & \Gamma &  &  &  & \Gamma &  &  &  & \Gamma\\
+ & \Gamma^{\dagger} &  &  &  & \Gamma^{\dagger} & -\xi & \Lambda^{\dagger} &  & \Gamma^{\dagger} &  &  &  & \Gamma^{\dagger} &  &  &  & \Gamma^{\dagger}\\
+-\Gamma^{\dagger} &  &  &  & -\Gamma^{\dagger} &  & \Lambda & -\xi & -\Gamma^{\dagger} &  &  &  & -\Gamma^{\dagger} &  &  &  & -\Gamma^{\dagger}\\
+ &  &  & -\Gamma &  &  &  & -\Gamma & \xi & \Lambda &  & -\Gamma &  &  &  & -\Gamma &  &  &  & -\Gamma\\
+ &  & \Gamma &  &  &  & \Gamma &  & \Lambda^{\dagger} & \xi & \Gamma &  &  &  & \Gamma &  &  &  & \Gamma\\
+ & \Gamma^{\dagger} &  &  &  & \Gamma^{\dagger} &  &  &  & \Gamma^{\dagger} & -\xi & \Lambda^{\dagger} &  & \Gamma^{\dagger} &  &  &  & \Gamma^{\dagger}\\
+-\Gamma^{\dagger} &  &  &  & -\Gamma^{\dagger} &  &  &  & -\Gamma^{\dagger} &  & \Lambda & -\xi & -\Gamma^{\dagger} &  &  &  & -\Gamma^{\dagger}\\
+ &  &  & -\Gamma &  &  &  & -\Gamma &  &  &  &  & \xi & \Lambda &  & -\Gamma &  &  &  & -\Gamma\\
+ &  & \Gamma &  &  &  & \Gamma &  &  &  &  &  & \Lambda^{\dagger} & \xi & \Gamma &  &  &  & \Gamma\\
+ & \Gamma^{\dagger} &  &  &  & \Gamma^{\dagger} &  &  &  &  &  &  &  & \Gamma^{\dagger} & -\xi & \Lambda^{\dagger} &  & \Gamma^{\dagger}\\
+-\Gamma^{\dagger} &  &  &  & -\Gamma^{\dagger} &  &  &  &  &  &  &  & -\Gamma^{\dagger} &  & \Lambda & -\xi & -\Gamma^{\dagger}\\
+ &  &  & -\Gamma &  &  &  & -\Gamma &  &  &  & -\Gamma &  &  &  & -\Gamma & \xi & \Lambda &  & -\Gamma\\
+ &  & \Gamma &  &  &  & \Gamma &  &  &  & \Gamma &  &  &  & \Gamma &  & \Lambda^{\dagger} & \xi & \Gamma\\
+ & \Gamma^{\dagger} &  &  &  & \Gamma^{\dagger} &  &  &  & \Gamma^{\dagger} &  &  &  & \Gamma^{\dagger} &  &  &  & \Gamma^{\dagger} & -\xi & \Lambda^{\dagger}\\
+-\Gamma^{\dagger} &  &  &  & -\Gamma^{\dagger} &  &  &  & -\Gamma^{\dagger} &  &  &  & -\Gamma^{\dagger} &  &  &  & -\Gamma^{\dagger} &  & \Lambda & \xi\end{array}\right)\end{equation}
+
+\end_inset
+
+using the 'spy' function in MATLAB, we could visualize the patterns of the
+ matrix sparsity, defined as 
+\begin_inset Formula $1-\frac{8N_{max}+P_{max}+1}{2N_{max}(2P_{max}+1)}$
+\end_inset
+
+.
+ In MATLAB, there is a library function named eigs where I can specify the
+ number of eigenvalues closest the one I want to calculate.
+ One of course need to store the matrix as the sparse form, and MATLAB has
+ provided a convenience function for the conversion, sparse().
+ However, explicitly constructing the matrix as one type of compression
+ is useful for efficiency.
+ I will work on this later with the choice of row compression, which essentially
+ involves number decomposition by calling floor() and mod() functions in
+ MATLAB.
+ This alone is one interesting and slightly challenging numerical exercise.
+ Eigen has an unsupported module for float and double type of matrix, but
+ without support to complex data type.
+ The module is a wrapper to ARPACK, which was the initial effort at Rice
+ CAAM department.
+ However, the legacy code is gaining its age and can only run on 32-bit
+ systems according to many experienced users.
+ This is the deal breaker for most of the folks in the computational community
+ nowadays.
+ However, for extreme scale computations, slepc/petsc has the libray function
+ support to the sparse matrix diagonalization with shift and invert method.
+ I will test it out in the future once the physics involved here is figured
+ out.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename spyBdGH_P2N1.eps
+	scale 50
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename spyBdGH_P3N20.eps
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/donglin/Documents/Research/Topological_FF/spyBdGH_P1N80.eps
+	scale 50
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename spyBdGH_P10N50.eps
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/donglin/Documents/Research/Topological_FF/sparsitySURF.eps
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+And also for 
+\begin_inset Formula $P_{max}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $N_{max}=2$
+\end_inset
+
+ (NEED landscape mode for display)
+\begin_inset Formula \[
+\left(\begin{array}{cccccccccccccccccccccccc}
+\xi &  & \Lambda & \Lambda &  &  & -\Gamma &  &  &  &  &  &  &  & -\Gamma &  &  &  &  &  &  &  & -\Gamma\\
+ & \xi & \Lambda & \Lambda &  &  &  & -\Gamma &  &  &  &  &  &  &  & -\Gamma &  &  &  &  &  &  &  & -\Gamma\\
+\Lambda^{\dagger} & \Lambda^{\dagger} & \xi &  & \Gamma &  &  &  &  &  &  &  & \Gamma &  &  &  &  &  &  &  & \Gamma\\
+\Lambda^{\dagger} & \Lambda^{\dagger} &  & \xi &  & \Gamma &  &  &  &  &  &  &  & \Gamma &  &  &  &  &  &  &  & \Gamma\\
+ &  & \Gamma^{\dagger} &  & -\xi &  & \Lambda^{\dagger} & \Lambda^{\dagger} &  &  & \Gamma^{\dagger} &  &  &  &  &  &  &  & \Gamma^{\dagger}\\
+ &  &  & \Gamma^{\dagger} &  & -\xi & \Lambda^{\dagger} & \Lambda^{\dagger} &  &  &  & \Gamma^{\dagger} &  &  &  &  &  &  &  & \Gamma^{\dagger}\\
+-\Gamma^{\dagger} &  &  &  & \Lambda & \Lambda & -\xi &  & -\Gamma^{\dagger} &  &  &  &  &  &  &  & -\Gamma^{\dagger}\\
+ & -\Gamma^{\dagger} &  &  & \Lambda & \Lambda &  & -\xi &  & -\Gamma^{\dagger} &  &  &  &  &  &  &  & -\Gamma^{\dagger}\\
+ &  &  &  &  &  & -\Gamma &  & \xi &  & \Lambda & \Lambda &  &  & -\Gamma &  &  &  &  &  &  &  & -\Gamma\\
+ &  &  &  &  &  &  & -\Gamma &  & \xi & \Lambda & \Lambda &  &  &  & -\Gamma &  &  &  &  &  &  &  & -\Gamma\\
+ &  &  &  & \Gamma &  &  &  & \Lambda^{\dagger} & \Lambda^{\dagger} & \xi &  & \Gamma &  &  &  &  &  &  &  & \Gamma\\
+ &  &  &  &  & \Gamma &  &  & \Lambda^{\dagger} & \Lambda^{\dagger} &  & \xi &  & \Gamma &  &  &  &  &  &  &  & \Gamma\\
+ &  & \Gamma^{\dagger} &  &  &  &  &  &  &  & \Gamma^{\dagger} &  & -\xi &  & \Lambda^{\dagger} & \Lambda^{\dagger} &  &  & \Gamma^{\dagger}\\
+ &  &  & \Gamma^{\dagger} &  &  &  &  &  &  &  & \Gamma^{\dagger} &  & -\xi & \Lambda^{\dagger} & \Lambda^{\dagger} &  &  &  & \Gamma^{\dagger}\\
+-\Gamma^{\dagger} &  &  &  &  &  &  &  & -\Gamma^{\dagger} &  &  &  & \Lambda & \Lambda & -\xi &  & -\Gamma^{\dagger}\\
+ & -\Gamma^{\dagger} &  &  &  &  &  &  &  & -\Gamma^{\dagger} &  &  & \Lambda & \Lambda &  & -\xi &  & -\Gamma^{\dagger}\\
+ &  &  &  &  &  & -\Gamma &  &  &  &  &  &  &  & -\Gamma &  & \xi &  & \Lambda & \Lambda &  &  & -\Gamma\\
+ &  &  &  &  &  &  & -\Gamma &  &  &  &  &  &  &  & -\Gamma &  & \xi & \Lambda & \Lambda &  &  &  & -\Gamma\\
+ &  &  &  & \Gamma &  &  &  &  &  &  &  & \Gamma &  &  &  & \Lambda^{\dagger} & \Lambda^{\dagger} & \xi &  & \Gamma\\
+ &  &  &  &  & \Gamma &  &  &  &  &  &  &  & \Gamma &  &  & \Lambda^{\dagger} & \Lambda^{\dagger} &  & \xi &  & \Gamma\\
+ &  & \Gamma^{\dagger} &  &  &  &  &  &  &  & \Gamma^{\dagger} &  &  &  &  &  &  &  & \Gamma^{\dagger} &  & -\xi &  & \Lambda^{\dagger} & \Lambda^{\dagger}\\
+ &  &  & \Gamma^{\dagger} &  &  &  &  &  &  &  & \Gamma^{\dagger} &  &  &  &  &  &  &  & \Gamma^{\dagger} &  & -\xi & \Lambda^{\dagger} & \Lambda^{\dagger}\\
+-\Gamma^{\dagger} &  &  &  &  &  &  &  & -\Gamma^{\dagger} &  &  &  &  &  &  &  & -\Gamma^{\dagger} &  &  &  & \Lambda & \Lambda & -\xi\\
+ & -\Gamma^{\dagger} &  &  &  &  &  &  &  & -\Gamma^{\dagger} &  &  &  &  &  &  &  & -\Gamma^{\dagger} &  &  & \Lambda & \Lambda &  & -\xi\end{array}\right)\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename spyBdGH_P1N2.eps
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Edge state
+\end_layout
+
+\begin_layout Standard
+After obtaining steady state, we take final value of 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+order parameter 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+as 
+\begin_inset Formula $\Delta(t)=\Delta_{\infty}e^{-2i\mu_{\infty}t}$
+\end_inset
+
+ and make a gauge transformation
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{c}
+u_{{\bf k}}^{\eta}\\
+\alpha_{{\bf k}}^{\eta}\\
+\beta_{{\bf k}}^{\eta}\\
+v_{{\bf k}}^{\eta}\end{array}\right)\rightarrow\left(\begin{array}{c}
+u_{{\bf k}}^{\eta}e^{-i\mu_{\infty}t}\\
+\alpha_{{\bf k}}^{\eta}e^{-i\mu_{\infty}t}\\
+\beta_{{\bf k}}^{\eta}e^{+i\mu_{\infty}t}\\
+v_{{\bf k}}^{\eta}e^{+i\mu_{\infty}t}\end{array}\right)\end{equation}
+
+\end_inset
+
+then BdG equation (setting 
+\begin_inset Formula $\mu=0$
+\end_inset
+
+ in the origional equation) can be mapped to 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{cccc}
+\epsilon_{{\bf k}}-\mu_{\infty}+h & \lambda(k_{x}-ik_{y}) & 0 & -\Delta_{\infty}\\
+\lambda(k_{x}+ik_{y}) & \epsilon_{{\bf k}}-\mu_{\infty}-h & \Delta_{\infty} & 0\\
+0 & \Delta_{\infty} & -(\epsilon_{{\bf k}}-\mu_{\infty}+h) & \lambda(k_{x}+ik_{y})\\
+-\Delta_{\infty} & 0 & \lambda(k_{x}-ik_{y}) & -(\epsilon_{{\bf k}}-\mu_{\infty}-h)\end{array}\right)\left(\begin{array}{c}
+u_{{\bf k}}^{\eta}\\
+\alpha_{{\bf k}}^{\eta}\\
+\beta_{{\bf k}}^{\eta}\\
+v_{{\bf k}}^{\eta}\end{array}\right)=E_{{\bf k}}^{\eta}\left(\begin{array}{c}
+u_{{\bf k}}^{\eta}\\
+\alpha_{{\bf k}}^{\eta}\\
+\beta_{{\bf k}}^{\eta}\\
+v_{{\bf k}}^{\eta}\end{array}\right)\end{equation}
+
+\end_inset
+
+Then, we impose hard-wall boundary condition upon y-direction and treat
+ 
+\begin_inset Formula $k_{x}$
+\end_inset
+
+ as good quantum number.
+ Along y-direction, we perform basis expansion 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{c}
+u(y)\\
+\alpha(y)\\
+\beta(y)\\
+v(y)\end{array}\right)=\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\left(\begin{array}{c}
+u_{n}\\
+\alpha_{n}\\
+\beta_{n}\\
+v_{n}\end{array}\right)\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $N_{max}=200$
+\end_inset
+
+ is a good cutoff.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename hihf0015_tBdG_before_phase_fixing.eps
+	scale 50
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename hihf0015_tBdG_before_phase_fixing_N0_N1.eps
+	scale 50
+
+\end_inset
+
+.
+ Look at the real and imaginary part of the solution, 
+\begin_inset Formula $Re=|\Delta|\cos2\mu_{\infty}t,Im=-|\Delta|\sin2\mu_{\infty}t$
+\end_inset
+
+, they differ by a 
+\begin_inset Formula $\pi/2$
+\end_inset
+
+ difference.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename hi00hf15.eps
+	scale 40
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename grst_EK.eps
+	scale 40
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename tbdg_Ek.eps
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+The center plot is for ground state parameters while the right panel is
+ steady state after quench.
+ Parameters are the following:
+\end_layout
+
+\begin_layout Plain Layout
+ground state @ 
+\begin_inset Formula $h=1.5E_{F}$
+\end_inset
+
+: 
+\begin_inset Formula $\Delta=0.09324E_{F}$
+\end_inset
+
+, 
+\begin_inset Formula $\mu=-0.2675E_{F}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+quenched steady state@ 
+\begin_inset Formula $h=1.5E_{F}$
+\end_inset
+
+: 
+\begin_inset Formula $\Delta=0.1356E_{F}$
+\end_inset
+
+, 
+\begin_inset Formula $\mu=\frac{\pi}{39.3}E_{F}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here, we consider the synthetic model proposed by Ming Gong: we consider
+ a periodic Hamiltonian 
+\begin_inset Formula \begin{equation}
+H(t)=\left(\begin{array}{cccc}
+\xi_{k}+h & \lambda(k_{x}-ik_{y}) & 0 & -\Delta(t)\\
+\lambda(k_{x}+ik_{y}) & \xi_{k}-h & \Delta(t) & 0\\
+0 & \Delta(t) & -(\xi_{k}+h) & \lambda(k_{x}+ik_{y})\\
+-\Delta(t) & 0 & \lambda(k_{x}-ik_{y}) & -(\xi_{k}-h)\end{array}\right)\end{equation}
+
+\end_inset
+
+with order parameter 
+\begin_inset Formula $\Delta(t)=\Delta_{1}+\Delta_{2}\cos(\omega t)$
+\end_inset
+
+ .
+ According to the Floquet theorem, we have 
+\begin_inset Formula $\left(\begin{array}{c}
+U(y,t)\\
+A(y,t)\\
+B(y,t)\\
+V(y,t)\end{array}\right)=\left(\begin{array}{c}
+u(y,t)e^{-i\varepsilon t}\\
+\alpha(y,t)e^{-i\varepsilon t}\\
+\beta(y,t)e^{-i\varepsilon t}\\
+v(y,t)e^{-i\varepsilon t}\end{array}\right)$
+\end_inset
+
+ where 
+\begin_inset Formula $|\Phi(t)\rangle\equiv\left(\begin{array}{c}
+u(y,t)\\
+\alpha(y,t)\\
+\beta(y,t)\\
+v(y,t)\end{array}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $|\Phi(t+T)\rangle=|\Phi(t)\rangle$
+\end_inset
+
+.
+ This is because we need to respect the particle-hole symmetry.
+ Then we write 
+\begin_inset Formula $H(t)|\psi(t)\rangle=i\partial_{t}|\psi(t)\rangle$
+\end_inset
+
+ as 
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{cccc}
+H-i\partial_{t} & \Lambda &  & -\Delta(t)\\
+\Lambda^{\dagger} & H-i\partial_{t} & \Delta(t)\\
+ & \Delta(t) & H-i\partial_{t} & \Lambda^{\dagger}\\
+-\Delta(t) &  & \Lambda & H-i\partial_{t}\end{array}\right)\left(\begin{array}{c}
+u(y,t)\\
+\alpha(y,t)\\
+\beta(y,t)\\
+v(y,t)\end{array}\right)=i\hbar\frac{\partial}{\partial t}\left(\begin{array}{c}
+u(y,t)\\
+\alpha(y,t)\\
+\beta(y,t)\\
+v(y,t)\end{array}\right)\end{equation}
+
+\end_inset
+
+ Following the paper 
+\begin_inset CommandInset href
+LatexCommand href
+name "arXiv:1404.4934v1"
+target "http://arxiv.org/pdf/1404.4934v1.pdf"
+
+\end_inset
+
+, we expand the wavefunction in both position and time as (assuming hard
+ wall boundary condition along y direction)
+\begin_inset Formula \begin{equation}
+|\Phi(t)\rangle\equiv\left(\begin{array}{c}
+u(y,t)\\
+\alpha(y,t)\\
+\beta(y,t)\\
+v(y,t)\end{array}\right)=\sum_{p=-P_{max}}^{P_{max}}\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\frac{1}{\sqrt{T}}\exp(+ip\omega t)\left(\begin{array}{c}
+u_{np}\\
+\alpha_{np}\\
+\beta_{np}\\
+v_{np}\end{array}\right)\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $N_{max}=200$
+\end_inset
+
+ and 
+\begin_inset Formula $P_{max}=10$
+\end_inset
+
+ (?) are good cutoffs.
+ The Hamiltonian can be recast into a self-adjoint matrix form of size 
+\begin_inset Formula $(N_{max}\times(2P_{max}+1))\times(N_{max}\times(2P_{max}+1))$
+\end_inset
+
+.
+ We have
+\begin_inset Formula \begin{eqnarray*}
+\left(k_{x}^{2}-\mu+h+(\frac{m\pi}{L})^{2}+p\omega\right)u_{mp}+\lambda k_{x}\alpha_{mp}-\sum_{n\neq m}\Lambda_{mn}\alpha_{np}-\sum_{q}\Gamma_{pq}^{(1)}v_{mq} & = & Eu_{mp}\\
+\lambda k_{x}u_{mp}+\sum_{n\neq m}\Lambda_{mn}u_{np}+\left(k_{x}^{2}-\mu-h+(\frac{m\pi}{L})^{2}+p\omega\right)\alpha_{mp}+\sum_{q}\Gamma_{pq}^{(1)}\beta_{mq} & = & E\alpha_{mp}\\
+\sum_{q}\Gamma_{pq}^{(2)}\alpha_{mq}-\left(k_{x}^{2}-\mu+h+(\frac{m\pi}{L})^{2}+p\omega\right)\beta_{mp}+\lambda k_{x}v_{mp}+\sum_{n\neq m}\Lambda_{mn}v_{np} & = & E\beta_{mp}\\
+-\sum_{q}\Gamma_{pq}^{(2)}u_{mq}+\lambda k_{x}\beta_{mp}-\sum_{n\neq m}\Lambda_{mn}\beta_{np}-\left(k_{x}^{2}-\mu-h+(\frac{m\pi}{L})^{2}+p\omega\right)v_{mp} & = & Ev_{mp}\end{eqnarray*}
+
+\end_inset
+
+where,
+\begin_inset Formula \begin{eqnarray}
+\Gamma_{pq}^{(1)} & = & \int_{0}^{T}\frac{dt}{T}\Delta(t)\exp\left(+i\omega(q-p)t\right)\\
+ & = & \Delta_{1}\delta_{q,p}+\frac{\omega\Delta_{2}}{4\pi}(\delta_{q,p-1}+\delta_{q,p+1})\\
+\Gamma_{pq}^{(2)} & = & \int_{0}^{T}\frac{dt}{T}\Delta(t)\exp\left(-i\omega(q-p)t\right)\\
+ & = & \Delta_{1}\delta_{q,p}+\frac{\omega\Delta_{2}}{4\pi}(\delta_{q,p-1}+\delta_{q,p+1})\equiv\Gamma_{pq}^{(1)}\\
+\Lambda_{mn} & = & \frac{2\lambda mn}{L}\frac{(1-(-1)^{m+n})}{(m^{2}-n^{2})}\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+3D systems.
+\end_layout
+
+\begin_layout Standard
+In this section, we consider 3D systems with 3DSOC and 
+\begin_inset Formula $h\sigma_{x}$
+\end_inset
+
+ where BdG Hamiltonian is given by (
+\begin_inset Formula $\hbar=2m=1$
+\end_inset
+
+) (according to Hui Hu's paper) 
+\begin_inset Formula \begin{equation}
+H_{BdG}=\left(\begin{array}{cccc}
+({\bf k}+\frac{q}{2}{\bf e}_{x})^{2}-\mu+\lambda k_{z} & \lambda(k_{x}+\frac{q}{2}-ik_{y})+h & 0 & -\Delta\\
+\lambda(k_{x}+\frac{q}{2}+ik_{y})+h & ({\bf k}+\frac{q}{2}{\bf e}_{x})^{2}-\mu-\lambda k_{z} & \Delta & 0\\
+0 & \Delta & -({\bf k}-\frac{q}{2}{\bf e}_{x})^{2}+\mu+\lambda k_{z} & \lambda(k_{x}-\frac{q}{2}+ik_{y})-h\\
+-\Delta & 0 & \lambda(k_{x}-\frac{q}{2}-ik_{y})-h & -({\bf k}-\frac{q}{2}{\bf e}_{x})^{2}+\mu-\lambda k_{z}\end{array}\right)\end{equation}
+
+\end_inset
+
+ where 
+\begin_inset Formula $\Delta$
+\end_inset
+
+, 
+\begin_inset Formula $q$
+\end_inset
+
+, 
+\begin_inset Formula $\mu$
+\end_inset
+
+ are determined from minimizing thermodynamic potential 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ under requirement of number conservation, 
+\begin_inset Formula \begin{equation}
+\frac{\partial\Omega}{\partial\Delta}=0,\quad\frac{\partial\Omega}{\partial q}=0,\quad-\frac{\partial\Omega}{\partial\mu}=n=\frac{1}{3\pi^{2}}\quad\text{(for 3D gas)}\label{eq:saddlepointsolution-1}\end{equation}
+
+\end_inset
+
+where expression of 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is found as
+\begin_inset Formula \begin{eqnarray}
+\frac{\Omega}{V} & = & -\frac{|\Delta|^{2}}{8\pi a_{s}}+\frac{1}{V}\sum_{{\bf k}}\left[\frac{\xi_{{\bf k}+q{\bf e}_{x}/2}+\xi_{-{\bf k}+q{\bf e}_{x}/2}}{2}-\frac{1}{4}\sum_{\eta=1}^{4}|E_{{\bf k}}^{\eta}|+\frac{|\Delta|^{2}}{2\epsilon_{{\bf k}}}-\frac{1}{2\beta}\sum_{\eta=1}^{4}\ln\left(1+\exp(-\beta|E_{{\bf k}}^{\eta}|)\right)\right]\\
+ & = & -\frac{|\Delta|^{2}}{8\pi a_{s}}+\frac{1}{(2\pi)^{3}}\int d^{3}k\left[k^{2}+\frac{q^{2}}{4}-\mu-\frac{1}{4}\sum_{\eta=1}^{4}|E_{{\bf k}}^{\eta}|+\frac{|\Delta|^{2}}{2\epsilon_{{\bf k}}}-\frac{1}{2\beta}\sum_{\eta=1}^{4}\ln\left(1+\exp(-\beta|E_{{\bf k}}^{\eta}|)\right)\right]\end{eqnarray}
+
+\end_inset
+
+and 
+\begin_inset Formula $E_{{\bf k}}^{\eta}$
+\end_inset
+
+ are diagonalized for given 
+\begin_inset Formula $\Delta$
+\end_inset
+
+, 
+\begin_inset Formula $q$
+\end_inset
+
+, 
+\begin_inset Formula $\mu$
+\end_inset
+
+ as variational parameters.
+ 
+\end_layout
+
+\begin_layout Standard
+For the sake of simplicity in coding, I choose 
+\begin_inset Formula $h\sigma_{z}$
+\end_inset
+
+ as the Zeeman field and BdG Hamiltonian is given by 
+\begin_inset Formula \begin{equation}
+H_{BdG}=\left(\begin{array}{cccc}
+\xi_{{\bf k}+\frac{q}{2}{\bf e}_{z}}+v_{3}(k_{z}+\frac{q}{2})+h & v_{1}k_{x}-iv_{2}k_{y} & 0 & -\Delta\\
+v_{1}k_{x}+iv_{2}k_{y} & \xi_{{\bf k}+\frac{q}{2}{\bf e}_{z}}-v_{3}(k_{z}+\frac{q}{2})-h & \Delta & 0\\
+0 & \Delta & -(\xi_{{\bf k}-\frac{q}{2}{\bf e}_{z}}-v_{3}(k_{z}-\frac{q}{2})+h) & v_{1}k_{x}+iv_{2}k_{y}\\
+-\Delta & 0 & v_{1}k_{x}-iv_{2}k_{y} & -(\xi_{{\bf k}-\frac{q}{2}{\bf e}_{z}}+v_{3}(k_{z}-\frac{q}{2})-h)\end{array}\right)\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $v_{1}=v_{2}=v_{3}=v$
+\end_inset
+
+.
+ I put hard wall boundaris along y direction and at 
+\begin_inset Formula $y=0$
+\end_inset
+
+ and 
+\begin_inset Formula $y=L$
+\end_inset
+
+ the wavefunction vanishes.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+In this case, 
+\begin_inset Formula $k_{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $k_{z}$
+\end_inset
+
+ are still good quantum numbers, and we replace 
+\begin_inset Formula $k_{y}$
+\end_inset
+
+ by 
+\begin_inset Formula $-i\partial_{y}\approx-i\frac{\delta_{i+1,i}-\delta_{i-1,i}}{2dy}$
+\end_inset
+
+.
+ In terms of matrix language, 
+\begin_inset Formula \begin{eqnarray}
+ivk_{y} & \approx & \frac{v}{2dy}\left(\begin{array}{ccccc}
+0 & 1\\
+-1 & 0 & 1\\
+ & -1 &  & 1\\
+ &  &  & ... & 1\\
+ &  &  & -1 & 0\end{array}\right)\\
+k_{y}^{2} & \approx & -\frac{1}{dy^{2}}\left(\begin{array}{ccccc}
+-2 & 1\\
+1 & -2 & 1\\
+ & 1 & -2 & 1\\
+ &  &  & ... & 1\\
+ &  &  & 1 & -2\end{array}\right)\end{eqnarray}
+
+\end_inset
+
+Denote 
+\begin_inset Formula $s_{2}=\frac{v}{2dy}$
+\end_inset
+
+ and 
+\begin_inset Formula $s_{1}=-\frac{1}{dy^{2}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Basis expansion method: (before using basis expansion method, I tried one
+ whole week of finite different method, it turns out the FD does not have
+ good convergence rate for this long line of system, where L is ideally
+ set to infinity, otherwise the finite size effect will kick in.
+ gapless will become gapped.
+ More discussions can be checked from the email with Hui on 03/26/14.
+ Basis expansion method is a method with global function that automatically
+ satisfies boundary condition.
+ Finite difference method gives a local update and builds up a sparse matrix,
+ though hermitian.
+ Former one has exponential convergence rate, whearas latter one gives quadratic
+ convergence-- according to the book 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "large scale eigenvalue problem"
+target "http://people.inf.ethz.ch/arbenz/ewp/Lnotes/lsevp2010.pdf"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{c}
+u(y)\\
+\alpha(y)\\
+\beta(y)\\
+v(y)\end{array}\right)=\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\left(\begin{array}{c}
+u_{n}\\
+\alpha_{n}\\
+\beta_{n}\\
+v_{n}\end{array}\right)\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula $N_{max}=200$
+\end_inset
+
+ is a good cutoff.
+ To convert the coupled differential equations into matrix equation, we
+ replace 
+\begin_inset Formula $ivk_{y}$
+\end_inset
+
+ by 
+\begin_inset Formula $v\partial_{y}$
+\end_inset
+
+, 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula \begin{eqnarray*}
+\left(k_{x}^{2}+k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q+v_{3}(k_{z}+\frac{q}{2})+h-\partial_{yy}\right)u(y)+(vk_{x}-v\partial_{y})\alpha(y)-\Delta v(y) & = & Eu(y)\\
+(vk_{x}+v\partial_{y})u(y)+\left(k_{x}^{2}+k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q-v_{3}(k_{z}+\frac{q}{2})-h-\partial_{yy}\right)\alpha(y)+\Delta\beta(y) & = & E\alpha(y)\\
+\Delta\alpha(y)-\left(k_{x}^{2}+k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q-v_{3}(k_{z}-\frac{q}{2})+h-\partial_{yy}\right)\beta(y)+(vk_{x}+v\partial_{y})v(y) & = & E\beta(y)\\
+-\Delta u(y)+(vk_{x}-v\partial_{y})\beta(y)-\left(k_{x}^{2}+k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q+v_{3}(k_{z}-\frac{q}{2})-h-\partial_{yy}\right)v(y) & = & Ev(y)\end{eqnarray*}
+
+\end_inset
+
+Then we plug in expression of the quasiparticle wavefunctions to arrive
+ at, 
+\begin_inset Formula \begin{eqnarray*}
+\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\left(k_{x}^{2}+k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q+v_{3}(k_{z}+\frac{q}{2})+h+(\frac{n\pi}{L})^{2}\right)u_{n}+\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\left(vk_{x}\sin(\frac{n\pi y}{L})-v\frac{n\pi}{L}\cos(\frac{n\pi y}{L})\right)\alpha_{n}-\Delta\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})v_{n} & = & E\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})u_{n}\\
+\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\left(vk_{x}\sin(\frac{n\pi y}{L})+v\frac{n\pi}{L}\cos(\frac{n\pi y}{L})\right)u_{n}+\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\left(k_{x}^{2}+k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q-v_{3}(k_{z}+\frac{q}{2})-h+(\frac{n\pi}{L})^{2}\right)\alpha_{n}+\Delta\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\beta_{n} & = & E\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\alpha_{n}\\
+\Delta\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\alpha_{n}-\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\left(k_{x}^{2}+k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q-v_{3}(k_{z}-\frac{q}{2})+h+(\frac{n\pi}{L})^{2}\right)\beta_{n}+\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\left(vk_{x}\sin(\frac{n\pi y}{L})+v\frac{n\pi}{L}\cos(\frac{n\pi y}{L})\right)v_{n} & = & E\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\beta_{n}\\
+-\Delta\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})u_{n}+\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\left(vk_{x}\sin(\frac{n\pi y}{L})-v\frac{n\pi}{L}\cos(\frac{n\pi y}{L})\right)\beta_{n}-\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\left(k_{x}^{2}+k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q+v_{3}(k_{z}-\frac{q}{2})-h+(\frac{n\pi}{L})^{2}\right)v_{n} & = & E\sum_{n=1}^{N_{max}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})v_{n}\end{eqnarray*}
+
+\end_inset
+
+Using integral relations
+\begin_inset Formula \begin{eqnarray}
+\frac{2}{L}\int_{0}^{L}\sin(\frac{m\pi}{L}y)\sin(\frac{n\pi}{L}y)dy & = & \delta_{mn}\\
+\frac{2}{L}\int_{0}^{L}\sin(\frac{m\pi}{L}y)\cos(\frac{n\pi}{L}y)dy & = & 0,\quad\text{for }m=n\\
+ & = & \frac{2m(1-(-1)^{m+n})}{(m^{2}-n^{2})\pi},\quad\text{for }m\neq n\end{eqnarray}
+
+\end_inset
+
+we have
+\begin_inset Formula \begin{eqnarray*}
+\left(k_{x}^{2}+k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q+v_{3}(k_{z}+\frac{q}{2})+h+(\frac{m\pi}{L})^{2}\right)u_{m}+vk_{x}\alpha_{m}-\sum_{n\neq m}\frac{2vmn}{L}\frac{(1-(-1)^{m+n})}{(m^{2}-n^{2})}\alpha_{n}-\Delta v_{m} & = & Eu_{m}\\
+vk_{x}u_{m}+\sum_{n\neq m}\frac{2vmn}{L}\frac{(1-(-1)^{m+n})}{(m^{2}-n^{2})}u_{n}+\left(k_{x}^{2}+k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q-v_{3}(k_{z}+\frac{q}{2})-h+(\frac{m\pi}{L})^{2}\right)\alpha_{m}+\Delta\beta_{m} & = & E\alpha_{m}\\
+\Delta\alpha_{m}-\left(k_{x}^{2}+k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q-v_{3}(k_{z}-\frac{q}{2})+h+(\frac{m\pi}{L})^{2}\right)\beta_{m}+vk_{x}v_{m}+\sum_{n\neq m}\frac{2vmn}{L}\frac{(1-(-1)^{m+n})}{(m^{2}-n^{2})}v_{n} & = & E\beta_{m}\\
+-\Delta u_{m}+vk_{x}\beta_{m}-\sum_{n\neq m}\frac{2vmn}{L}\frac{(1-(-1)^{m+n})}{(m^{2}-n^{2})}\beta_{n}-\left(k_{x}^{2}+k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q+v_{3}(k_{z}-\frac{q}{2})-h+(\frac{m\pi}{L})^{2}\right)v_{m} & = & Ev_{m}\end{eqnarray*}
+
+\end_inset
+
+The matrix for coefficients are real and symmetric, and in the diagonalization
+ routine, only lower left part is referenced.
+ However, the subblock within the SOC term is antisymmetric, or skew symmetric:
+ 
+\begin_inset Formula $A=-A^{T}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+For the Hamiltonian in PRA85, 021603(R) by Hui Hu et al, with 
+\begin_inset Formula $\Delta=\Delta e^{-i\theta}$
+\end_inset
+
+, the reason for relative phase between wavefunctions is the following:
+\begin_inset Formula \begin{eqnarray}
+x & = & r\cos\theta\\
+y & = & r\sin\theta\\
+\partial_{x} & = & \cos\theta\partial_{r}-\frac{\sin\theta}{r}\partial_{\theta}\\
+\partial_{y} & = & \sin\theta\partial_{r}+\frac{\cos\theta}{r}\partial_{\theta}\\
+\nabla^{2} & = & \frac{1}{r}\frac{\partial}{\partial r}(r\frac{\partial}{\partial r})+\frac{1}{r^{2}}\frac{\partial^{2}}{\partial\theta^{2}}\equiv D_{r}+\frac{1}{r^{2}}\frac{\partial^{2}}{\partial\theta^{2}}\end{eqnarray}
+
+\end_inset
+
+Then, 
+\begin_inset Formula \begin{eqnarray}
+V_{SO} & = & \lambda(k_{y}+ik_{x})=-i\lambda(\partial_{y}+i\partial_{x})=e^{-i\theta}\lambda(\partial_{r}-\frac{i}{r}\partial_{\theta})\\
+V_{SO}^{\dagger} & = & \lambda(k_{y}-ik_{x})=-i\lambda(\partial_{y}-i\partial_{x})=-e^{i\theta}\lambda(\partial_{r}+\frac{i}{r}\partial_{\theta})\end{eqnarray}
+
+\end_inset
+
+ From
+\begin_inset Formula \begin{equation}
+H_{BdG}=\left[\begin{array}{cccc}
+H_{\uparrow} & V_{so} & 0 & -\Delta\\
+V_{so}^{\dagger} & H_{\downarrow} & \Delta & 0\\
+0 & \Delta^{\ast} & -H_{\uparrow} & V^{\dagger}\\
+-\Delta^{\ast} & 0 & V_{so} & -H_{\downarrow}\end{array}\right]\end{equation}
+
+\end_inset
+
+we have
+\begin_inset Formula \begin{eqnarray}
+(H_{\uparrow}+D_{r}+\frac{1}{r^{2}}\frac{\partial^{2}}{\partial\theta^{2}})u({\bf r})+e^{-i\theta}(\partial_{r}-\frac{i}{r}\partial_{\theta})\alpha({\bf r})-\Delta e^{-i\theta}v({\bf r}) & = & Eu({\bf r})\\
+-e^{i\theta}\lambda(\partial_{r}+\frac{i}{r}\partial_{\theta})u({\bf r})+(H_{\downarrow}+D_{r}+\frac{1}{r^{2}}\frac{\partial^{2}}{\partial\theta^{2}})\alpha({\bf r})+\Delta e^{-i\theta}\beta({\bf r}) & = & E\alpha({\bf r})\\
+\Delta e^{i\theta}\alpha({\bf r})+(-H_{\uparrow}D_{r}+\frac{1}{r^{2}}\frac{\partial^{2}}{\partial\theta^{2}})\beta({\bf r})-e^{i\theta}\lambda(\partial_{r}+\frac{i}{r}\partial_{\theta})v({\bf r}) & = & E\beta({\bf r})\\
+-\Delta e^{i\theta}u({\bf r})+e^{-i\theta}(\partial_{r}-\frac{i}{r}\partial_{\theta})\beta({\bf r})+(-H_{\downarrow}+D_{r}+\frac{1}{r^{2}}\frac{\partial^{2}}{\partial\theta^{2}})v({\bf r}) & = & Ev({\bf r})\end{eqnarray}
+
+\end_inset
+
+The construction of wavefunctions can be decomposed into different angular
+ momentum 
+\begin_inset Formula $m$
+\end_inset
+
+, but we need to pay attention to the relative phase, in order to have an
+ eigenvalue matrix equation:
+\begin_inset Formula \begin{eqnarray}
+u({\bf r}) & = & \frac{e^{im\theta}}{\sqrt{2\pi}}u(r)e^{-i\theta}\\
+\alpha({\bf r}) & = & \frac{e^{im\theta}}{\sqrt{2\pi}}\alpha(r)\\
+\beta({\bf r}) & = & \frac{e^{im\theta}}{\sqrt{2\pi}}\beta(r)e^{+i\theta}\\
+v({\bf r}) & = & \frac{e^{im\theta}}{\sqrt{2\pi}}v(r)\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For cylindrical boundary condition in the plane of x-y with radius 
+\begin_inset Formula $r=L$
+\end_inset
+
+, we use basis expansion as (
+\begin_inset Formula $m\ge0$
+\end_inset
+
+ , integer.), assuming states with different 
+\begin_inset Formula $m$
+\end_inset
+
+ are decoupled 
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{c}
+u({\bf r})\\
+\alpha({\bf r})\\
+\beta({\bf r})\\
+v({\bf r})\end{array}\right)=e^{ik_{z}z}\sum_{n=1}^{N_{max}}\left(\begin{array}{c}
+\frac{u_{n}}{\sqrt{\mathcal{N}_{n}^{(m)}}}J_{m}(\kappa_{n}^{(m)}\frac{r}{L})\\
+\frac{\alpha_{n}}{\sqrt{\mathcal{N}_{n}^{(m+1)}}}J_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})e^{i\theta}\\
+\frac{\beta_{n}}{\sqrt{\mathcal{N}_{n}^{(m+1)}}}J_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})e^{i\theta}\\
+\frac{v_{n}}{\sqrt{\mathcal{N}_{n}^{(m)}}}J_{m}(\kappa_{n}^{(m)}\frac{r}{L})\end{array}\right)\frac{e^{im\theta}}{\sqrt{2\pi}}\label{eq:basisBessel}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\kappa_{n}^{(m)}$
+\end_inset
+
+ are the 
+\begin_inset Formula $n$
+\end_inset
+
+th root of Bessel function 
+\begin_inset Formula $J_{m}$
+\end_inset
+
+.
+ For states with 
+\begin_inset Formula $m<0$
+\end_inset
+
+, we have instead 
+\begin_inset Formula $J_{-m}(x)=(-1)^{m}J_{m}(x)$
+\end_inset
+
+, which is NOT linearly independent solution of Bessel equation.
+ States at 
+\begin_inset Formula $r=0$
+\end_inset
+
+ should not diverge, the second kind of Bessel function 
+\begin_inset Formula $N_{m}(x)$
+\end_inset
+
+ should be discarded.
+ 
+\end_layout
+
+\begin_layout Standard
+SOC terms are written as 
+\begin_inset Formula \begin{eqnarray}
+V_{SO} & = & vk_{x}-ivk_{y}=-iv(\partial_{x}-i\partial_{y})=-ve^{-i\theta}(i\partial_{r}+\frac{1}{r}\partial_{\theta})\\
+V_{SO}^{\dagger} & = & vk_{x}+ivk_{y}=-iv(\partial_{x}+i\partial_{y})=ve^{i\theta}(-i\partial_{r}+\frac{1}{r}\partial_{\theta})\end{eqnarray}
+
+\end_inset
+
+we have
+\begin_inset Formula \begin{eqnarray}
+\left(k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q+v_{3}(k_{z}+\frac{q}{2})+h-(\frac{1}{r}\frac{\partial}{\partial r}(r\frac{\partial}{\partial r})+\frac{1}{r^{2}}\frac{\partial^{2}}{\partial\theta^{2}})\right)u({\bf r})-ve^{-i\theta}(i\partial_{r}+\frac{1}{r}\partial_{\theta})\alpha({\bf r})-\Delta v({\bf r}) & = & Eu({\bf r})\label{eq:bdg1}\\
+ve^{i\theta}(-i\partial_{r}+\frac{1}{r}\partial_{\theta})u({\bf r})+\left(k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q-v_{3}(k_{z}+\frac{q}{2})-h-(\frac{1}{r}\frac{\partial}{\partial r}(r\frac{\partial}{\partial r})+\frac{1}{r^{2}}\frac{\partial^{2}}{\partial\theta^{2}})\right)\alpha({\bf r})+\Delta\beta({\bf r}) & = & E\alpha({\bf r})\label{eq:bdg2}\\
+\Delta\alpha({\bf r})-\left(k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q-v_{3}(k_{z}-\frac{q}{2})+h-(\frac{1}{r}\frac{\partial}{\partial r}(r\frac{\partial}{\partial r})+\frac{1}{r^{2}}\frac{\partial^{2}}{\partial\theta^{2}})\right)\beta({\bf r})+ve^{i\theta}(-i\partial_{r}+\frac{1}{r}\partial_{\theta})v({\bf r}) & = & E\beta({\bf r})\label{eq:bdg3}\\
+-\Delta u({\bf r})-ve^{-i\theta}(i\partial_{r}+\frac{1}{r}\partial_{\theta})\beta({\bf r})-\left(k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q+v_{3}(k_{z}-\frac{q}{2})-h-(\frac{1}{r}\frac{\partial}{\partial r}(r\frac{\partial}{\partial r})+\frac{1}{r^{2}}\frac{\partial^{2}}{\partial\theta^{2}})\right)v({\bf r}) & = & Ev({\bf r})\label{eq:bdg4}\end{eqnarray}
+
+\end_inset
+
+Normalization of Bessel function is given by
+\begin_inset Formula \begin{equation}
+\mathcal{N}_{n}^{(m)}=\int_{0}^{L}J_{m}(\kappa_{n}^{(m)}\frac{r}{L})J_{m}(\kappa_{n}^{(m)}\frac{r}{L})rdr=\frac{1}{2}L^{2}\left(J_{m+1}(\kappa_{n}^{(m)})\right)^{2}\end{equation}
+
+\end_inset
+
+Then Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:basisBessel"
+
+\end_inset
+
+ becomes,
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{c}
+u({\bf r})\\
+\alpha({\bf r})\\
+\beta({\bf r})\\
+v({\bf r})\end{array}\right)=e^{ik_{z}z}\sum_{n=1}^{N_{max}}\frac{\sqrt{2}}{L}\frac{e^{im\theta}}{\sqrt{2\pi}}\left(\begin{array}{c}
+\frac{J_{m}(\kappa_{n}^{(m)}\frac{r}{L})}{|J_{m+1}(\kappa_{n}^{(m)})|}u_{n}\\
+\frac{J_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})}{|J_{m+2}(\kappa_{n}^{(m+1)})|}\alpha_{n}e^{i\theta}\\
+\frac{J_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})}{|J_{m+2}(\kappa_{n}^{(m+1)})|}\beta_{n}e^{i\theta}\\
+\frac{J_{m}(\kappa_{n}^{(m)}\frac{r}{L})}{|J_{m+1}(\kappa_{n}^{(m)})|}v_{n}\end{array}\right)\end{equation}
+
+\end_inset
+
+Orthogonal condition for Bessel function,
+\begin_inset Formula \begin{equation}
+\int_{0}^{L}J_{m}(\kappa_{n}^{(m)}\frac{r}{L})J_{m}(\kappa_{l}^{(m)}\frac{r}{L})rdr=0\end{equation}
+
+\end_inset
+
+for 
+\begin_inset Formula $n\neq l$
+\end_inset
+
+.
+ Derivative relations for Bessel functions:
+\begin_inset Formula \begin{eqnarray}
+\frac{\partial}{\partial r}J_{0}(\kappa_{n}^{(0)}\frac{r}{L}) & = & -\frac{\kappa_{n}^{(0)}}{L}J_{1}(\kappa_{n}^{(0)}\frac{r}{L})\label{eq:dJ0dr}\\
+\frac{\partial}{\partial r}J_{m}(\kappa_{n}^{(m)}\frac{r}{L}) & = & \frac{\kappa_{n}^{(m)}}{2L}\left(J_{m-1}(\kappa_{n}^{(m)}\frac{r}{L})-J_{m+1}(\kappa_{n}^{(m)}\frac{r}{L})\right),\quad\text{for }m\ge1\label{eq:dJmdr}\\
+\frac{1}{r}\frac{\partial}{\partial r}(r\frac{\partial}{\partial r}J_{0}(\kappa_{n}^{(0)}\frac{r}{L})) & = & -\frac{\kappa_{n}^{(0)}}{L}\frac{1}{r}\frac{\partial}{\partial r}(rJ_{1}(\kappa_{n}^{(0)}\frac{r}{L}))\nonumber \\
+ & = & -\frac{\kappa_{n}^{(0)}}{L}\left(\frac{J_{1}(\kappa_{n}^{(0)}\frac{r}{L})}{r}+\frac{\kappa_{n}^{(0)}}{2L}\left(J_{0}(\kappa_{n}^{(0)}\frac{r}{L})-J_{2}(\kappa_{n}^{(0)}\frac{r}{L})\right)\right)=...=-(\frac{\kappa_{n}^{(0)}}{L})^{2}\nonumber \\
+\frac{1}{r}\frac{\partial}{\partial r}(r\frac{\partial}{\partial r}J_{1}(\kappa_{n}^{(1)}\frac{r}{L})) & = & \frac{\kappa_{n}^{(1)}}{2L}\frac{1}{r}\frac{\partial}{\partial r}(r\left(J_{0}(\kappa_{n}^{(1)}\frac{r}{L})-J_{2}(\kappa_{n}^{(1)}\frac{r}{L})\right))\nonumber \\
+ & = & \frac{\kappa_{n}^{(1)}}{2L}\frac{1}{r}\left(J_{0}(\kappa_{n}^{(1)}\frac{r}{L})-J_{2}(\kappa_{n}^{(1)}\frac{r}{L})\right)+\frac{\kappa_{n}^{(1)}}{2L}\frac{\partial}{\partial r}\left(J_{0}(\kappa_{n}^{(1)}\frac{r}{L})-J_{2}(\kappa_{n}^{(1)}\frac{r}{L})\right)\nonumber \\
+ & = & \frac{\kappa_{n}^{(1)}}{2L}\frac{1}{r}\left(J_{0}(\kappa_{n}^{(1)}\frac{r}{L})-J_{2}(\kappa_{n}^{(1)}\frac{r}{L})\right)+\frac{1}{2}\left(\frac{\kappa_{n}^{(1)}}{L}\right)^{2}\left(-J_{1}(\kappa_{n}^{(1)}\frac{r}{L})-\frac{1}{2}\left(J_{1}(\kappa_{n}^{(1)}\frac{r}{L})-J_{3}(\kappa_{n}^{(1)}\frac{r}{L})\right)\right)\nonumber \\
+ & = & \frac{\kappa_{n}^{(1)}}{2L}\frac{J_{0}(\kappa_{n}^{(1)}\frac{r}{L})}{r}-\frac{3}{4}\left(\frac{\kappa_{n}^{(1)}}{L}\right)^{2}J_{1}(\kappa_{n}^{(1)}\frac{r}{L})-\frac{\kappa_{n}^{(1)}}{2L}\frac{J_{2}(\kappa_{n}^{(1)}\frac{r}{L})}{r}+\frac{1}{4}\left(\frac{\kappa_{n}^{(1)}}{L}\right)^{2}J_{3}(\kappa_{n}^{(1)}\frac{r}{L})\nonumber \\
+\frac{1}{r}\frac{\partial}{\partial r}(r\frac{\partial}{\partial r}J_{m}(\kappa_{n}^{(m)}\frac{r}{L})) & = & \frac{\kappa_{n}^{(m)}}{2L}\frac{1}{r}\frac{\partial}{\partial r}(r\left(J_{m-1}(\kappa_{n}^{(m)}\frac{r}{L})-J_{m+1}(\kappa_{n}^{(m)}\frac{r}{L})\right))\nonumber \\
+ & = & \frac{\kappa_{n}^{(m)}}{2L}\frac{1}{r}\left(J_{m-1}(\kappa_{n}^{(m)}\frac{r}{L})-J_{m+1}(\kappa_{n}^{(m)}\frac{r}{L})\right)+\frac{\kappa_{n}^{(m)}}{2L}\frac{\partial}{\partial r}\left(J_{m-1}(\kappa_{n}^{(m)}\frac{r}{L})-J_{m+1}(\kappa_{n}^{(m)}\frac{r}{L})\right)\nonumber \\
+ & = & \frac{\kappa_{n}^{(m)}}{2L}\frac{1}{r}\left(J_{m-1}(\kappa_{n}^{(m)}\frac{r}{L})-J_{m+1}(\kappa_{n}^{(m)}\frac{r}{L})\right)\nonumber \\
+ & + & \left(\frac{\kappa_{n}^{(m)}}{2L}\right)^{2}\left(\left(J_{m-2}(\kappa_{n}^{(m)}\frac{r}{L})-J_{m}(\kappa_{n}^{(m)}\frac{r}{L})\right)-\left(J_{m}(\kappa_{n}^{(m)}\frac{r}{L})-J_{m+2}(\kappa_{n}^{(m)}\frac{r}{L})\right)\right)\nonumber \\
+ & = & \left(\frac{\kappa_{n}^{(m)}}{2L}\right)^{2}J_{m-2}(\kappa_{n}^{(m)}\frac{r}{L})+\frac{\kappa_{n}^{(m)}}{2L}\frac{J_{m-1}(\kappa_{n}^{(m)}\frac{r}{L})}{r}-2\left(\frac{\kappa_{n}^{(m)}}{2L}\right)^{2}J_{m}(\kappa_{n}^{(m)}\frac{r}{L})\nonumber \\
+ & - & \frac{\kappa_{n}^{(m)}}{2L}\frac{J_{m+1}(\kappa_{n}^{(m)}\frac{r}{L})}{r}+\left(\frac{\kappa_{n}^{(m)}}{2L}\right)^{2}J_{m+2}(\kappa_{n}^{(m)}\frac{r}{L}),\quad\text{for }m\ge2\nonumber \end{eqnarray}
+
+\end_inset
+
+Actually, the above second order derivatives are not necessary.
+ Because Bessel function automatically satisfies Bessel equation
+\begin_inset Formula \begin{equation}
+\frac{1}{r}\frac{\partial}{\partial r}(r\frac{\partial}{\partial r}J_{m}(\kappa_{n}^{(m)}\frac{r}{L}))=\left(\frac{m^{2}}{r^{2}}-(\frac{\kappa_{n}^{(m)}}{L})^{2}\right)J_{m}(\kappa_{n}^{(m)}\frac{r}{L})\label{eq:BesselEquation}\end{equation}
+
+\end_inset
+
+It can be checked straightforwardly that the RHS of above second order derivativ
+es are actually quite simple, using the recursion relation
+\begin_inset Formula \begin{equation}
+J_{m+1}(x)+J_{m-1}(x)=2mJ_{m}(x)/x\label{eq:DeductionRelation}\end{equation}
+
+\end_inset
+
+which is essentially derived from the Bessel equation.
+ This helps us to facilitate the conversion into coefficient matrix equations:
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+for 
+\begin_inset Formula $m\geq1$
+\end_inset
+
+
+\begin_inset Formula \begin{eqnarray}
+\sum_{n=1}^{N_{max}}\left(k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q+v_{3}(k_{z}+\frac{q}{2})+h+\left(\frac{\kappa_{n}^{(m)}}{L}\right)^{2}\right)\frac{u_{n}}{\sqrt{\mathcal{N}_{n}^{(m)}}}J_{m}(\kappa_{n}^{(m)}\frac{r}{L})\nonumber \\
+-iv\sum_{n=1}^{N_{max}}\frac{\alpha_{n}}{\sqrt{\mathcal{N}_{n}^{(m+1)}}}\left(\frac{\kappa_{n}^{(m+1)}}{2L}J_{m}(\kappa_{n}^{(m+1)}\frac{r}{L})-\frac{\kappa_{n}^{(m+1)}}{2L}J_{m+2}(\kappa_{n}^{(m+1)}\frac{r}{L})+\frac{m+1}{r}J_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})\right)\nonumber \\
+-\Delta\sum_{n=1}^{N_{max}}\frac{v_{n}}{\sqrt{\mathcal{N}_{n}^{(m)}}}J_{m}(\kappa_{n}^{(m)}\frac{r}{L})=E\sum_{n=1}^{N_{max}}\frac{u_{n}}{\sqrt{\mathcal{N}_{n}^{(m)}}}J_{m}(\kappa_{n}^{(m)}\frac{r}{L})\\
+iv\sum_{n=1}^{N_{max}}\frac{u_{n}}{\sqrt{\mathcal{N}_{n}^{(m)}}}\left(-\frac{\kappa_{n}^{(m)}}{2L}J_{m-1}(\kappa_{n}^{(m)}\frac{r}{L})+\frac{\kappa_{n}^{(m)}}{2L}J_{m+1}(\kappa_{n}^{(m)}\frac{r}{L})+\frac{m}{r}J_{m}(\kappa_{n}^{(m)}\frac{r}{L})\right)\nonumber \\
++\sum_{n=1}^{N_{max}}\left(k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q-v_{3}(k_{z}+\frac{q}{2})-h+\left(\frac{\kappa_{n}^{(m+1)}}{L}\right)^{2}\right)\frac{\alpha_{n}}{\sqrt{\mathcal{N}_{n}^{(m+1)}}}J_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})\nonumber \\
++\Delta\sum_{n=1}^{N_{max}}\frac{\beta_{n}}{\sqrt{\mathcal{N}_{n}^{(m+1)}}}J_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})=E\sum_{n=1}^{N_{max}}\frac{\alpha_{n}}{\sqrt{\mathcal{N}_{n}^{(m+1)}}}J_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})\\
+\Delta\sum_{n=1}^{N_{max}}\frac{\alpha_{n}}{\sqrt{\mathcal{N}_{n}^{(m+1)}}}J_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})\nonumber \\
+-\sum_{n=1}^{N_{max}}\left(k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q-v_{3}(k_{z}-\frac{q}{2})+h+\left(\frac{\kappa_{n}^{(m+1)}}{L}\right)^{2}\right)\frac{\beta_{n}}{\sqrt{\mathcal{N}_{n}^{(m+1)}}}J_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})\nonumber \\
++iv\sum_{n=1}^{N_{max}}\frac{v_{n}}{\sqrt{\mathcal{N}_{n}^{(m)}}}\left(-\frac{\kappa_{n}^{(m)}}{2L}J_{m-1}(\kappa_{n}^{(m)}\frac{r}{L})+\frac{\kappa_{n}^{(m)}}{2L}J_{m+1}(\kappa_{n}^{(m)}\frac{r}{L})+\frac{m}{r}J_{m}(\kappa_{n}^{(m)}\frac{r}{L})\right)=E\sum_{n=1}^{N_{max}}\frac{\beta_{n}}{\sqrt{\mathcal{N}_{n}^{(m+1)}}}J_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})\\
+-\Delta\sum_{n=1}^{N_{max}}\frac{u_{n}}{\sqrt{\mathcal{N}_{n}^{(m)}}}J_{m}(\kappa_{n}^{(m)}\frac{r}{L})\nonumber \\
+-iv\sum_{n=1}^{N_{max}}\frac{\beta_{n}}{\sqrt{\mathcal{N}_{n}^{(m+1)}}}\left(\frac{\kappa_{n}^{(m+1)}}{2L}J_{m}(\kappa_{n}^{(m+1)}\frac{r}{L})-\frac{\kappa_{n}^{(m+1)}}{2L}J_{m+2}(\kappa_{n}^{(m+1)}\frac{r}{L})+\frac{m+1}{r}J_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})\right)\nonumber \\
+-\sum_{n=1}^{N_{max}}\left(k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q+v_{3}(k_{z}-\frac{q}{2})-h+\left(\frac{\kappa_{n}^{(m)}}{L}\right)^{2}\right)\frac{v_{n}}{\sqrt{\mathcal{N}_{n}^{(m)}}}J_{m}(\kappa_{n}^{(m)}\frac{r}{L})=E\sum_{n=1}^{N_{max}}\frac{v_{n}}{\sqrt{\mathcal{N}_{n}^{(m)}}}J_{m}(\kappa_{n}^{(m)}\frac{r}{L})\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+for 
+\begin_inset Formula $m\geq1$
+\end_inset
+
+, using Bessel Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:BesselEquation"
+
+\end_inset
+
+ and recursion relation Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:DeductionRelation"
+
+\end_inset
+
+, we can simplify the SOC term a little bit,
+\begin_inset Formula \begin{eqnarray}
+\sum_{n=1}^{N_{max}}\left(k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q+v_{3}(k_{z}+\frac{q}{2})+h+\left(\frac{\kappa_{n}^{(m)}}{L}\right)^{2}\right)\frac{u_{n}}{\sqrt{\mathcal{N}_{n}^{(m)}}}J_{m}(\kappa_{n}^{(m)}\frac{r}{L})\nonumber \\
+-iv\sum_{l=1}^{N_{max}}\frac{\alpha_{l}}{\sqrt{\mathcal{N}_{l}^{(m+1)}}}\frac{\kappa_{l}^{(m+1)}}{L}J_{m}(\kappa_{l}^{(m+1)}\frac{r}{L})\nonumber \\
+-\Delta\sum_{n=1}^{N_{max}}\frac{v_{n}}{\sqrt{\mathcal{N}_{n}^{(m)}}}J_{m}(\kappa_{n}^{(m)}\frac{r}{L})=E\sum_{n=1}^{N_{max}}\frac{u_{n}}{\sqrt{\mathcal{N}_{n}^{(m)}}}J_{m}(\kappa_{n}^{(m)}\frac{r}{L})\\
+iv\sum_{l=1}^{N_{max}}\frac{u_{l}}{\sqrt{\mathcal{N}_{l}^{(m)}}}\frac{\kappa_{l}^{(m)}}{L}J_{m+1}(\kappa_{l}^{(m)}\frac{r}{L})\nonumber \\
++\sum_{n=1}^{N_{max}}\left(k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q-v_{3}(k_{z}+\frac{q}{2})-h+\left(\frac{\kappa_{n}^{(m+1)}}{L}\right)^{2}\right)\frac{\alpha_{n}}{\sqrt{\mathcal{N}_{n}^{(m+1)}}}J_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})\nonumber \\
++\Delta\sum_{n=1}^{N_{max}}\frac{\beta_{n}}{\sqrt{\mathcal{N}_{n}^{(m+1)}}}J_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})=E\sum_{n=1}^{N_{max}}\frac{\alpha_{n}}{\sqrt{\mathcal{N}_{n}^{(m+1)}}}J_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})\\
+\Delta\sum_{n=1}^{N_{max}}\frac{\alpha_{n}}{\sqrt{\mathcal{N}_{n}^{(m+1)}}}J_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})\nonumber \\
+-\sum_{n=1}^{N_{max}}\left(k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q-v_{3}(k_{z}-\frac{q}{2})+h+\left(\frac{\kappa_{n}^{(m+1)}}{L}\right)^{2}\right)\frac{\beta_{n}}{\sqrt{\mathcal{N}_{n}^{(m+1)}}}J_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})\nonumber \\
++iv\sum_{l=1}^{N_{max}}\frac{v_{l}}{\sqrt{\mathcal{N}_{l}^{(m)}}}\frac{\kappa_{l}^{(m)}}{L}J_{m+1}(\kappa_{l}^{(m)}\frac{r}{L})=E\sum_{n=1}^{N_{max}}\frac{\beta_{n}}{\sqrt{\mathcal{N}_{n}^{(m+1)}}}J_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})\\
+-\Delta\sum_{n=1}^{N_{max}}\frac{u_{n}}{\sqrt{\mathcal{N}_{n}^{(m)}}}J_{m}(\kappa_{n}^{(m)}\frac{r}{L})\nonumber \\
+-iv\sum_{l=1}^{N_{max}}\frac{\beta_{l}}{\sqrt{\mathcal{N}_{l}^{(m+1)}}}\frac{\kappa_{l}^{(m+1)}}{L}J_{m}(\kappa_{l}^{(m+1)}\frac{r}{L})\nonumber \\
+-\sum_{n=1}^{N_{max}}\left(k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q+v_{3}(k_{z}-\frac{q}{2})-h+\left(\frac{\kappa_{n}^{(m)}}{L}\right)^{2}\right)\frac{v_{n}}{\sqrt{\mathcal{N}_{n}^{(m)}}}J_{m}(\kappa_{n}^{(m)}\frac{r}{L})=E\sum_{n=1}^{N_{max}}\frac{v_{n}}{\sqrt{\mathcal{N}_{n}^{(m)}}}J_{m}(\kappa_{n}^{(m)}\frac{r}{L})\end{eqnarray}
+
+\end_inset
+
+for 
+\begin_inset Formula $m=0$
+\end_inset
+
+, special care is needed for first order derivative, but the result can
+ be recovered by replacing 
+\begin_inset Formula $m=0$
+\end_inset
+
+ in the above equations.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Then using orthonormal condition, we have equations for the coefficients,
+ 
+\begin_inset Formula $m\ge1$
+\end_inset
+
+,
+\begin_inset Formula \begin{eqnarray}
+\left(k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q+v_{3}(k_{z}+\frac{q}{2})+h+\left(\frac{\kappa_{n}^{(m)}}{L}\right)^{2}\right)u_{n}\nonumber \\
+-iv\sum_{l=1}^{N_{max}}\frac{\alpha_{l}}{\sqrt{\mathcal{N}_{l}^{(m+1)}}\sqrt{\mathcal{N}_{n}^{(m)}}}\left(\frac{\kappa_{l}^{(m+1)}}{2L}I_{nl}^{1}-\frac{\kappa_{l}^{(m+1)}}{2L}I_{nl}^{2}+(m+1)I_{nl}^{3}\right)-\Delta v_{n}=Eu_{n}\\
+\int_{0}^{L}rdrJ_{m}(\kappa_{n}^{(m)}\frac{r}{L})J_{m}(\kappa_{l}^{(m+1)}\frac{r}{L})=I_{nl}^{1}\nonumber \\
+\int_{0}^{L}rdrJ_{m}(\kappa_{n}^{(m)}\frac{r}{L})J_{m+2}(\kappa_{n}^{(m+1)}\frac{r}{L})=I_{nl}^{2}\nonumber \\
+\int_{0}^{L}drJ_{m}(\kappa_{n}^{(m)}\frac{r}{L})J_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})=I_{nl}^{3}\nonumber \\
+iv\sum_{l=1}^{N_{max}}\frac{u_{l}}{\sqrt{\mathcal{N}_{l}^{(m)}}\sqrt{\mathcal{N}_{n}^{(m+1)}}}\left(-\frac{\kappa_{l}^{(m)}}{2L}I_{nl}^{4}+\frac{\kappa_{l}^{(m)}}{2L}I_{nl}^{5}+mI_{nl}^{6}\right)\nonumber \\
++\left(k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q-v_{3}(k_{z}+\frac{q}{2})-h+\left(\frac{\kappa_{n}^{(m+1)}}{L}\right)^{2}\right)\alpha_{n}+\Delta\beta_{n}=E\alpha_{n}\\
+\Delta\alpha_{n}-\left(k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q-v_{3}(k_{z}-\frac{q}{2})+h+\left(\frac{\kappa_{n}^{(m+1)}}{L}\right)^{2}\right)\beta_{n}\nonumber \\
++iv\sum_{l=1}^{N_{max}}\frac{v_{l}}{\sqrt{\mathcal{N}_{l}^{(m)}}\sqrt{\mathcal{N}_{n}^{(m+1)}}}\left(-\frac{\kappa_{l}^{(m)}}{2L}I_{nl}^{4}+\frac{\kappa_{l}^{(m)}}{2L}I_{nl}^{5}+mI_{nl}^{6}\right)=E\beta_{n}\\
+\int_{0}^{L}rdrJ_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})J_{m-1}(\kappa_{l}^{(m)}\frac{r}{L})=I_{nl}^{4}\nonumber \\
+\int_{0}^{L}rdrJ_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})J_{m+1}(\kappa_{l}^{(m)}\frac{r}{L})=I_{nl}^{5}\nonumber \\
+\int_{0}^{L}drJ_{m+1}(\kappa_{n}^{(m+1)}\frac{r}{L})J_{m}(\kappa_{l}^{(m)}\frac{r}{L})=I_{nl}^{6}\nonumber \\
+-\Delta u_{n}-iv\sum_{l=1}^{N_{max}}\frac{\beta_{l}}{\sqrt{\mathcal{N}_{l}^{(m+1)}}\sqrt{\mathcal{N}_{n}^{(m)}}}\left(\frac{\kappa_{l}^{(m+1)}}{2L}I_{nl}^{1}-\frac{\kappa_{l}^{(m+1)}}{2L}I_{nl}^{2}+(m+1)I_{nl}^{3}\right)\nonumber \\
+-\left(k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q+v_{3}(k_{z}-\frac{q}{2})-h+\left(\frac{\kappa_{n}^{(m)}}{L}\right)^{2}\right)v_{n}=Ev_{n}\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then using orthonormal condition, we have equations for the coefficients,
+ 
+\begin_inset Formula $m\ge0$
+\end_inset
+
+,
+\begin_inset Formula \begin{eqnarray}
+\mathcal{H}_{11n}^{(m)}u_{n}-iv\sum_{l=1}^{N_{max}}\mathcal{A}_{nl}^{(m)}\alpha_{l}-\Delta v_{n} & = & Eu_{n}\label{eq:bdg1-1-1-1}\\
+iv\sum_{l=1}^{N_{max}}\mathcal{B}_{nl}^{(m)}u_{l}+\mathcal{H}_{22n}^{(m)}\alpha_{n}+\Delta\beta_{n} & = & E\alpha_{n}\label{eq:bdg1-1-1-2}\\
+\Delta\alpha_{n}+\mathcal{H}_{33n}^{(m)}\beta_{n}+iv\sum_{l=1}^{N_{max}}\mathcal{B}_{nl}^{(m)}v_{l} & = & E\beta_{n}\label{eq:bdg1-1-1-3}\\
+-\Delta u_{n}-iv\sum_{l=1}^{N_{max}}\mathcal{A}_{nl}^{(m)}\beta_{l}+\mathcal{H}_{44n}^{(m)}v_{n} & = & Ev_{n}\label{eq:bdg1-1-1-4}\\
+\mathcal{H}_{11n}^{(m)}=\left(k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q+v_{3}(k_{z}+\frac{q}{2})+h+\left(\frac{\kappa_{n}^{(m)}}{L}\right)^{2}\right)\\
+\mathcal{H}_{22n}^{(m)}=\left(k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q-v_{3}(k_{z}+\frac{q}{2})-h+\left(\frac{\kappa_{n}^{(m+1)}}{L}\right)^{2}\right)\\
+\mathcal{H}_{33n}^{(m)}=-\left(k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q-v_{3}(k_{z}-\frac{q}{2})+h+\left(\frac{\kappa_{n}^{(m+1)}}{L}\right)^{2}\right)\\
+\mathcal{H}_{44n}^{(m)}=-\left(k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q+v_{3}(k_{z}-\frac{q}{2})-h+\left(\frac{\kappa_{n}^{(m)}}{L}\right)^{2}\right)\\
+\mathcal{A}_{nl}^{(m)}=\frac{\frac{\kappa_{l}^{(m+1)}}{L}I_{nl}^{(1)}}{\sqrt{\mathcal{N}_{l}^{(m+1)}}\sqrt{\mathcal{N}_{n}^{(m)}}}\\
+\mathcal{B}_{nl}^{(m)}=\frac{\frac{\kappa_{l}^{(m)}}{L}I_{nl}^{(2)}}{\sqrt{\mathcal{N}_{l}^{(m)}}\sqrt{\mathcal{N}_{n}^{(m+1)}}}\end{eqnarray}
+
+\end_inset
+
+where
+\begin_inset Formula \begin{eqnarray}
+\int_{0}^{L}rJ_{m}(\frac{\kappa_{n}^{(m)}}{L}r)J_{m}(\frac{\kappa_{l}^{(m+1)}}{L}r)dr & = & I_{nl}^{(1)}\\
+\int_{0}^{L}rJ_{m+1}(\frac{\kappa_{n}^{(m+1)}}{L}r)J_{m+1}(\frac{\kappa_{l}^{(m)}}{L}r)dr & = & I_{nl}^{(2)}\end{eqnarray}
+
+\end_inset
+
+Using Eq.
+ (2) in page 414 of the book 
+\begin_inset Quotes eld
+\end_inset
+
+Introduction to Special Functions
+\begin_inset Quotes erd
+\end_inset
+
+ by Zhuxi Wang and Dunren Guo
+\begin_inset Formula \begin{equation}
+\int_{0}^{x}tJ_{\nu}(at)J_{\nu}(bt)dt=\frac{x}{a^{2}-b^{2}}\left(J_{\nu}(ax)\frac{dJ_{\nu}(bx)}{dx}-J_{\nu}(bx)\frac{dJ_{\nu}(ax)}{dx}\right)\label{eq:BesselIdentity}\end{equation}
+
+\end_inset
+
+for 
+\begin_inset Formula $\nu>-1$
+\end_inset
+
+, which can be easily proved by considering two Bessel Equations
+\begin_inset Formula \begin{eqnarray*}
+\frac{1}{t}\frac{d}{dt}(t\frac{dJ_{\nu}(at)}{dt})+(a^{2}-\frac{\nu^{2}}{t^{2}})J_{\nu}(at) & = & 0\\
+\frac{1}{t}\frac{d}{dt}(t\frac{dJ_{\nu}(bt)}{dt})+(b^{2}-\frac{\nu^{2}}{t^{2}})J_{\nu}(bt) & = & 0\end{eqnarray*}
+
+\end_inset
+
+Multiply the two equations by 
+\begin_inset Formula $tJ_{\nu}(bt)$
+\end_inset
+
+ and 
+\begin_inset Formula $tJ_{\nu}(at)$
+\end_inset
+
+ individually and subtract them and integrate it from 0 to 
+\begin_inset Formula $x$
+\end_inset
+
+, to obtain
+\begin_inset Formula \begin{equation}
+(a^{2}-b^{2})\int_{0}^{x}tJ_{\nu}(at)J_{\nu}(bt)dt=\left(tJ_{\nu}(at)\frac{dJ_{\nu}(bt)}{dt}-tJ_{\nu}(bt)\frac{dJ_{\nu}(at)}{dt}\right)|_{t=0}^{t=x}\end{equation}
+
+\end_inset
+
+and it is easy to see the RHS is zero when 
+\begin_inset Formula $t=0$
+\end_inset
+
+, which concludes our proof of Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:BesselIdentity"
+
+\end_inset
+
+.
+ From this, we can easily have
+\begin_inset Formula \begin{eqnarray*}
+I_{nl}^{(1)} & = & \frac{L}{(\frac{\kappa_{n}^{(m)}}{L})^{2}-(\frac{\kappa_{l}^{(m+1)}}{L})^{2}}\left(J_{m}(\kappa_{n}^{(m)})\frac{dJ_{m}(\kappa_{l}^{(m+1)}r/L)}{dr}|_{r=L}-J_{m}(\kappa_{l}^{(m+1)})\frac{dJ_{m}(\kappa_{n}^{(m)}r/L)}{dr}|_{r=L}\right)\\
+ & = & -\frac{L}{(\frac{\kappa_{n}^{(m)}}{L})^{2}-(\frac{\kappa_{l}^{(m+1)}}{L})^{2}}J_{m}(\kappa_{l}^{(m+1)})\frac{\kappa_{n}^{(m)}}{2L}\left(J_{m-1}(\kappa_{n}^{(m)})-J_{m+1}(\kappa_{n}^{(m)})\right)\\
+I_{nl}^{(2)} & = & \frac{L}{(\frac{\kappa_{n}^{(m+1)}}{L})^{2}-(\frac{\kappa_{l}^{(m)}}{L})^{2}}\left(J_{m+1}(\kappa_{n}^{(m+1)})\frac{dJ_{m+1}(\kappa_{l}^{(m)}r/L)}{dr}|_{r=L}-J_{m+1}(\kappa_{l}^{(m)})\frac{dJ_{m+1}(\kappa_{n}^{(m+1)}r/L)}{dr}|_{r=L}\right)\\
+ & = & -\frac{L}{(\frac{\kappa_{n}^{(m+1)}}{L})^{2}-(\frac{\kappa_{l}^{(m)}}{L})^{2}}J_{m+1}(\kappa_{l}^{(m)})\frac{\kappa_{n}^{(m+1)}}{2L}\left(J_{m}(\kappa_{n}^{(m+1)})-J_{m+2}(\kappa_{n}^{(m+1)})\right)\end{eqnarray*}
+
+\end_inset
+
+Then, we can further simplify coefficients of SOC term 
+\begin_inset Formula \begin{eqnarray}
+\mathcal{A}_{nl}^{(m)} & = & -(\frac{\sqrt{2}}{L})^{2}\frac{1}{|J_{m+2}(\kappa_{l}^{(m+1)})|}\frac{1}{|J_{m+1}(\kappa_{n}^{(m)})|}\nonumber \\
+ & \times & \frac{\kappa_{l}^{(m+1)}}{L}\frac{L}{(\frac{\kappa_{n}^{(m)}}{L})^{2}-(\frac{\kappa_{l}^{(m+1)}}{L})^{2}}J_{m}(\kappa_{l}^{(m+1)})\frac{\kappa_{n}^{(m)}}{2L}\left(J_{m-1}(\kappa_{n}^{(m)})-J_{m+1}(\kappa_{n}^{(m)})\right)\nonumber \\
+ & = & -\frac{1}{L}\frac{\kappa_{n}^{(m)}\kappa_{l}^{(m+1)}}{(\kappa_{n}^{(m)})^{2}-(\kappa_{l}^{(m+1)})^{2}}\frac{J_{m}(\kappa_{l}^{(m+1)})\left(J_{m-1}(\kappa_{n}^{(m)})-J_{m+1}(\kappa_{n}^{(m)})\right)}{|J_{m+2}(\kappa_{l}^{(m+1)})|\cdot|J_{m+1}(\kappa_{n}^{(m)})|},\quad\text{for }m\ge1\label{eq:I1}\\
+ & = & -\frac{2}{L}\frac{\kappa_{n}^{(m)}\kappa_{l}^{(m+1)}}{(\kappa_{n}^{(m)})^{2}-(\kappa_{l}^{(m+1)})^{2}}\frac{J_{m}(\kappa_{l}^{(m+1)})\left(-J_{m+1}(\kappa_{n}^{(m)})\right)}{|J_{m+2}(\kappa_{l}^{(m+1)})|\cdot|J_{m+1}(\kappa_{n}^{(m)})|},\quad\text{for }m=0.\\
+\mathcal{B}_{nl}^{(m)} & = & -(\frac{\sqrt{2}}{L})^{2}\frac{1}{|J_{m+1}(\kappa_{l}^{(m)})|}\frac{1}{|J_{m+2}(\kappa_{n}^{(m+1)})|}\nonumber \\
+ & \times & \frac{\kappa_{l}^{(m)}}{L}\frac{L}{(\frac{\kappa_{n}^{(m+1)}}{L})^{2}-(\frac{\kappa_{l}^{(m)}}{L})^{2}}J_{m+1}(\kappa_{l}^{(m)})\frac{\kappa_{n}^{(m+1)}}{2L}\left(J_{m}(\kappa_{n}^{(m+1)})-J_{m+2}(\kappa_{n}^{(m+1)})\right)\nonumber \\
+ & = & -\frac{1}{L}\frac{\kappa_{n}^{(m+1)}\kappa_{l}^{(m)}}{(\kappa_{n}^{(m+1)})^{2}-(\kappa_{l}^{(m)})^{2}}\frac{J_{m+1}(\kappa_{l}^{(m)})\left(J_{m}(\kappa_{n}^{(m+1)})-J_{m+2}(\kappa_{n}^{(m+1)})\right)}{|J_{m+1}(\kappa_{l}^{(m)})|\cdot|J_{m+2}(\kappa_{n}^{(m+1)})|}\label{eq:I2}\end{eqnarray}
+
+\end_inset
+
+where 
+\begin_inset Formula $m=0$
+\end_inset
+
+ term should be treated slightly differently, concerning the derivative
+ rule for 
+\begin_inset Formula $J_{m}(x)$
+\end_inset
+
+ in Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:dJ0dr"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:dJmdr"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The matrix for coefficients is actually self-adjoint/Hermitian and in the
+ diagonalization routine, only lower left part is referenced.
+ 
+\end_layout
+
+\begin_layout Standard
+If we consider states with negative angular momentum, we need expansion
+ as ( 
+\begin_inset Formula $m\le-1$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula $|m|\ge1$
+\end_inset
+
+ ), 
+\begin_inset Formula \begin{eqnarray*}
+\left(\begin{array}{c}
+u({\bf r})\\
+\alpha({\bf r})\\
+\beta({\bf r})\\
+v({\bf r})\end{array}\right) & = & e^{ik_{z}z}\sum_{n=1}^{N_{max}}\left(\begin{array}{c}
+\frac{u_{n}}{\sqrt{\mathcal{N}_{n}^{(-|m|)}}}J_{-|m|}(\kappa_{n}^{(-|m|)}\frac{r}{L})\\
+\frac{\alpha_{n}}{\sqrt{\mathcal{N}_{n}^{(-|m|+1)}}}J_{-|m|+1}(\kappa_{n}^{(-|m|+1)}\frac{r}{L})e^{i\theta}\\
+\frac{\beta_{n}}{\sqrt{\mathcal{N}_{n}^{(-|m|+1)}}}J_{-|m|+1}(\kappa_{n}^{(-|m|+1)}\frac{r}{L})e^{i\theta}\\
+\frac{v_{n}}{\sqrt{\mathcal{N}_{n}^{(-|m|)}}}J_{-|m|}(\kappa_{n}^{(-|m|)}\frac{r}{L})\end{array}\right)\frac{e^{-i|m|\theta}}{\sqrt{2\pi}}\\
+ & = & e^{ik_{z}z}\sum_{n=1}^{N_{max}}\left(\begin{array}{c}
+\frac{u_{n}}{\sqrt{\mathcal{N}_{n}^{(|m|)}}}(-1)^{|m|}J_{|m|}(\kappa_{n}^{(|m|)}\frac{r}{L})\\
+\frac{\alpha_{n}}{\sqrt{\mathcal{N}_{n}^{(|m|-1)}}}(-1)^{|m|-1}J_{|m|-1}(\kappa_{n}^{(|m|-1)}\frac{r}{L})e^{i\theta}\\
+\frac{\beta_{n}}{\sqrt{\mathcal{N}_{n}^{(|m|-1)}}}(-1)^{|m|-1}J_{|m|-1}(\kappa_{n}^{(|m|-1)}\frac{r}{L})e^{i\theta}\\
+\frac{v_{n}}{\sqrt{\mathcal{N}_{n}^{(|m|)}}}(-1)^{|m|}J_{|m|}(\kappa_{n}^{(|m|)}\frac{r}{L})\end{array}\right)\frac{e^{-i|m|\theta}}{\sqrt{2\pi}}\end{eqnarray*}
+
+\end_inset
+
+where relation 
+\begin_inset Formula $J_{-m}(x)=(-1)^{m}J_{m}(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $\kappa_{n}^{(-m)}=\kappa_{n}^{(m)}$
+\end_inset
+
+ has been used, and normalization is given by
+\begin_inset Formula \begin{eqnarray}
+\mathcal{N}_{n}^{(-|m|)} & = & \int_{0}^{L}J_{-|m|}(\kappa_{n}^{(-|m|)}\frac{r}{L})J_{-|m|}(\kappa_{n}^{(-|m|)}\frac{r}{L})rdr\\
+ & = & (-1)^{2|m|}\int_{0}^{L}J_{|m|}(\kappa_{n}^{(|m|)}\frac{r}{L})J_{|m|}(\kappa_{n}^{(|m|)}\frac{r}{L})rdr\\
+ & = & \frac{1}{2}L^{2}\left(J_{|m|+1}(\kappa_{n}^{(|m|)})\right)^{2}\\
+ & = & \mathcal{N}_{n}^{(|m|)}\end{eqnarray}
+
+\end_inset
+
+Following the above procedures, we obtain equations for coefficients ( 
+\begin_inset Formula $m\le-1$
+\end_inset
+
+ ) 
+\begin_inset Formula \begin{eqnarray}
+\mathcal{L}_{11n}^{(m)}u_{n}-iv\sum_{l=1}^{N_{max}}\mathcal{C}_{nl}^{(m)}\alpha_{l}-\Delta v_{n} & = & Eu_{n}\label{eq:bdg1-2-1-1}\\
+iv\sum_{l=1}^{N_{max}}\mathcal{D}_{nl}^{(m)}u_{l}+\mathcal{L}_{22n}^{(m)}\alpha_{n}+\Delta\beta_{n} & = & E\alpha_{n}\label{eq:bdg1-2-1-2}\\
+\Delta\alpha_{n}+\mathcal{L}_{33n}^{(m)}\beta_{n}+iv\sum_{l=1}^{N_{max}}\mathcal{D}_{nl}^{(m)}v_{l} & = & E\beta_{n}\label{eq:bdg1-2-1-3}\\
+-\Delta u_{n}-iv\sum_{l=1}^{N_{max}}\mathcal{C}_{nl}^{(m)}\beta_{l}+\mathcal{L}_{44n}^{(m)}v_{n} & = & Ev_{n}\label{eq:bdg1-2-1-4}\end{eqnarray}
+
+\end_inset
+
+where
+\begin_inset Formula \begin{eqnarray}
+\mathcal{L}_{11n}^{(m)} & = & \left(k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q+v_{3}(k_{z}+\frac{q}{2})+h+\left(\frac{\kappa_{n}^{(|m|)}}{L}\right)^{2}\right)\\
+\mathcal{L}_{22n}^{(m)} & = & \left(k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q-v_{3}(k_{z}+\frac{q}{2})-h+\left(\frac{\kappa_{n}^{(|m|-1)}}{L}\right)^{2}\right)\\
+\mathcal{L}_{33n}^{(m)} & = & -\left(k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q-v_{3}(k_{z}-\frac{q}{2})+h+\left(\frac{\kappa_{n}^{(|m|-1)}}{L}\right)^{2}\right)\\
+\mathcal{L}_{44n}^{(m)} & = & -\left(k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q+v_{3}(k_{z}-\frac{q}{2})-h+\left(\frac{\kappa_{n}^{(|m|)}}{L}\right)^{2}\right)\\
+\mathcal{C}_{nl}^{(m)} & = & \frac{\kappa_{l}^{(|m|-1)}}{L}\frac{\int_{0}^{L}rJ_{|m|}(\kappa_{n}^{(|m|)}\frac{r}{L})J_{|m|}(\kappa_{l}^{(|m|-1)}\frac{r}{L})dr}{\sqrt{\mathcal{N}_{l}^{(|m|-1)}}\sqrt{\mathcal{N}_{n}^{(|m|)}}}\\
+\mathcal{D}_{nl}^{(m)} & = & \frac{\kappa_{l}^{(|m|)}}{L}\frac{\int_{0}^{L}rJ_{|m|-1}(\kappa_{n}^{|m|-1}\frac{r}{L})J_{|m|-1}(\kappa_{l}^{(|m|)}\frac{r}{L})dr}{\sqrt{\mathcal{N}_{l}^{(|m|)}}\sqrt{\mathcal{N}_{n}^{(|m|-1)}}}\end{eqnarray}
+
+\end_inset
+
+which will be evaluated as before, 
+\begin_inset Formula \begin{eqnarray}
+\mathcal{C}_{nl}^{(m)} & = & -\frac{1}{L}\frac{\kappa_{n}^{(|m|)}\kappa_{l}^{(|m|-1)}}{(\kappa_{n}^{(|m|)})^{2}-(\kappa_{l}^{(|m|-1)})^{2}}\frac{J_{|m|}(\kappa_{l}^{(|m|-1)})\left(J_{|m|-1}(\kappa_{n}^{(|m|)})-J_{|m|+1}(\kappa_{n}^{(|m|)})\right)}{|J_{|m|}(\kappa_{l}^{(|m|-1)})|\cdot|J_{|m|+1}(\kappa_{n}^{(|m|)})|},\\
+\mathcal{D}_{nl}^{(m)} & = & -\frac{1}{L}\frac{\kappa_{l}^{(|m|)}\kappa_{n}^{(|m|-1)}}{(\kappa_{n}^{|m|-1})^{2}-(\kappa_{l}^{(|m|)})^{2}}\frac{J_{|m|-1}(\kappa_{l}^{(|m|)})\left(J_{|m|-2}(\kappa_{n}^{|m|-1})-J_{|m|}(\kappa_{n}^{|m|-1})\right)}{|J_{|m|+1}(\kappa_{l}^{(|m|)})|\cdot|J_{|m|}(\kappa_{n}^{(|m|-1)})|},\quad m\le-2\\
+ & = & -\frac{2}{L}\frac{\kappa_{l}^{(|m|)}\kappa_{n}^{(|m|-1)}}{(\kappa_{n}^{|m|-1})^{2}-(\kappa_{l}^{(|m|)})^{2}}\frac{J_{|m|-1}(\kappa_{l}^{(|m|)})\left(-J_{|m|}(\kappa_{n}^{|m|-1})\right)}{|J_{|m|+1}(\kappa_{l}^{(|m|)})|\cdot|J_{|m|}(\kappa_{n}^{(|m|-1)})|},\quad m=-1\end{eqnarray}
+
+\end_inset
+
+The self-adjoincy can be verified by interchanging 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $l$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathcal{C}_{nl}^{(m)}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{D}_{nl}^{(m)}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+From the numerical calculation, we observe the symmetry of 
+\begin_inset Formula $E\rightarrow-E$
+\end_inset
+
+ when 
+\begin_inset Formula $m\rightarrow-m-1$
+\end_inset
+
+ and 
+\begin_inset Formula $k_{z}\rightarrow-k_{z}$
+\end_inset
+
+, assuming 
+\begin_inset Formula $m\ge0$
+\end_inset
+
+ here.
+ In the following, we analytically prove this is indeed true.
+ 
+\end_layout
+
+\begin_layout Enumerate
+To get started, we observe the relation of eigen matrix elements between
+ the two classes of 
+\begin_inset Formula $m\ge0$
+\end_inset
+
+ and 
+\begin_inset Formula $m\le-1$
+\end_inset
+
+.
+ For clarity, I assume 
+\begin_inset Formula $m$
+\end_inset
+
+ to be non-negative.
+ Of note is that 
+\begin_inset Formula $\mathcal{H}_{11n}^{(-m-1)}(-k_{z})=-\mathcal{L}_{33n}^{(m)}(k_{z})$
+\end_inset
+
+, 
+\begin_inset Formula $\mathcal{H}_{22n}^{(-m-1)}(-k_{z})=-\mathcal{L}_{44n}^{(m)}(k_{z})$
+\end_inset
+
+, 
+\begin_inset Formula $\mathcal{H}_{33n}^{(-m-1)}(-k_{z})=-\mathcal{L}_{11n}^{(m)}(k_{z})$
+\end_inset
+
+, 
+\begin_inset Formula $\mathcal{H}_{44n}^{(-m-1)}(-k_{z})=-\mathcal{L}_{22n}^{(m)}(k_{z})$
+\end_inset
+
+.
+ And more lengthy derivation gives 
+\begin_inset Formula $\mathcal{A}_{nl}^{(-m-1)}=-\mathcal{D}_{ln}^{(m)}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathcal{B}_{nl}^{(-m-1)}=-\mathcal{C}_{ln}^{(m)}$
+\end_inset
+
+, where Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relationm"
+
+\end_inset
+
+ has been used.
+\end_layout
+
+\begin_layout Enumerate
+BdG equation has particle hole symmetry, Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:particleholesymmetry"
+
+\end_inset
+
+, which shall be written as
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{c}
+u_{n}\\
+\alpha_{n}\\
+\beta_{n}\\
+v_{n}\end{array}\right)\leftrightarrow\left(\begin{array}{c}
+\beta_{n}^{\ast}\\
+v_{n}^{\ast}\\
+u_{n}^{\ast}\\
+\alpha_{n}^{\ast}\end{array}\right)\end{equation}
+
+\end_inset
+
+in basis expansion coefficients.
+ 
+\end_layout
+
+\begin_layout Standard
+With these two properties, we write Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bdg1-1-1-1"
+
+\end_inset
+
+ as
+\begin_inset Formula \[
+-\mathcal{L}_{33n}^{(m)}\beta_{n}^{\ast}+iv\sum_{l}\mathcal{D}_{ln}^{(m)}v_{l}^{\ast}-\Delta\alpha_{n}^{\ast}=E'\beta_{n}^{\ast}\]
+
+\end_inset
+
+where 
+\begin_inset Formula $E'$
+\end_inset
+
+ denotes the new eigenenergy after the symmetry operation.
+ We then take the conjugate of the equation to obtain
+\begin_inset Formula \[
+\Delta\alpha_{n}+\mathcal{L}_{33n}^{(m)}\beta_{n}+iv\sum_{l}\mathcal{D}_{nl}^{(m)}v_{l}=-E'\beta_{n}\]
+
+\end_inset
+
+which is identical to Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bdg1-2-1-3"
+
+\end_inset
+
+ by recognizing 
+\begin_inset Formula $E'=-E$
+\end_inset
+
+.
+ Similarly, Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bdg1-1-1-2"
+
+\end_inset
+
+ changes to Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bdg1-2-1-4"
+
+\end_inset
+
+, Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bdg1-1-1-3"
+
+\end_inset
+
+ changes to Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bdg1-2-1-1"
+
+\end_inset
+
+, and Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bdg1-1-1-4"
+
+\end_inset
+
+ changes to Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bdg1-2-1-2"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For concreteness, we check the special case with 
+\begin_inset Formula $N_{max}=1$
+\end_inset
+
+, 
+\begin_inset Formula $m=0$
+\end_inset
+
+, 
+\begin_inset Formula $L=1$
+\end_inset
+
+.
+ We have the ansatz 
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{c}
+u({\bf r})\\
+\alpha({\bf r})\\
+\beta({\bf r})\\
+v({\bf r})\end{array}\right)=\frac{e^{ik_{z}z}}{\sqrt{2\pi}}\left(\begin{array}{c}
+\frac{u}{\sqrt{\mathcal{N}_{1}^{(0)}}}J_{0}(\kappa_{1}^{(0)}r)\\
+\frac{\alpha}{\sqrt{\mathcal{N}_{1}^{(1)}}}J_{1}(\kappa_{1}^{(1)}r)e^{i\theta}\\
+\frac{\beta}{\sqrt{\mathcal{N}_{1}^{(1)}}}J_{1}(\kappa_{1}^{(1)}r)e^{i\theta}\\
+\frac{v}{\sqrt{\mathcal{N}_{1}^{(0)}}}J_{0}(\kappa_{1}^{(0)}r)\end{array}\right)\equiv\frac{e^{ik_{z}z}}{\sqrt{2\pi}}\left(\begin{array}{c}
+\frac{1}{A}J_{0}(ar)u\\
+\frac{e^{i\theta}}{B}J_{1}(br)\alpha\\
+\frac{e^{i\theta}}{B}J_{1}(br)\beta\\
+\frac{1}{A}J_{0}(ar)v\end{array}\right)\label{eq:basisBessel-1}\end{equation}
+
+\end_inset
+
+where we have abbreviated 
+\begin_inset Formula $[u_{n},\alpha_{n},\beta_{n},v_{n}]$
+\end_inset
+
+ into 
+\begin_inset Formula $[u,\alpha,\beta,v]$
+\end_inset
+
+, 
+\begin_inset Formula $a=\kappa_{1}^{(0)}\approx2.40483$
+\end_inset
+
+, 
+\begin_inset Formula $b=\kappa_{1}^{(1)}\approx3.83171$
+\end_inset
+
+, and 
+\begin_inset Formula \begin{eqnarray}
+\mathcal{N}_{1}^{(0)} & = & \int_{0}^{1}J_{0}(\kappa_{1}^{(0)}r)J_{0}(\kappa_{1}^{(0)}r)rdr=\frac{1}{2}\left(J_{1}(\kappa_{1}^{(0)})\right)^{2}\equiv A^{2}\approx0.134757\\
+\mathcal{N}_{1}^{(1)} & = & \int_{0}^{1}J_{1}(\kappa_{1}^{(1)}r)J_{1}(\kappa_{1}^{(1)}r)rdr=\frac{1}{2}\left(J_{2}(\kappa_{1}^{(1)})\right)^{2}\equiv B^{2}\approx0.081107\end{eqnarray}
+
+\end_inset
+
+Then we recast the eigen equation of BdG Hamiltonian into coefficient matrix,
+ by using the following relations
+\begin_inset Formula \begin{eqnarray}
+-(\frac{1}{r}\frac{\partial}{\partial r}(r\frac{\partial}{\partial r})+\frac{1}{r^{2}}\frac{\partial^{2}}{\partial\theta^{2}})J_{0}(ar) & = & a^{2}J_{0}(ar)\\
+-(\frac{1}{r}\frac{\partial}{\partial r}(r\frac{\partial}{\partial r})+\frac{1}{r^{2}}\frac{\partial^{2}}{\partial\theta^{2}})J_{1}(br) & = & b^{2}J_{1}(br)\\
+-\lambda e^{-i\theta}(i\partial_{r}+\frac{1}{r}\partial_{\theta})\left(J_{1}(br)e^{i\theta}\right) & = & -\lambda e^{-i\theta}\left(i\frac{b}{2}(J_{0}(br)-J_{2}(br))e^{i\theta}+\frac{i}{r}J_{1}(br)e^{i\theta}\right)\nonumber \\
+ & = & -i\lambda\left(\frac{J_{0}(br)-J_{2}(br)}{2}+\frac{1}{r}J_{1}(br)\right)\nonumber \\
+ & = & -i\lambda\left(\frac{b}{2}\left(J_{0}(br)-J_{2}(br)\right)+\frac{1}{r}J_{1}(br)\right)\nonumber \\
+ & = & -i\lambda\left(\frac{b}{2}\left(J_{0}(br)-J_{2}(br)\right)+\frac{b}{2}\left(J_{2}(br)+J_{0}(br)\right)\right)\label{eq:specificrecursion}\\
+ & = & -i\lambda bJ_{0}(br)\\
+ve^{i\theta}(-i\partial_{r}+\frac{1}{r}\partial_{\theta})J_{0}(ar) & = & \lambda e^{i\theta}(-i(-a)J_{1}(ar))\nonumber \\
+ & = & i\lambda ae^{i\theta}J_{1}(ar)\end{eqnarray}
+
+\end_inset
+
+where in order to get Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:specificrecursion"
+
+\end_inset
+
+ we have used Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:DeductionRelation"
+
+\end_inset
+
+.
+ With these simplifications, we plug Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:basisBessel-1"
+
+\end_inset
+
+ into Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bdg1-1-1-1"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bdg2"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bdg3"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bdg4"
+
+\end_inset
+
+, to arrive at 
+\begin_inset Formula \begin{eqnarray}
+\left(k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q+\lambda(k_{z}+\frac{q}{2})+h+a^{2}\right)\frac{1}{A}J_{0}(ar)u-i\lambda b\frac{1}{B}J_{0}(br)\alpha-\Delta\frac{1}{A}J_{0}(ar)v & = & E\frac{1}{A}J_{0}(ar)u\label{eq:bdg1-1}\\
+i\lambda ae^{i\theta}\frac{1}{A}J_{1}(ar)u+\left(k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q-\lambda(k_{z}+\frac{q}{2})-h+b^{2}\right)\frac{e^{i\theta}}{B}J_{1}(br)\alpha+\Delta\frac{e^{i\theta}}{B}J_{1}(br)\beta & = & E\frac{e^{i\theta}}{B}J_{1}(br)\alpha\label{eq:bdg1-2}\\
+\Delta\frac{e^{i\theta}}{B}J_{1}(br)\alpha-\left(k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q-v_{3}(k_{z}-\frac{q}{2})+h+b^{2}\right)\frac{e^{i\theta}}{B}J_{1}(br)\beta+i\lambda e^{i\theta}\frac{1}{A}aJ_{1}(ar)v & = & E\frac{e^{i\theta}}{B}J_{1}(br)\beta\label{eq:bdg1-3}\\
+-\Delta\frac{1}{A}J_{0}(ar)u-i\lambda b\frac{1}{B}J_{0}(br)\beta-\left(k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q+v_{3}(k_{z}-\frac{q}{2})-h+a^{2}\right)\frac{1}{A}J_{0}(ar)v & = & E\frac{1}{A}J_{0}(ar)v\label{eq:bdg1-4}\end{eqnarray}
+
+\end_inset
+
+We multiply both sides of Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bdg1-1"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bdg1-4"
+
+\end_inset
+
+ by 
+\begin_inset Formula $\int_{0}^{1}\frac{1}{A}J_{0}(ar)rdr$
+\end_inset
+
+ and Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bdg1-2"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:bdg1-3"
+
+\end_inset
+
+ by 
+\begin_inset Formula $\int_{0}^{1}\frac{1}{B}J_{1}(br)rdr$
+\end_inset
+
+, we will have
+\begin_inset Formula \begin{eqnarray}
+\left(k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q+\lambda(k_{z}+\frac{q}{2})+h+a^{2}\right)u-i\lambda\frac{b}{AB}\int_{0}^{1}rdrJ_{0}(ar)J_{0}(br)\alpha-\Delta v & = & Eu\label{eq:bdg1-1-1}\\
+i\lambda\frac{a}{AB}\int_{0}^{1}rdrJ_{1}(br)J_{1}(ar)u+\left(k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q-\lambda(k_{z}+\frac{q}{2})-h+b^{2}\right)\alpha+\Delta\beta & = & E\alpha\label{eq:bdg1-2-1}\\
+\Delta\alpha-\left(k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q-v_{3}(k_{z}-\frac{q}{2})+h+b^{2}\right)\beta+i\lambda\frac{a}{AB}\int_{0}^{1}rdrJ_{1}(br)J_{1}(ar)v & = & E\beta\label{eq:bdg1-3-1}\\
+-\Delta u-i\lambda\frac{b}{AB}\int_{0}^{r}rdrJ_{0}(ar)J_{0}(br)\beta-\left(k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q+v_{3}(k_{z}-\frac{q}{2})-h+a^{2}\right)v & = & Ev\label{eq:bdg1-4-1}\end{eqnarray}
+
+\end_inset
+
+which can be further casted into
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{cccc}
+\mathcal{H}_{11} & -i\lambda\mathcal{A} & 0 & -\Delta\\
+i\lambda\mathcal{B} & \mathcal{H}_{22} & \Delta & 0\\
+0 & \Delta & \mathcal{H}_{33} & i\lambda\mathcal{B}\\
+-\Delta & 0 & -i\lambda\mathcal{A} & \mathcal{H}_{44}\end{array}\right)\left(\begin{array}{c}
+u\\
+\alpha\\
+\beta\\
+v\end{array}\right)=E\left(\begin{array}{c}
+u\\
+\alpha\\
+\beta\\
+v\end{array}\right)\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula \begin{eqnarray}
+\mathcal{H}_{11} & = & k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q+\lambda(k_{z}+\frac{q}{2})+h+a^{2}\\
+\mathcal{H}_{22} & = & k_{z}^{2}+\frac{q^{2}}{4}+k_{z}q-\lambda(k_{z}+\frac{q}{2})-h+b^{2}\\
+\mathcal{H}_{33} & = & -\left(k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q-v_{3}(k_{z}-\frac{q}{2})+h+b^{2}\right)\\
+\mathcal{H}_{44} & = & -\left(k_{z}^{2}+\frac{q^{2}}{4}-k_{z}q+v_{3}(k_{z}-\frac{q}{2})-h+a^{2}\right)\\
+\mathcal{A} & = & \frac{b}{AB}\int_{0}^{1}rdrJ_{0}(ar)J_{0}(br)\\
+ & = & \frac{b}{AB}\frac{1}{a^{2}-b^{2}}(-J_{0}(b)\frac{dJ_{0}(ar)}{dr}|_{r=1})\\
+ & = & \frac{ab}{AB}\frac{1}{a^{2}-b^{2}}J_{0}(b)J_{1}(a)\\
+ & \approx & 2.0709759318690697\\
+\mathcal{B} & = & \frac{a}{AB}\int_{0}^{1}rdrJ_{1}(br)J_{1}(ar)\\
+ & = & \frac{a}{AB}\frac{1}{b^{2}-a^{2}}(-J_{1}(a)\frac{dJ_{1}(br)}{dr}|_{r=1})\\
+ & = & \frac{ab}{AB}\frac{1}{a^{2}-b^{2}}J_{1}(a)\frac{1}{2}(J_{0}(b)-J_{2}(b))\\
+ & \approx & 2.0709759318690693\end{eqnarray}
+
+\end_inset
+
+And 
+\begin_inset Formula $\mathcal{A}=\mathcal{B}$
+\end_inset
+
+ at least to the accuracy of 
+\begin_inset Formula $10^{-15}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Straightforwardly, we can check other special cases, by using Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:I1"
+
+\end_inset
+
+ and Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:I2"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $m=3$
+\end_inset
+
+, 
+\begin_inset Formula $n=5$
+\end_inset
+
+, 
+\begin_inset Formula $l=2$
+\end_inset
+
+ : 
+\begin_inset Formula \begin{eqnarray}
+\mathcal{A} & = & -0.041749239919106576\\
+\mathcal{B} & = & -0.04174923991910716\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $m=1$
+\end_inset
+
+, 
+\begin_inset Formula $n=2$
+\end_inset
+
+, 
+\begin_inset Formula $l=2$
+\end_inset
+
+ :
+\begin_inset Formula \begin{eqnarray}
+\mathcal{A} & = & 0.081446190044653\\
+\mathcal{B} & = & 0.08144619004465767\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $m=-3$
+\end_inset
+
+, 
+\begin_inset Formula $n=6$
+\end_inset
+
+, 
+\begin_inset Formula $l=2$
+\end_inset
+
+ :
+\begin_inset Formula \begin{eqnarray}
+\mathcal{A} & = & -0.04536913491022942\\
+\mathcal{B} & = & -0.045369134910227024\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+This means in Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:I1"
+
+\end_inset
+
+ and Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:I2"
+
+\end_inset
+
+, 
+\begin_inset Formula $\mathcal{A}=\mathcal{B}$
+\end_inset
+
+ after interchanging 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $l$
+\end_inset
+
+: 
+\begin_inset Formula \begin{eqnarray}
+J_{m}(\kappa_{l}^{(m+1)})J_{m-1}(\kappa_{n}^{(m)}) & = & J_{m+1}(\kappa_{n}^{(m)})J_{m+2}(\kappa_{l}^{(m+1)}),\quad m\ge1\label{eq:relationmgreaterthan1}\\
+J_{m}(\kappa_{l}^{(m+1)}) & = & -J_{m+2}(\kappa_{l}^{(m+1)})\label{eq:relationm}\end{eqnarray}
+
+\end_inset
+
+where 
+\begin_inset Formula $\kappa_{n}^{(m)}$
+\end_inset
+
+ is the 
+\begin_inset Formula $n$
+\end_inset
+
+th non-zero root of the first kind of Bessel Function 
+\begin_inset Formula $J_{m}(x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relationm"
+
+\end_inset
+
+ can be proved easily with recursion relation and the definition of 
+\begin_inset Formula $\kappa_{n}^{(m)}$
+\end_inset
+
+ for 
+\begin_inset Formula $m\ge0$
+\end_inset
+
+.
+ Then apply the relation to 
+\begin_inset Formula $J_{m+1}$
+\end_inset
+
+ and multiply both sides of the equations, then Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:relationmgreaterthan1"
+
+\end_inset
+
+ follows naturally.
+\end_layout
+
+\end_body
+\end_document

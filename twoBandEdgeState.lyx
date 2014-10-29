@@ -1,0 +1,600 @@
+#LyX 1.6.6.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass paper
+\begin_preamble
+\def\pa{\partial}
+\def\r{\textbf{r}}
+\def\k{\textbf{k}}
+\def\q{\textbf{q}}
+\def\p{\textbf{p}}
+\def\R{\textbf{R}}
+\def\s{\sigma}
+\def\u{\uparrow}
+\def\d{\downarrow}
+\end_preamble
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\cite_engine natbib_numerical
+\use_bibtopic false
+\paperorientation portrait
+\leftmargin 0.5in
+\topmargin 0.5in
+\rightmargin 0.5in
+\bottommargin 1.2in
+\headsep 0.2in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Understanding 
+\begin_inset Quotes eld
+\end_inset
+
+Anomalous edge states in a weakly driven two-band lattice system
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Lin Dong, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this note, we follow the general two-band model considered in Micheal
+ Levin's PRX paper (2013).
+ The time-independent term is written as
+\begin_inset Formula \begin{equation}
+H_{0}({\bf k})=e({\bf k})+{\bf d}({\bf k})\cdot{\bf \sigma}\end{equation}
+
+\end_inset
+
+and further more we simplify the discussion by considering a specific Hamiltonia
+n with specified parameters, 
+\begin_inset Formula \begin{equation}
+H_{0}(k_{x},k_{y})=\left(\begin{array}{cc}
+(\mu-J)-2b(2-\cos k_{x}-\cos k_{y})+J\cos k_{x}\cos k_{y} & a(\sin k_{x}-i\sin k_{y})\\
+a(\sin k_{x}+i\sin k_{y}) & -(\mu-J)+2b(2-\cos k_{x}-\cos k_{y})-J\cos k_{x}\cos k_{y}\end{array}\right)\end{equation}
+
+\end_inset
+
+while time-dependent term is written as
+\begin_inset Formula \begin{equation}
+\Delta(t)=\Delta_{0}\sigma_{z}\cos\omega t\label{eq:harmonicDriving}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Chern Number of the bulk system.
+\end_layout
+
+\begin_layout Standard
+First of all, we consider the Chern number for the time-independent system
+ described by 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ only, and from definition we have
+\begin_inset Formula \begin{equation}
+C^{\nu=-}=\frac{1}{2\pi}\int d^{2}{\bf k}\gamma^{\nu=-}\end{equation}
+
+\end_inset
+
+where the summation runs over the occupied quasi-hole bands.
+ The definition for Berry curvature is 
+\begin_inset Formula \begin{eqnarray}
+\gamma^{\nu=-} & = & i\frac{\langle-|\partial_{k_{x}}H_{0}|+\rangle\langle+|\partial_{k_{y}}H_{0}|-\rangle-(k_{x}\leftrightarrow k_{y})}{(E_{{\bf k}}^{-}-E_{{\bf k}}^{+})^{2}}\\
+ & = & -2\Im\frac{\langle-|\partial_{k_{x}}H_{0}|+\rangle\langle+|\partial_{k_{y}}H_{0}|-\rangle}{(E_{{\bf k}}^{-}-E_{{\bf k}}^{+})^{2}}\end{eqnarray}
+
+\end_inset
+
+Derivatives for Hamiltonian is straightforward, 
+\begin_inset Formula \begin{eqnarray}
+\frac{\partial}{\partial k_{x}}H_{0}(k_{x},k_{y}) & = & \left(\begin{array}{cc}
+-2b\sin k_{x}-J\sin k_{x}\cos k_{y} & a\cos k_{x}\\
+a\cos k_{x} & 2b\sin k_{x}+J\sin k_{x}\cos k_{y}\end{array}\right)\equiv h_{x}\\
+\frac{\partial}{\partial k_{y}}H_{0}(k_{x},k_{y}) & = & \left(\begin{array}{cc}
+-2b\sin k_{y}-J\cos k_{x}\sin k_{y} & -ia\cos k_{y}\\
+ia\cos k_{y} & 2b\sin k_{y}+J\cos k_{x}\sin k_{y}\end{array}\right)\equiv h_{y}\end{eqnarray}
+
+\end_inset
+
+ Then, we have a simplified notation
+\begin_inset Formula \begin{eqnarray*}
+\gamma^{\nu=-} & = & -2\Im\left\{ \frac{1}{(E_{{\bf k}}^{-}-E_{{\bf k}}^{+})^{2}}\left(\begin{array}{cc}
+u & v\end{array}\right)^{\ast}\left(\begin{array}{c}
+-(2b\sin k_{x}+J\sin k_{x}\cos k_{y})u'+a\cos k_{x}v'\\
+a\cos k_{x}u'+(2b\sin k_{x}+J\sin k_{x}\cos k_{y})v'\end{array}\right)\cdot\left(\begin{array}{cc}
+u' & v'\end{array}\right)^{\ast}\left(\begin{array}{c}
+-(2b\sin k_{y}+J\cos k_{x}\sin k_{y})u-ia\cos k_{y}v\\
+ia\cos k_{y}u+(2b\sin k_{y}+J\cos k_{x}\sin k_{y})v\end{array}\right)\right\} \\
+ & = & -2\Im\left\{ \frac{1}{(E_{{\bf k}}^{-}-E_{{\bf k}}^{+})^{2}}\Xi_{1}\cdot\Xi_{2}\right\} \end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula \begin{eqnarray*}
+\Xi_{1} & = & \left(-(2b\sin k_{x}+J\sin k_{x}\cos k_{y})u'u^{\ast}+a\cos k_{x}v'u^{\ast}+a\cos k_{x}u'v^{\ast}+(2b\sin k_{x}+J\sin k_{x}\cos k_{y})v'v^{\ast}\right)\\
+\Xi_{2} & = & \left(-(2b\sin k_{y}+J\cos k_{x}\sin k_{y})uu'^{\ast}-ia\cos k_{y}vu'^{\ast}+ia\cos k_{y}uv'^{\ast}+(2b\sin k_{y}+J\cos k_{x}\sin k_{y})vv'^{\ast}\right)\end{eqnarray*}
+
+\end_inset
+
+Note that 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ is periodic in momentum space and the integral should only be performed
+ over the crystal-mometum Brillouin zone.
+ 
+\end_layout
+
+\begin_layout Section
+Edge State with boundary condition
+\end_layout
+
+\begin_layout Standard
+In this section, we put hard wall boundary condition on y-direction, and
+ we approximate 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+ with 
+\begin_inset Formula \begin{eqnarray}
+H_{0}^{\text{eff}}(k_{x}) & = & \left(\begin{array}{cc}
+(\mu-J)-2b(\frac{1}{2}k_{x}^{2}+\frac{1}{2}k_{y}^{2})+J(1-\frac{1}{2}k_{x}^{2})(1-\frac{1}{2}k_{y}^{2}) & a(k_{x}-ik_{y})\\
+a(k_{x}+ik_{y}) & -(\mu-J)+2b(\frac{1}{2}k_{x}^{2}+\frac{1}{2}k_{y}^{2})-J(1-\frac{1}{2}k_{x}^{2})(1-\frac{1}{2}k_{y}^{2})\end{array}\right)\\
+ & = & \left(\begin{array}{cc}
+(\mu-J)-2b(\frac{1}{2}k_{x}^{2}-\frac{1}{2}\frac{\partial^{2}}{\partial y^{2}})+J(1-\frac{1}{2}k_{x}^{2})(1+\frac{1}{2}\frac{\partial^{2}}{\partial y^{2}}) & a(k_{x}-\frac{\partial}{\partial y})\\
+a(k_{x}+\frac{\partial}{\partial y}) & -(\mu-J)+2b(\frac{1}{2}k_{x}^{2}-\frac{1}{2}\frac{\partial^{2}}{\partial y^{2}})-J(1-\frac{1}{2}k_{x}^{2})(1+\frac{1}{2}\frac{\partial^{2}}{\partial y^{2}})\end{array}\right)\end{eqnarray}
+
+\end_inset
+
+then we expand wave-function in the basis as
+\begin_inset Formula \begin{equation}
+|\psi\rangle=\sqrt{\frac{2}{L}}\sum_{n=1}^{N_{\text{max}}}\sin(\frac{n\pi y}{L})\left(\begin{array}{c}
+u_{n}\\
+v_{n}\end{array}\right)\label{eq:realspaceexpansion}\end{equation}
+
+\end_inset
+
+From this, we can recast 
+\begin_inset Formula $H_{0}^{\text{eff}}(k_{x})$
+\end_inset
+
+ into a self-adjoint matrix form of size 
+\begin_inset Formula $2N_{\text{max}}\times2N_{\text{max}}$
+\end_inset
+
+,
+\begin_inset Formula \begin{eqnarray*}
+\left((\mu-J)-2b(\frac{1}{2}k_{x}^{2}+\frac{1}{2}(\frac{n\pi}{L})^{2})+J(1-\frac{1}{2}k_{x}^{2})(1-\frac{1}{2}(\frac{n\pi}{L})^{2})\right)u_{n}+ak_{x}v_{n}-\sum_{m\neq n}\Lambda_{mn}v_{m} & = & \varepsilon u_{n}\\
+ak_{x}u_{n}+\sum_{m\neq n}\Lambda_{mn}u_{m}+\left(-(\mu-J)+2b(\frac{1}{2}k_{x}^{2}+\frac{1}{2}(\frac{n\pi}{L})^{2})-J(1-\frac{1}{2}k_{x}^{2})(1-\frac{1}{2}(\frac{n\pi}{L})^{2})\right)v_{n} & = & \varepsilon v_{n}\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula \begin{equation}
+\Lambda_{mn}=\frac{2a}{L}\frac{mn(1-(-1)^{m+n})}{(n^{2}-m^{2})}\end{equation}
+
+\end_inset
+
+where self-adjoincy is noted by 
+\begin_inset Formula $\Lambda_{mn}=-\Lambda_{nm}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Floquet Edge State
+\end_layout
+
+\begin_layout Standard
+In the previous two sections, we have ignored the time-dependent term Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:harmonicDriving"
+
+\end_inset
+
+, and in this section, we put it back, 
+\begin_inset Formula $\Delta(t)=\left(\begin{array}{cc}
+\Delta_{0}\cos\omega t & 0\\
+0 & -\Delta_{0}\cos\omega t\end{array}\right)$
+\end_inset
+
+.
+ Floquet theorem gives 
+\begin_inset Formula $|\Phi\rangle=|\psi\rangle e^{i\varepsilon t}$
+\end_inset
+
+ and we study the equation, 
+\begin_inset Formula $(H-i\partial_{t})|\psi\rangle=\varepsilon|\psi\rangle$
+\end_inset
+
+.
+ So following Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:realspaceexpansion"
+
+\end_inset
+
+, we expand wave function as
+\begin_inset Formula \begin{equation}
+|\psi\rangle=\sum_{p=-P_{\text{max}}}^{P_{\text{max}}}\sum_{n=1}^{N_{\text{max}}}\sqrt{\frac{2}{L}}\sin(\frac{n\pi y}{L})\frac{1}{\sqrt{T}}\exp(+i\frac{2\pi pt}{T})\left(\begin{array}{c}
+u_{np}\\
+v_{np}\end{array}\right)\label{eq:realspaceAndtimeexpansion}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $T=\frac{2\pi}{\omega}$
+\end_inset
+
+.
+ From this, we recast 
+\begin_inset Formula $H_{0}^{\text{eff}}$
+\end_inset
+
+ into a self-adjoint matrix form of size 
+\begin_inset Formula $2N_{\text{max}}(2P_{\text{max}}+1)\times2N_{\text{max}}(2P_{\text{max}}+1)$
+\end_inset
+
+,
+\begin_inset Formula \begin{eqnarray*}
+\left((\mu-J)-2b(\frac{1}{2}k_{x}^{2}+\frac{1}{2}(\frac{n\pi}{L})^{2})+J(1-\frac{1}{2}k_{x}^{2})(1-\frac{1}{2}(\frac{n\pi}{L})^{2})+\frac{2\pi p}{T}\right)u_{np}+\frac{\Delta_{0}}{2}(u_{n,p-1}+u_{n,p+1})+ak_{x}v_{np}-\sum_{m\neq n}\Lambda_{mn}v_{mp} & = & \varepsilon u_{np}\\
+ak_{x}u_{np}+\sum_{m\neq n}\Lambda_{mn}u_{mp}+\left(-(\mu-J)+2b(\frac{1}{2}k_{x}^{2}+\frac{1}{2}(\frac{n\pi}{L})^{2})-J(1-\frac{1}{2}k_{x}^{2})(1-\frac{1}{2}(\frac{n\pi}{L})^{2})+\frac{2\pi p}{T}\right)v_{np}-\frac{\Delta_{0}}{2}(v_{n,p-1}+v_{n,p+1}) & = & \varepsilon v_{np}\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula \begin{equation}
+\Lambda_{mn}=\frac{2a}{L}\frac{mn(1-(-1)^{m+n})}{(n^{2}-m^{2})}\end{equation}
+
+\end_inset
+
+where self-adjoincy is noted by 
+\begin_inset Formula $\Lambda_{mn}=-\Lambda_{nm}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Floquet Bulk invariant
+\end_layout
+
+\begin_layout Standard
+With bulk-edge correspondance, it's natural to consider topological invariant
+ as a bulk property from the emergence of edge state.
+ We consider the time-dependent Hamiltonian and study EOM 
+\begin_inset Formula $(H-i\partial_{t})|\psi\rangle=\varepsilon|\psi\rangle$
+\end_inset
+
+, by expanding wave function as 
+\begin_inset Formula \begin{equation}
+|\psi\rangle=\sum_{p=-P_{\text{max}}}^{P_{\text{max}}}\frac{1}{\sqrt{T}}\exp(+i\frac{2\pi pt}{T})\left(\begin{array}{c}
+u_{p}\\
+v_{p}\end{array}\right)\label{eq:timeexpansion}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $T=\frac{2\pi}{\omega}$
+\end_inset
+
+.
+ From this, we recast 
+\begin_inset Formula $H_{0}^{\text{eff}}$
+\end_inset
+
+ into a self-adjoint matrix form of size 
+\begin_inset Formula $2(2P_{\text{max}}+1)\times2(2P_{\text{max}}+1)$
+\end_inset
+
+,
+\begin_inset Formula \begin{eqnarray*}
+\left((\mu-J)-2b(2-\cos k_{x}-\cos k_{y})+J\cos k_{x}\cos k_{y}+\frac{2\pi p}{T}\right)u_{p}+\frac{\Delta_{0}}{2}(u_{p-1}+u_{p+1})+a(\sin k_{x}-i\sin k_{y})v_{p} & = & \varepsilon u_{p}\\
+a(\sin k_{x}+i\sin k_{y})u_{p}+\left(-(\mu-J)+2b(2-\cos k_{x}-\cos k_{y})-J\cos k_{x}\cos k_{y}+\frac{2\pi p}{T}\right)v_{p}-\frac{\Delta_{0}}{2}(v_{p-1}+v_{p+1}) & = & \varepsilon v_{p}\end{eqnarray*}
+
+\end_inset
+
+Then we follow section one to compute Chern number of the coefficient matrix,
+ by taking it as the time-independent model.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+More explicitly, suppose we have a self-adjoint matrix form of size 
+\begin_inset Formula $2(2P_{\text{max}}+1)\times2(2P_{\text{max}}+1)$
+\end_inset
+
+, and its eigenvalue problem is prescribed by 
+\begin_inset Formula \begin{eqnarray}
+\left((\mu-J)-2b(2-\cos k_{x}-\cos k_{y})+J\cos k_{x}\cos k_{y}+\frac{2\pi p}{T}\right)u_{p}+\frac{\Delta_{0}}{2}(u_{p-1}+u_{p+1})+a(\sin k_{x}-i\sin k_{y})v_{p} & = & \varepsilon u_{p}\label{eq:self-adjoint_matrix}\\
+a(\sin k_{x}+i\sin k_{y})u_{p}+\left(-(\mu-J)+2b(2-\cos k_{x}-\cos k_{y})-J\cos k_{x}\cos k_{y}+\frac{2\pi p}{T}\right)v_{p}-\frac{\Delta_{0}}{2}(v_{p-1}+v_{p+1}) & = & \varepsilon v_{p}\label{eq:self-adjoint_matrix2}\end{eqnarray}
+
+\end_inset
+
+ where 
+\begin_inset Formula $p$
+\end_inset
+
+ runs from 
+\begin_inset Formula $-P_{max}$
+\end_inset
+
+ to 
+\begin_inset Formula $P_{max}$
+\end_inset
+
+.
+ (
+\begin_inset Formula $\mu$
+\end_inset
+
+, 
+\begin_inset Formula $J$
+\end_inset
+
+, 
+\begin_inset Formula $T$
+\end_inset
+
+, 
+\begin_inset Formula $b$
+\end_inset
+
+, 
+\begin_inset Formula $\Delta_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $a$
+\end_inset
+
+, are given parameters for the eigenvalue problem) In order to compute the
+ Chern number, I have adopted the following approach to get fairly accurate
+ integer number 
+\begin_inset Formula $1$
+\end_inset
+
+ (see code at the latest commit under branch floquet_chern_number_PRX of
+ the github repo):
+\end_layout
+
+\begin_layout Enumerate
+Determine Legendre-Gauss nodes and weights on the interval 
+\begin_inset Formula $[-\pi,\pi]$
+\end_inset
+
+ for both 
+\begin_inset Formula $k_{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $k_{y}$
+\end_inset
+
+.
+ This step is done only once and in prior, and the idea is to compute the
+ zeros of the N+1 Legendre Polynomial using the recursion relation and the
+ Newton-Raphson method.
+ My C++ code is mainly translated from the 
+\begin_inset CommandInset href
+LatexCommand href
+name "matlab code in file-exchange"
+target "http://www.mathworks.com/matlabcentral/fileexchange/4540-legendre-gauss-quadrature-weights-and-nodes/content/lgwt.m"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Use node value 
+\begin_inset Formula $k_{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $k_{y}$
+\end_inset
+
+ obtained from 1 to update the matrix element in Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:self-adjoint_matrix"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:self-adjoint_matrix2"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Compute the eigenvalues within the range of 
+\begin_inset Formula $[-\frac{\pi}{T},\frac{\pi}{T}]$
+\end_inset
+
+ and obtain the associated eigenvectors.
+\end_layout
+
+\begin_layout Enumerate
+Calculate the integrand (so-called Berry curvature) 
+\begin_inset Formula \begin{eqnarray}
+\gamma_{ij}(k_{x},k_{y}) & = & -2\Im\frac{\langle-,i|\partial_{k_{x}}H_{0}|+,j\rangle\langle+,j|\partial_{k_{y}}H_{0}|-,i\rangle}{(E_{{\bf k}}^{-,i}-E_{{\bf k}}^{+,j})^{2}}\end{eqnarray}
+
+\end_inset
+
+where 
+\begin_inset Formula $E_{{\bf k}}^{-,i}$
+\end_inset
+
+ and 
+\begin_inset Formula $|-,i\rangle$
+\end_inset
+
+ denotes the 
+\begin_inset Formula $i$
+\end_inset
+
+th eigenvalue within 
+\begin_inset Formula $[-\frac{\pi}{T},0]$
+\end_inset
+
+ and corresponding eigenvector, 
+\begin_inset Formula $E_{{\bf k}}^{+,j}$
+\end_inset
+
+ and 
+\begin_inset Formula $|+,j\rangle$
+\end_inset
+
+ denotes the 
+\begin_inset Formula $j$
+\end_inset
+
+th eigenvalue within 
+\begin_inset Formula $[0,\frac{\pi}{T}]$
+\end_inset
+
+ and corresponding eigenvector.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Sum up both 2D momentum integration and 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+ indices, 
+\begin_inset Formula \begin{equation}
+\mathcal{C}=\frac{1}{2\pi}\sum_{k_{x},k_{y}}\sum_{i,j}\gamma_{ij}(k_{x},k_{y})\omega(k_{x})\omega(k_{y})\label{eq:chern_summation}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\omega(k_{x})$
+\end_inset
+
+ is the Legendre-Gauss weight at 
+\begin_inset Formula $k_{x}$
+\end_inset
+
+ determined at step 1.
+ Note the summation over 
+\begin_inset Formula $k_{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $k_{y}$
+\end_inset
+
+ in Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:chern_summation"
+
+\end_inset
+
+ are completely independent with each other, and I have made use of MPI
+ scatter and gather function to parallize the code.
+\end_layout
+
+\begin_layout Standard
+An example plot of 
+\begin_inset Formula $\sum_{i,j}\gamma_{ij}(k_{x},k_{y})$
+\end_inset
+
+ is given here, for parameters mu = 1.0; J = 1.5*mu; b = 0.5*mu; Delta0 = 1.0*mu;
+ a = 4.0*mu; omega = mu/0.07;
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document
