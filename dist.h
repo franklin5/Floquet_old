@@ -16,6 +16,8 @@ class cDistribute {
   int recvcount, sendcount, stride;
   int *sendbuf, *recvbuf;
   int *sendcounts, *displs;
+  int *recvcounts, *displs_r, offset;
+  double  *localEig, *TotalEig;
  public:
   cDistribute(const int rank, const int size, const int root)
     {_rank = rank;_size=size;_root=root;}
@@ -24,8 +26,12 @@ class cDistribute {
       delete []sendbuf;
       delete []sendcounts;
       delete []displs;
+      delete []recvcounts;
+	  delete []displs_r;
+	  delete []TotalEig;
     }
-      delete []recvbuf;
+    delete []recvbuf;
+	delete []localEig;
   }
   int compute_count(int rank, int size, int NJOBS);// compute distribution count: the last rank does the remaineder job while the rest do the most even work.
   // NJOBS is the total number of work to be distributed, because each work is indepedent with each other.

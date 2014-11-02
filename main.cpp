@@ -72,7 +72,11 @@ int main(int argc, char** argv){
 				bdg->file_output();
 				break;
 			case 0:
-				//bdg = new cBdG_Edge(rank,size,root);
+				bdg = new cBdG_Edge(rank,size,root);
+				bdg->file_input();
+				bdg->construction();
+				bdg->compute();
+				bdg->file_output();
 				break;
 			default:
 				break;

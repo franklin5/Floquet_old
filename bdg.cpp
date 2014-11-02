@@ -347,20 +347,4 @@ void cBdG_Bulk::file_output(){
   
 }
 
-void cBdG_Edge::file_input(){
-  
-  
-}
 
-void cBdG_Edge::file_output(){
-
-
-}
-void cBdG_Edge::construction(){
-  
-  
-}
-void cBdG_Edge::compute(){
-
-
-}

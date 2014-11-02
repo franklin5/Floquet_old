@@ -18,7 +18,7 @@
 class cBdG: public cFloquet {
  protected:
 	int _pblock4, _ibdg;
-	double  _h, _mu, _T, _Delta0, _v;
+	double  _h, _mu, _T, _Delta0, _v, _kmax;
  public:
   virtual void file_input()   =0; // this->file_input()
   virtual void file_output()   =0; // this->file_output()
@@ -34,13 +34,12 @@ class cBdG_Bulk : public cBdG, public cDistribute{
 private:
 	int _NKX2;
 	int _lowerbound, _upperbound;
-	int *recvcounts, *displs_r, offset;
 	double *curvature_rank, *curvature;
-	double _kmax, _temp_curv;
+	double _temp_curv;
 	complex<double> _chern;
 	double _chern_rank, _total_chern;
 	char* _chernSolver;
-	double  *localEig, *TotalEig;
+
 public:
 	cBdG_Bulk (const int rank, const int size, const int root) : cDistribute(rank,size,root){
 		_chernSolver = new char [100];
@@ -49,12 +48,8 @@ public:
 		delete []_chernSolver;
 		if (_root==_rank) {
 			delete []curvature;
-			delete []recvcounts;
-			delete []displs_r;
-			delete []TotalEig;
 		}
 		delete []curvature_rank;
-		delete []localEig;
 	}
 	void file_input();
 	void file_output();
@@ -71,14 +66,15 @@ class cBdG_Edge : public cBdG, public cDistribute{
 // p = 0 for time-independent problem.
 private:
 	int _NMAX;
-	double _L, _kmax;
+	double _L;
+	double  *localEig, *TotalEig;
 public:
 	cBdG_Edge (const int rank, const int size, const int root) : cDistribute(rank,size,root){}
+	~cBdG_Edge(){}
 	void file_input();
 	void file_output();
 	void construction();
 	void update(int nkx);
 	void compute();
-
 };
 #endif // BDG_H_
