@@ -82,8 +82,8 @@ void cBdG_Edge::update(int nkx){
 		Gamma1 = complex<double> (0.0,0.0);Gamma2 = complex<double> (0.0,0.0);
 		for (int it = 0; it < count; ++it) {
 			temp = Delta_t[it];
-			Gamma1 += abs(temp)		*exp(_myI*2*M_PI*(q-p)/_T*it*dt)/_T*dt;
-			Gamma2 += abs(temp)*exp(_myI*2*M_PI*(q-p)/_T*it*dt)/_T*dt;
+			Gamma1 += (temp)		*exp(_myI*2*M_PI*(q-p)/_T*it*dt)/_T*dt;
+			Gamma2 += conj(temp)*exp(_myI*2*M_PI*(q-p)/_T*it*dt)/_T*dt;
 		}
 		//cout << "gamma1=" << Gamma1 << "gamma2="<< Gamma2 << endl;
 		for (int im = 0; im < _NMAX; ++im) {
@@ -99,10 +99,10 @@ void cBdG_Edge::update(int nkx){
     		  n = in+1;
 //    		  if (in!=im){
     		  Lambda = 2.0*_v*m*n*(1-pow(-1.0,m+n))/_L/(m*m-n*n);
-    		  _bdg_H(ip*_ibdg*_NMAX+im*_ibdg	,ip*_ibdg*_NMAX+in*_ibdg+1) = -complex<double>(Lambda,0.0);
+    		  _bdg_H(ip*_ibdg*_NMAX+im*_ibdg	,ip*_ibdg*_NMAX+in*_ibdg+1) = complex<double>(-Lambda,0.0);
     		  _bdg_H(ip*_ibdg*_NMAX+im*_ibdg+1	,ip*_ibdg*_NMAX+in*_ibdg)	=  complex<double>(Lambda,0.0);
     		  _bdg_H(ip*_ibdg*_NMAX+im*_ibdg+2	,ip*_ibdg*_NMAX+in*_ibdg+3) =  complex<double>(Lambda,0.0);
-    		  _bdg_H(ip*_ibdg*_NMAX+im*_ibdg+3	,ip*_ibdg*_NMAX+in*_ibdg+2)	= -complex<double>(Lambda,0.0);
+    		  _bdg_H(ip*_ibdg*_NMAX+im*_ibdg+3	,ip*_ibdg*_NMAX+in*_ibdg+2)	= complex<double>(-Lambda,0.0);
 //    		  }
     	  }
       }
