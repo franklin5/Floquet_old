@@ -56,15 +56,17 @@ void cBdG_Edge::construction(){
 }
 
 void cBdG_Edge::update(int nkx){
-  int p,q,m,n;
+  int p,q,m,n,s,t;
   if (nkx == -1) {
     _bdg_H.setZero(); // This is done only once.
     // The off-diagonal coupling introduced from time-dependent order parameter should be computed only here.
     double dt = 0.0005;int lenT = int(_T/dt);
     VectorXcd Delta_t(lenT+1000);Delta_t.setZero();
     FILE *R_Delta, *I_Delta;
-    R_Delta = fopen("Rdata_2109.dat","r");
-    I_Delta = fopen("Idata_2109.dat","r");
+	R_Delta = fopen("Rdata_2109_testing.dat","r");
+	I_Delta = fopen("Idata_2109_testing.dat","r");
+//    R_Delta = fopen("Rdata_2109.dat","r");
+//    I_Delta = fopen("Idata_2109.dat","r");
     assert(R_Delta != NULL);assert(I_Delta != NULL);
     int count = 0;
     double reD, imD;
@@ -77,61 +79,54 @@ void cBdG_Edge::update(int nkx){
     double Lambda;
     for (int ip = 0; ip < _pblock; ++ip) {
       p = ip - _PMAX;
-      for (int iq = 0; iq<=ip;++iq){
+      s = ip*_ibdg*_NMAX;
+      for (int iq = 0; iq<_pblock;++iq){
 		q = iq - _PMAX;
+		t = iq*_ibdg*_NMAX;
 		Gamma1 = complex<double> (0.0,0.0);Gamma2 = complex<double> (0.0,0.0);
 		for (int it = 0; it < count; ++it) {
 			temp = Delta_t[it];
-			Gamma1 += (temp)		*exp(_myI*2*M_PI*(q-p)/_T*it*dt)/_T*dt;
+			Gamma1 += (temp)*exp(_myI*2*M_PI*(q-p)/_T*it*dt)/_T*dt;
 			Gamma2 += conj(temp)*exp(_myI*2*M_PI*(q-p)/_T*it*dt)/_T*dt;
 		}
 		//cout << "gamma1=" << Gamma1 << "gamma2="<< Gamma2 << endl;
 		for (int im = 0; im < _NMAX; ++im) {
-			_bdg_H(ip*_ibdg*_NMAX+im*_ibdg	,iq*_ibdg*_NMAX+im*_ibdg+3) = -Gamma1;
-			_bdg_H(ip*_ibdg*_NMAX+im*_ibdg+1,iq*_ibdg*_NMAX+im*_ibdg+2) =  Gamma1;
-			_bdg_H(ip*_ibdg*_NMAX+im*_ibdg+2,iq*_ibdg*_NMAX+im*_ibdg+1) =  Gamma2;
-			_bdg_H(ip*_ibdg*_NMAX+im*_ibdg+3,iq*_ibdg*_NMAX+im*_ibdg)	= -Gamma2;
+			_bdg_H(s+im,t+im+3*_NMAX) = -Gamma1;
+			_bdg_H(s+im+_NMAX,t+im+2*_NMAX) =  Gamma1;
+			_bdg_H(s+im+2*_NMAX,t+im+_NMAX) =  Gamma2;
+			_bdg_H(s+im+3*_NMAX,t+im)	= -Gamma2;
 		}
       }
       for (int im = 0; im < _NMAX; ++im) {
     	  m = im+1;
-    	  for (int in = 0; in < im; ++in) {
+    	  for (int in = 0; in < _NMAX; ++in) {
     		  n = in+1;
-//    		  if (in!=im){
+    		  if (in!=im){
     		  Lambda = 2.0*_v*m*n*(1-pow(-1.0,m+n))/_L/(m*m-n*n);
-    		  _bdg_H(ip*_ibdg*_NMAX+im*_ibdg	,ip*_ibdg*_NMAX+in*_ibdg+1) = complex<double>(-Lambda,0.0);
-    		  _bdg_H(ip*_ibdg*_NMAX+im*_ibdg+1	,ip*_ibdg*_NMAX+in*_ibdg)	=  complex<double>(Lambda,0.0);
-    		  _bdg_H(ip*_ibdg*_NMAX+im*_ibdg+2	,ip*_ibdg*_NMAX+in*_ibdg+3) =  complex<double>(Lambda,0.0);
-    		  _bdg_H(ip*_ibdg*_NMAX+im*_ibdg+3	,ip*_ibdg*_NMAX+in*_ibdg+2)	= complex<double>(-Lambda,0.0);
-//    		  }
+    		  _bdg_H(s+im,s+in+_NMAX) = complex<double>(-Lambda,0.0);
+    		  _bdg_H(s+im+_NMAX,s+in)	=  complex<double>(Lambda,0.0);
+    		  _bdg_H(s+im+2*_NMAX,s+in+3*_NMAX) =  complex<double>(Lambda,0.0);
+    		  _bdg_H(s+im+3*_NMAX,s+in+2*_NMAX)	= complex<double>(-Lambda,0.0);
+    		  }
     	  }
       }
     }
   } else {
-    double kx = -_kmax +2.0*_kmax/(_NKX-1)*nkx, xi = kx*kx-_mu;
+	  int s;
+	  double kx = -_kmax +2.0*_kmax/(_NKX-1)*nkx, xi = kx*kx-_mu;
     for (int ip = 0; ip < _pblock; ++ip) {
       p = ip - _PMAX;
+      s = ip*_ibdg*_NMAX;
       for (int im = 0; im < _NMAX; ++im) {
-    	  _bdg_H(ip*_ibdg*_NMAX+im*_ibdg,ip*_ibdg*_NMAX+im*_ibdg) =
-    			  complex<double> (xi+pow(m*M_PI/_L,2.0)+_h+2*p*M_PI/_T,0.0);
-
-    	  //_bdg_H(ip*_ibdg*_NMAX+im*_ibdg,ip*_ibdg*_NMAX+im*_ibdg+1) =
-    	  //    			  complex<double> (_v*kx,0.0);
-
-    	  _bdg_H(ip*_ibdg*_NMAX+im*_ibdg+1,ip*_ibdg*_NMAX+im*_ibdg) =
-    			  complex<double> (_v*kx,0.0);
-    	  _bdg_H(ip*_ibdg*_NMAX+im*_ibdg+1,ip*_ibdg*_NMAX+im*_ibdg+1) =
-    			  complex<double> (xi+pow(m*M_PI/_L,2.0)-_h+2*p*M_PI/_T,0.0);
-    	  _bdg_H(ip*_ibdg*_NMAX+im*_ibdg+2,ip*_ibdg*_NMAX+im*_ibdg+2) =
-    			  complex<double> (-(xi+pow(m*M_PI/_L,2.0)+_h)+2*p*M_PI/_T,0.0);
-
-    	  //_bdg_H(ip*_ibdg*_NMAX+im*_ibdg+2,ip*_ibdg*_NMAX+im*_ibdg+3) =
-    	  //    			  complex<double> (_v*kx,0.0);
-
-    	  _bdg_H(ip*_ibdg*_NMAX+im*_ibdg+3,ip*_ibdg*_NMAX+im*_ibdg+2) =
-    			  complex<double> (_v*kx,0.0);
-    	  _bdg_H(ip*_ibdg*_NMAX+im*_ibdg+3,ip*_ibdg*_NMAX+im*_ibdg+3) =
-    			  complex<double> (-(xi+pow(m*M_PI/_L,2.0)-_h)+2*p*M_PI/_T,0.0);
+    	  m = im +1;
+    	  _bdg_H(s+im,s+im) =complex<double> (xi+pow(m*M_PI/_L,2.0)+_h+2*p*M_PI/_T,0.0);
+    	  _bdg_H(s+im,s+im+_NMAX) =complex<double> (_v*kx,0.0);
+    	  _bdg_H(s+im+_NMAX,s+im) =complex<double> (_v*kx,0.0);
+    	  _bdg_H(s+im+_NMAX,s+im+_NMAX) =complex<double> (xi+pow(m*M_PI/_L,2.0)-_h+2*p*M_PI/_T,0.0);
+    	  _bdg_H(s+im+2*_NMAX,s+im+2*_NMAX) =complex<double> (-(xi+pow(m*M_PI/_L,2.0)+_h)-2*p*M_PI/_T,0.0);
+    	  _bdg_H(s+im+2*_NMAX,s+im+3*_NMAX) =complex<double> (_v*kx,0.0);
+    	  _bdg_H(s+im+3*_NMAX,s+im+2*_NMAX) =complex<double> (_v*kx,0.0);
+    	  _bdg_H(s+im+3*_NMAX,s+im+3*_NMAX) =complex<double> (-(xi+pow(m*M_PI/_L,2.0)-_h)-2*p*M_PI/_T,0.0);
       }
 	}
   }
@@ -175,13 +170,14 @@ void cBdG_Edge::file_output(){
   }
   MPI_Gatherv(localEig, stride, MPI_DOUBLE, TotalEig, recvcounts, displs_r, MPI_DOUBLE, _root, COMM_WORLD);
   if (_root==_rank) {
-	//  update(5);
+	  update(_NKX-1);
 	  ofstream spectrum_output, akx;
-    //ofstream bdgR,bdgI;
+	  akx.precision(16);spectrum_output.precision(16);
+    ofstream bdgR,bdgI;
     spectrum_output.open("spectrum.OUT");
-    //bdgR.open("bdgR.OUT");bdgI.open("bdgI.OUT");assert(bdgR.is_open());assert(bdgI.is_open());
-    //bdgR << _bdg_H.real() << endl;
-    //bdgI << _bdg_H.imag() << endl;
+    bdgR.open("bdgR.OUT");bdgI.open("bdgI.OUT");assert(bdgR.is_open());assert(bdgI.is_open());
+    bdgR << _bdg_H.real() << endl;
+    bdgI << _bdg_H.imag() << endl;
     akx.open("AKX.OUT");
     assert(akx.is_open());
     assert(spectrum_output.is_open());
@@ -193,7 +189,7 @@ void cBdG_Edge::file_output(){
       spectrum_output << endl;
     }
     akx << endl;
-    //bdgR.close();bdgI.close();
+    bdgR.close();bdgI.close();
     akx.close();spectrum_output.close();
   }
 }
