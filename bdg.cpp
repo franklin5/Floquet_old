@@ -26,8 +26,6 @@ void cBdG_Bulk::file_input(){
       fscanf(input_bdg_bulk,"%s %lf", dummyname, &dummyvalue);
       _T = dummyvalue;	if (ig == _root) cout << dummyname << "=" << _T << endl;
       fscanf(input_bdg_bulk,"%s %lf", dummyname, &dummyvalue);
-      _Delta0 = dummyvalue;	if (ig == _root) cout << dummyname << "=" << _Delta0 << endl;
-      fscanf(input_bdg_bulk,"%s %lf", dummyname, &dummyvalue);
       _v = dummyvalue;	if (ig == _root) cout << dummyname << "=" << _v << endl;
       fscanf(input_bdg_bulk,"%s %lf", dummyname, &dummyvalue);
       _kmax = dummyvalue;	if (ig == _root) cout << dummyname << "=" << _kmax << endl;
@@ -58,39 +56,55 @@ void cBdG_Bulk::construction(){
   if (_rank == _root) cout << "Construction is completed." << endl;
 }
 void cBdG_Bulk::update(int nk, double kx, double ky){
-  int p,q;
+  int p,q,s,t;
   if (nk == -1) {
     _bdg_H.setZero(); // This is done only once.
     // The off-diagonal coupling introduced from time-dependent order parameter should be computed only here.
-    double dt = 0.0001;int lenT = int(_T/dt);double Delta2 = 0.0;
-    double *DELTA_t = new double [lenT];
-    for (int it = 0; it < lenT; ++it) {
-      DELTA_t[it] = _Delta0 + Delta2*cos(it*dt*2*M_PI/_T); // time-independent problem: replace Delta2 with 0.0;
-    }
-    complex<double> Gamma2;
+    double dt = 0.0001;int lenT = int(_T/dt);
+    VectorXcd Delta_t(lenT+1000);Delta_t.setZero();
+    FILE *R_Delta, *I_Delta;
+   	R_Delta = fopen("Rdata_2109_testing.dat","r");
+   	I_Delta = fopen("Idata_2109_testing.dat","r");
+   //    R_Delta = fopen("Rdata_2109.dat","r");
+   //    I_Delta = fopen("Idata_2109.dat","r");
+	assert(R_Delta != NULL);assert(I_Delta != NULL);
+	int count = 0;
+	double reD, imD;
+	while (fscanf(R_Delta, "%lf", &reD) != EOF && fscanf(I_Delta, "%lf", &imD) != EOF ){
+	 Delta_t(count) = complex<double>(reD,imD);
+	 count++;
+	}
+	fclose(R_Delta);fclose(I_Delta);
+	complex<double> Gamma1, Gamma2, temp;
     for (int ip = 0; ip < _pblock; ++ip) {
       p = ip - _PMAX;
+      s = ip*_ibdg;
       for (int iq = 0; iq<=ip;++iq){
 	q = iq - _PMAX;
-	Gamma2 = complex<double> (0.0,0.0);
-	for (int it = 0; it < lenT; ++it) {
-	  Gamma2 += DELTA_t[it]*exp(-_myI*2*M_PI*(q-p)/_T*it*dt)/_T*dt;
+	t = iq*_ibdg;
+	Gamma1 = complex<double> (0.0,0.0);Gamma2 = complex<double> (0.0,0.0);
+	for (int it = 0; it < count; ++it) {
+		temp = Delta_t(it);
+		Gamma1 += (temp)*exp(_myI*2*M_PI*(q-p)/_T*it*dt)/_T*dt;
+		Gamma2 += conj(temp)*exp(_myI*2*M_PI*(q-p)/_T*it*dt)/_T*dt;
 	}
-	_bdg_H(ip*_ibdg+2,iq*_ibdg+1)   =  Gamma2;
-	_bdg_H(ip*_ibdg+3,iq*_ibdg) 	= -Gamma2;
+	_bdg_H(s,t+3)   =  -Gamma1;
+	_bdg_H(s+1,t+2)   =  Gamma1;
+	_bdg_H(s+2,t+1)   =  Gamma2;
+	_bdg_H(s+3,t)   =  -Gamma2;
       }
     }
-    delete []DELTA_t;
   } else {
     double xi = kx*kx+ky*ky-_mu;
     for (int ip = 0; ip < _pblock; ++ip) {
       p = ip - _PMAX;
-      _bdg_H(ip*_ibdg,ip*_ibdg)   		=  complex<double> (xi+_h+2*p*M_PI/_T,0.0);
-      _bdg_H(ip*_ibdg+1,ip*_ibdg)   	=  complex<double> (_v*kx,_v*ky);
-      _bdg_H(ip*_ibdg+1,ip*_ibdg+1)   	=  complex<double> (xi-_h+2*p*M_PI/_T,0.0);
-      _bdg_H(ip*_ibdg+2,ip*_ibdg+2)   	=  complex<double> (-(xi+_h)+2*p*M_PI/_T,0.0);
-      _bdg_H(ip*_ibdg+3,ip*_ibdg+2)   	=  complex<double> (_v*kx,-_v*ky);
-      _bdg_H(ip*_ibdg+3,ip*_ibdg+3)   	=  complex<double> (-(xi-_h)+2*p*M_PI/_T,0.0);
+      s = ip*_ibdg;
+      _bdg_H(s,s)   		=  complex<double> (xi+_h+2*p*M_PI/_T,0.0);
+      _bdg_H(s+1,s)   		=  complex<double> (_v*kx,_v*ky);
+      _bdg_H(s+1,s+1)   	=  complex<double> (xi-_h+2*p*M_PI/_T,0.0);
+      _bdg_H(s+2,s+2)   	=  complex<double> (-(xi+_h)-2*p*M_PI/_T,0.0);
+      _bdg_H(s+3,s+2)   	=  complex<double> (_v*kx,-_v*ky);
+      _bdg_H(s+3,s+3)   	=  complex<double> (-(xi-_h)-2*p*M_PI/_T,0.0);
     }
     //cout << _bdg_H << endl;
   }
@@ -102,18 +116,19 @@ void cBdG_Bulk::BrillouinZone(){
   ces.compute(_bdg_H);
   _bdg_E = ces.eigenvalues();
   _bdg_V = ces.eigenvectors();
+  double pov = -1.0;
   if (_PMAX == 0) {
     _lowerbound = 0;
     _upperbound = _SMAX-1;
   } else {
-    for(int ip = 0; ip < _SMAX/2;++ip){
-      if (_bdg_E[ip]/(M_PI/_T) >= -1.0) {
+    for(int ip = 0; ip < _SMAX;++ip){
+      if (_bdg_E[ip]/(M_PI/_T) >= pov) {
 	_lowerbound = ip;
 	break;
       }
     }
-    for(int ip = _SMAX/2; ip < _SMAX;++ip){
-      if (_bdg_E[ip]/(M_PI/_T) >= 1.0) {
+    for(int ip = 0; ip < _SMAX;++ip){
+      if (_bdg_E[ip]/(M_PI/_T) >= pov+2) {
 	_upperbound = ip-1;
 	break;
       }
@@ -132,21 +147,23 @@ double cBdG_Bulk::chern(int nk, double kx, double ky){
       //      cout  <<"lower bound = " << lowerbound << " upper bound = " << up	\
       perbound << ", and " << upperbound-lowerbound+1 << " is considered for computation." <<endl;
       double Ediff;
+      int s;
       int nkx = nk % _NKX, nky = int (nk/_NKX);
       _chern = complex<double> (0.0,0.0);
-      for(int ih = _lowerbound; ih < _SMAX/2; ++ih) { // hole branch
-	for(int ip = _SMAX/2;ip<=_upperbound;++ip){ // particle branch
+      for(int ih = _lowerbound; ih < (_upperbound+_lowerbound+1)/2; ++ih) { // hole branch
+	for(int ip = (_upperbound+_lowerbound+1)/2;ip<=_upperbound;++ip){ // particle branch
 	  Theta1 = complex<double> (0.0,0.0);
 	  Theta2 = complex<double> (0.0,0.0);
 	  for(int i = 0; i < _pblock; ++i){ // frequency block adds up
-	    u = _bdg_V(i*_ibdg,ih);
-	    a = _bdg_V(i*_ibdg+1,ih);
-	    b = _bdg_V(i*_ibdg+2,ih);
-	    v = _bdg_V(i*_ibdg+3,ih);
-	    up = _bdg_V(i*_ibdg,ip);
-	    ap = _bdg_V(i*_ibdg+1,ip);
-	    bp = _bdg_V(i*_ibdg+2,ip);
-	    vp = _bdg_V(i*_ibdg+3,ip);
+		  s = i*_ibdg;
+	    u = _bdg_V(s,ih);
+	    a = _bdg_V(s+1,ih);
+	    b = _bdg_V(s+2,ih);
+	    v = _bdg_V(s+3,ih);
+	    up = _bdg_V(s,ip);
+	    ap = _bdg_V(s+1,ip);
+	    bp = _bdg_V(s+2,ip);
+	    vp = _bdg_V(s+3,ip);
 	    Theta1 += 2*kx*up*conj(u)+_v*ap*conj(u)
 	      +_v*up*conj(a)+2*kx*ap*conj(a)
 	      -2*kx*bp*conj(b)+_v*vp*conj(b)
@@ -295,7 +312,7 @@ void cBdG_Bulk::file_output(){
   MPI_Gatherv(localEig, stride, MPI_DOUBLE, TotalEig, recvcounts, displs_r, MPI_DOUBLE, _root, COMM_WORLD);
   if (_root==_rank) {
     ofstream spectrum_output, akx, aky;
-    spectrum_output.open("spectrum.OUT");
+    spectrum_output.open("bulk_spectrum.OUT");
     akx.open("AKX.OUT");
     aky.open("AKY.OUT");
     assert(akx.is_open());

@@ -85,7 +85,7 @@ void cBdG_Edge::update(int nkx){
 		t = iq*_ibdg*_NMAX;
 		Gamma1 = complex<double> (0.0,0.0);Gamma2 = complex<double> (0.0,0.0);
 		for (int it = 0; it < count; ++it) {
-			temp = Delta_t[it];
+			temp = Delta_t(it);
 			Gamma1 += (temp)*exp(_myI*2*M_PI*(q-p)/_T*it*dt)/_T*dt;
 			Gamma2 += conj(temp)*exp(_myI*2*M_PI*(q-p)/_T*it*dt)/_T*dt;
 		}
@@ -103,9 +103,9 @@ void cBdG_Edge::update(int nkx){
     		  n = in+1;
     		  if (in!=im){
     		  Lambda = 2.0*_v*m*n*(1-pow(-1.0,m+n))/_L/(m*m-n*n);
-    		  _bdg_H(s+im,s+in+_NMAX) = complex<double>(-Lambda,0.0);
-    		  _bdg_H(s+im+_NMAX,s+in)	=  complex<double>(Lambda,0.0);
-    		  _bdg_H(s+im+2*_NMAX,s+in+3*_NMAX) =  complex<double>(Lambda,0.0);
+    		  _bdg_H(s+im,s+in+_NMAX) 			= complex<double>(-Lambda,0.0);
+    		  _bdg_H(s+im+_NMAX,s+in)			= complex<double>( Lambda,0.0);
+    		  _bdg_H(s+im+2*_NMAX,s+in+3*_NMAX) = complex<double>( Lambda,0.0);
     		  _bdg_H(s+im+3*_NMAX,s+in+2*_NMAX)	= complex<double>(-Lambda,0.0);
     		  }
     	  }
@@ -174,7 +174,7 @@ void cBdG_Edge::file_output(){
 	  ofstream spectrum_output, akx;
 	  akx.precision(16);spectrum_output.precision(16);
     ofstream bdgR,bdgI;
-    spectrum_output.open("spectrum.OUT");
+    spectrum_output.open("edge_spectrum.OUT");
     bdgR.open("bdgR.OUT");bdgI.open("bdgI.OUT");assert(bdgR.is_open());assert(bdgI.is_open());
     bdgR << _bdg_H.real() << endl;
     bdgI << _bdg_H.imag() << endl;
